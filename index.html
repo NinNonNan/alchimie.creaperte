@@ -16,7 +16,7 @@
       background-color: #d6bfa4;
       color: white;
       text-align: center;
-      padding: 2rem;
+      padding: 2rem 1rem;
     }
     header h1 {
       margin: 0;
@@ -86,6 +86,23 @@
     form button:hover {
       background-color: #c2a888;
     }
+    .cta-whatsapp {
+      display: block;
+      text-align: center;
+      margin: 1.5rem auto;
+      padding: 1rem;
+      background-color: #25d366;
+      color: white;
+      border-radius: 12px;
+      max-width: 300px;
+      text-decoration: none;
+      font-weight: bold;
+      font-size: 1.1rem;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    }
+    .cta-whatsapp:hover {
+      background-color: #1ebe57;
+    }
     footer {
       text-align: center;
       padding: 1rem;
@@ -105,6 +122,16 @@
       }
       .card {
         padding: 0.5rem;
+      }
+      form {
+        padding: 1.5rem;
+      }
+      form input, form textarea {
+        font-size: 0.95rem;
+      }
+      .cta-whatsapp {
+        width: 90%;
+        font-size: 1rem;
       }
     }
   </style>
@@ -127,12 +154,12 @@
       <p>Un regalo unico e raffinato per cerimonie speciali.</p>
     </div>
     <div class="card">
-      <img src="tre.jpg" alt="Decorazioni artistiche in cera">
+      <img src="tre.webp" alt="Decorazioni artistiche in cera">
       <h3>Decorazioni artistiche</h3>
       <p>Pezzi unici per rendere ogni ambiente speciale.</p>
     </div>
     <div class="card">
-      <img src="quattro.jpg" alt="Oggetti artigianali in cera">
+      <img src="quattro.webp" alt="Oggetti artigianali in cera">
       <h3>Oggetti artigianali</h3>
       <p>Creazioni originali che portano calore e bellezza.</p>
     </div>
@@ -144,6 +171,9 @@
       <label for="nome">Nome</label>
       <input type="text" id="nome" name="nome" required>
 
+      <label for="telefono">Telefono</label>
+      <input type="tel" id="telefono" name="telefono" required>
+
       <label for="email">Email</label>
       <input type="email" id="email" name="email" required>
 
@@ -152,6 +182,8 @@
 
       <button type="submit">Invia</button>
     </form>
+
+    <a class="cta-whatsapp" href="https://wa.me/391234567890" target="_blank">Scrivici su WhatsApp</a>
   </section>
 
   <footer>
