@@ -245,3 +245,51 @@ body {
         max-width: 350px;
     }
 }
+
+/* Stili per lo slider di immagini */
+.image-slider-container {
+    position: relative;
+    width: 100%;
+    overflow: hidden; /* Nasconde le immagini che non sono in vista */
+}
+
+.image-slider {
+    display: flex; /* Mette le immagini una accanto all'altra */
+    transition: transform 0.4s ease-in-out; /* Transizione fluida tra le immagini */
+}
+
+.slider-image {
+    min-width: 100%; /* Ogni immagine occupa tutta la larghezza del contenitore */
+    height: auto;
+    display: block;
+}
+
+.slider-controls {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    padding: 0 10px;
+    z-index: 10;
+}
+
+.slider-controls button {
+    background-color: rgba(255, 255, 255, 0.5);
+    border: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #4A423D;
+    transition: background-color 0.2s ease;
+}
+
+.slider-controls button:hover {
+    background-color: rgba(255, 255, 255, 0.8);
+}
