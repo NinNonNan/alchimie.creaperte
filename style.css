@@ -379,3 +379,63 @@ body {
 .submit-btn:hover {
     background-color: #a0522d;
 }
+
+
+
+/* --- STILI PER IL FORM DI CONTATTO --- */
+.contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px; /* Spazio tra i campi del form */
+    margin-top: 20px;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    text-align: left; /* Allinea etichetta e input a sinistra */
+}
+
+.form-group label {
+    font-size: 0.9rem;
+    color: #6A5F52;
+    margin-bottom: 5px;
+    font-weight: 500;
+}
+
+.form-group input,
+.form-group textarea {
+    padding: 10px;
+    border: 1px solid #ddd; /* Bordo leggero */
+    border-radius: 5px;
+    font-family: 'Poppins', sans-serif;
+    font-size: 0.9rem;
+    color: #4A423D;
+    transition: all 0.3s ease; /* Transizione per un effetto più fluido */
+    /* Aggiungiamo una sottile ombra per un effetto "leggermente sollevato" */
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+    outline: none;
+    border-color: #C8A2A0; /* Colore dell'accento quando il campo è selezionato */
+    box-shadow: 0 0 8px rgba(200, 162, 160, 0.6); /* Ombra più evidente al focus */
+}
+
+.submit-btn {
+    background-color: #C8A2A0; /* Colore del bottone, in linea con l'accento */
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 5px;
+    font-size: 1rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    align-self: center; /* Centra il bottone */
+}
+
+.submit-btn:hover {
+    background-color: #a0522d;
+}
