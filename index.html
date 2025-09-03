@@ -1,193 +1,105 @@
 <!DOCTYPE html>
 <html lang="it">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Creazioni in Cera - Fatto a Mano</title>
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      margin: 0;
-      padding: 0;
-      background-color: #fefcf9;
-      color: #333;
-    }
-    header {
-      background-color: #d6bfa4;
-      color: white;
-      text-align: center;
-      padding: 2rem 1rem;
-    }
-    header h1 {
-      margin: 0;
-      font-size: 2.2rem;
-    }
-    header p {
-      margin: 0.5rem 0 0;
-    }
-    .products {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 1.5rem;
-      padding: 2rem;
-      max-width: 1200px;
-      margin: auto;
-    }
-    .card {
-      background: white;
-      border-radius: 12px;
-      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-      overflow: hidden;
-      text-align: center;
-      padding: 1rem;
-    }
-    .card img {
-      width: 100%;
-      height: auto;
-      border-radius: 8px;
-    }
-    .card h3 {
-      margin: 1rem 0 0.5rem;
-    }
-    form {
-      background: #f2e7dc;
-      padding: 2rem;
-      border-radius: 12px;
-      max-width: 600px;
-      margin: 2rem auto;
-      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-    }
-    form h2 {
-      text-align: center;
-      margin-bottom: 1rem;
-    }
-    form label {
-      display: block;
-      margin: 0.5rem 0 0.2rem;
-    }
-    form input, form textarea {
-      width: 100%;
-      padding: 0.8rem;
-      border: 1px solid #ccc;
-      border-radius: 8px;
-      font-size: 1rem;
-    }
-    form button {
-      margin-top: 1rem;
-      background-color: #d6bfa4;
-      color: white;
-      border: none;
-      padding: 0.8rem 1.5rem;
-      border-radius: 8px;
-      cursor: pointer;
-      font-size: 1rem;
-      width: 100%;
-    }
-    form button:hover {
-      background-color: #c2a888;
-    }
-    .cta-whatsapp {
-      display: block;
-      text-align: center;
-      margin: 1.5rem auto;
-      padding: 1rem;
-      background-color: #25d366;
-      color: white;
-      border-radius: 12px;
-      max-width: 300px;
-      text-decoration: none;
-      font-weight: bold;
-      font-size: 1.1rem;
-      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-    }
-    .cta-whatsapp:hover {
-      background-color: #1ebe57;
-    }
-    footer {
-      text-align: center;
-      padding: 1rem;
-      background-color: #d6bfa4;
-      color: white;
-      margin-top: 2rem;
-    }
-
-    /* Stile per mobile */
-    @media (max-width: 600px) {
-      header h1 {
-        font-size: 1.8rem;
-      }
-      .products {
-        grid-template-columns: 1fr;
-        padding: 1rem;
-      }
-      .card {
-        padding: 0.5rem;
-      }
-      form {
-        padding: 1.5rem;
-      }
-      form input, form textarea {
-        font-size: 0.95rem;
-      }
-      .cta-whatsapp {
-        width: 90%;
-        font-size: 1rem;
-      }
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Le Bomboniere di [Il Tuo Brand]</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
 <body>
-  <header>
-    <h1>Creazioni in Cera</h1>
-    <p>Bomboniere e oggetti artigianali fatti a mano</p>
-  </header>
 
-  <section class="products">
-    <div class="card">
-      <img src="uno.jpg" alt="Candela decorativa artigianale">
-      <h3>Candela decorativa</h3>
-      <p>Realizzata interamente a mano con cera naturale.</p>
-    </div>
-    <div class="card">
-      <img src="due.jpg" alt="Bomboniera floreale in cera">
-      <h3>Bomboniera floreale</h3>
-      <p>Un regalo unico e raffinato per cerimonie speciali.</p>
-    </div>
-    <div class="card">
-      <img src="tre.webp" alt="Decorazioni artistiche in cera">
-      <h3>Decorazioni artistiche</h3>
-      <p>Pezzi unici per rendere ogni ambiente speciale.</p>
-    </div>
-    <div class="card">
-      <img src="quattro.webp" alt="Oggetti artigianali in cera">
-      <h3>Oggetti artigianali</h3>
-      <p>Creazioni originali che portano calore e bellezza.</p>
-    </div>
-  </section>
+    <header class="header">
+        <div class="logo">
+            [Il Tuo Brand]
+        </div>
+        <div class="header-icons">
+            <i class="fas fa-shopping-cart cart-icon"></i>
+            <i class="fas fa-bars menu-icon" id="menu-toggle"></i>
+        </div>
+    </header>
 
-  <section>
-    <form>
-      <h2>Contattaci</h2>
-      <label for="nome">Nome</label>
-      <input type="text" id="nome" name="nome" required>
+    <nav class="menu-overlay" id="menu-overlay">
+        <i class="fas fa-times close-btn" id="menu-close"></i>
+        <ul>
+            <li><a href="#matrimoni" class="nav-link" data-section="matrimoni">Matrimoni</a></li>
+            <li><a href="#battesimi" class="nav-link" data-section="battesimi">Battesimi</a></li>
+            <li><a href="#comunioni" class="nav-link" data-section="comunioni">Comunioni</a></li>
+            <li><a href="#contatti" class="nav-link" data-section="contatti">Contatti</a></li>
+        </ul>
+    </nav>
 
-      <label for="telefono">Telefono</label>
-      <input type="tel" id="telefono" name="telefono" required>
+    <main class="main-content">
+        <section id="matrimoni" class="content-section active">
+            <h2 class="section-title">Le nostre Bomboniere per Matrimoni</h2>
+            <div class="product-grid">
+                <div class="product-card">
+                    <img src="https://via.placeholder.com/400x400.png?text=Bomboniera+Matrimonio+1" alt="Bomboniera Matrimonio 1" class="product-image">
+                    <div class="product-details">
+                        <h3 class="product-name">Elegante sacchetto in lino</h3>
+                        <p class="product-price">€ 5,50</p>
+                        <p class="product-description">Sacchetto in lino decorato con spighe di grano, ideale per matrimoni a tema rustico-chic.</p>
+                        <button class="add-to-cart-btn">Aggiungi al carrello</button>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <img src="https://via.placeholder.com/400x400.png?text=Bomboniera+Matrimonio+2" alt="Bomboniera Matrimonio 2" class="product-image">
+                    <div class="product-details">
+                        <h3 class="product-name">Piccolo vaso di miele artigianale</h3>
+                        <p class="product-price">€ 7,00</p>
+                        <p class="product-description">Vasetto di miele biologico con etichetta personalizzabile, un dolce pensiero per i tuoi invitati.</p>
+                        <button class="add-to-cart-btn">Aggiungi al carrello</button>
+                    </div>
+                </div>
+                </div>
+        </section>
 
-      <label for="email">Email</label>
-      <input type="email" id="email" name="email" required>
+        <section id="battesimi" class="content-section">
+            <h2 class="section-title">Dolci creazioni per Battesimi</h2>
+            <div class="product-grid">
+                <div class="product-card">
+                    <img src="https://via.placeholder.com/400x400.png?text=Bomboniera+Battesimo+1" alt="Bomboniera Battesimo 1" class="product-image">
+                    <div class="product-details">
+                        <h3 class="product-name">Angioletto in pasta di mais</h3>
+                        <p class="product-price">€ 4,20</p>
+                        <p class="product-description">Un delicato angioletto fatto a mano, perfetto per il battesimo del tuo bambino.</p>
+                        <button class="add-to-cart-btn">Aggiungi al carrello</button>
+                    </div>
+                </div>
+                </div>
+        </section>
+        
+        <section id="comunioni" class="content-section">
+            <h2 class="section-title">Bomboniere per la Santa Comunione</h2>
+            <div class="product-grid">
+                <div class="product-card">
+                    <img src="https://via.placeholder.com/400x400.png?text=Bomboniera+Comunione+1" alt="Bomboniera Comunione 1" class="product-image">
+                    <div class="product-details">
+                        <h3 class="product-name">Croce in legno d'ulivo</h3>
+                        <p class="product-price">€ 6,80</p>
+                        <p class="product-description">Piccola croce in legno d'ulivo, simbolo di fede e spiritualità.</p>
+                        <button class="add-to-cart-btn">Aggiungi al carrello</button>
+                    </div>
+                </div>
+                </div>
+        </section>
 
-      <label for="messaggio">Messaggio</label>
-      <textarea id="messaggio" name="messaggio" rows="5" required></textarea>
+        <section id="contatti" class="content-section">
+            <h2 class="section-title">Contattaci</h2>
+            <div class="contact-info">
+                <p><strong>Email:</strong> info@tuobrand.it</p>
+                <p><strong>Telefono:</strong> 333 1234567</p>
+                <p><strong>Instagram:</strong> @tuobrand</p>
+                <p><strong>Facebook:</strong> /tuobrand</p>
+            </div>
+        </section>
+    </main>
 
-      <button type="submit">Invia</button>
-    </form>
+    <footer class="footer">
+        <p>&copy; 2025 [Il Tuo Brand]. Tutti i diritti riservati.</p>
+    </footer>
 
-    <a class="cta-whatsapp" href="https://wa.me/391234567890" target="_blank">Scrivici su WhatsApp</a>
-  </section>
+    <script src="script.js"></script>
 
-  <footer>
-    <p>&copy; 2025 Creazioni in Cera - Tutti i diritti riservati</p>
-  </footer>
 </body>
 </html>
