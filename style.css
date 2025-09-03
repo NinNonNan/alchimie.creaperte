@@ -8,13 +8,21 @@
     padding: 0;
 }
 
+/* --- MODIFICHE PER IL FOOTER "INCOLLATO" --- */
+html, body {
+    height: 100%; /* Assicura che <html> e <body> occupino tutta l'altezza della viewport */
+}
+
 body {
+    display: flex; /* Trasforma il <body> in un contenitore flex */
+    flex-direction: column; /* Impila gli elementi verticalmente */
     font-family: 'Poppins', sans-serif;
     background-color: #FBF7F3;
     line-height: 1.6;
-    padding-top: 60px;
+    padding-top: 60px; /* Offset per l'header fisso */
     color: #4A423D;
 }
+/* --- FINE MODIFICHE --- */
 
 /* HEADER FISSO */
 .header {
@@ -98,10 +106,13 @@ body {
     color: #C8A2A0;
 }
 
-/* CONTENUTO PRINCIPALE (BODY) */
+/* --- MODIFICHE QUI --- */
+/* Il contenuto principale deve crescere per spingere il footer in basso */
 .main-content {
+    flex-grow: 1;
     padding: 20px;
 }
+/* --- FINE MODIFICHE --- */
 
 .content-section {
     display: none;
@@ -193,11 +204,13 @@ body {
     margin: 10px 0;
     color: #4A423D;
 }
+
 .contact-info a {
     color: #C8A2A0;
     text-decoration: none;
     font-weight: bold;
 }
+
 .contact-info a:hover {
     text-decoration: underline;
 }
@@ -208,7 +221,7 @@ body {
     padding: 20px;
     background-color: #6A5F52;
     color: #fff;
-    margin-top: 40px;
+    margin-top: auto; /* Questo è il segreto per spingerlo in fondo */
 }
 
 /* MEDIA QUERIES PER TABLET E DESKTOP */
