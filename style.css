@@ -293,3 +293,89 @@ body {
 .slider-controls button:hover {
     background-color: rgba(255, 255, 255, 0.8);
 }
+
+/* SEZIONE CONTATTI */
+.contact-info {
+    text-align: center;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+    max-width: 500px;
+    margin: 0 auto;
+}
+
+.contact-info p {
+    font-size: 1.1rem;
+    margin: 10px 0;
+    color: #4A423D;
+}
+
+/* Stile per i contatti diretti (aggiunto per separare le due sezioni) */
+.contact-methods {
+    margin-bottom: 20px;
+}
+.contact-methods p {
+    margin: 5px 0;
+}
+
+/* Descrizione sopra il form */
+.form-description {
+    font-style: italic;
+    margin-top: 30px;
+}
+
+/* Stili per il form di contatto */
+.contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin-top: 20px;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    text-align: left; /* Allinea etichetta e input a sinistra */
+}
+
+.form-group label {
+    font-size: 0.9rem;
+    color: #6A5F52;
+    margin-bottom: 5px;
+    font-weight: 500;
+}
+
+.form-group input,
+.form-group textarea {
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-family: 'Poppins', sans-serif;
+    font-size: 0.9rem;
+    color: #4A423D;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+    outline: none;
+    border-color: #C8A2A0;
+    box-shadow: 0 0 5px rgba(200, 162, 160, 0.5);
+}
+
+.submit-btn {
+    background-color: #C8A2A0;
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 5px;
+    font-size: 1rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    align-self: center; /* Centra il bottone */
+}
+
+.submit-btn:hover {
+    background-color: #a0522d;
+}
