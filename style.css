@@ -34,12 +34,11 @@ body {
     color: #444;
 }
 
-/* Icona carrello rimossa, solo l'icona menu rimane */
 .header-icons .menu-icon {
     font-size: 1.4rem;
     color: #666;
     cursor: pointer;
-    margin-left: 0; /* Rimuovi margin-left se è l'unica icona */
+    margin-left: 0;
 }
 
 /* MENU OVERLAY */
@@ -92,7 +91,7 @@ body {
 }
 
 .menu-overlay ul li a:hover {
-    color: #a0522d; /* Esempio di colore al passaggio del mouse */
+    color: #a0522d;
 }
 
 /* CONTENUTO PRINCIPALE (BODY) */
@@ -101,11 +100,11 @@ body {
 }
 
 .content-section {
-    display: none; /* Inizialmente tutte le sezioni sono nascoste */
+    display: none;
 }
 
 .content-section.active {
-    display: block; /* Solo la sezione con questa classe viene mostrata */
+    display: block;
 }
 
 .section-title {
@@ -129,7 +128,7 @@ body {
     background-color: #fff;
     border-radius: 10px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
-    overflow: hidden;
+    overflow: hidden; /* Importante per contenere l'immagine se object-fit: cover */
     transition: transform 0.2s ease;
 }
 
@@ -137,4 +136,97 @@ body {
     transform: translateY(-5px);
 }
 
+/* --- MODIFICHE QUI PER LE IMMAGINI --- */
 .product-image {
+    max-width: 100%; /* L'immagine non supera mai la larghezza del suo contenitore */
+    height: auto;     /* Mantiene l'aspect ratio originale */
+    display: block;
+    /* Se vuoi che tutte le immagini abbiano la stessa dimensione e siano "cropped" */
+    /* decommenta le due righe sotto: */
+    /* width: 100%; */
+    /* aspect-ratio: 1/1; */ /* Forza un rapporto 1:1 (quadrato) */
+    /* object-fit: cover;  */  /* Copre l'area, tagliando le parti in eccesso */
+}
+/* --- FINE MODIFICHE IMMAGINI --- */
+
+
+.product-details {
+    padding: 15px;
+    text-align: center;
+}
+
+.product-name {
+    font-size: 1.3rem;
+    font-weight: 600;
+    color: #333;
+    margin-bottom: 5px;
+}
+
+.product-price {
+    font-size: 1.1rem;
+    color: #a0522d;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.product-description {
+    font-size: 0.9rem;
+    color: #666;
+    margin-bottom: 15px;
+}
+
+/* SEZIONE CONTATTI */
+.contact-info {
+    text-align: center;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+    max-width: 500px;
+    margin: 0 auto;
+}
+
+.contact-info p {
+    font-size: 1.1rem;
+    margin: 10px 0;
+    color: #444;
+}
+.contact-info a {
+    color: #a0522d;
+    text-decoration: none;
+    font-weight: bold;
+}
+.contact-info a:hover {
+    text-decoration: underline;
+}
+
+/* FOOTER */
+.footer {
+    text-align: center;
+    padding: 20px;
+    background-color: #333;
+    color: #fff;
+    margin-top: 40px;
+}
+
+/* MEDIA QUERIES PER TABLET E DESKTOP */
+@media (min-width: 768px) {
+    .product-grid {
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 30px;
+    }
+
+    .product-card {
+        width: calc(50% - 15px);
+        max-width: 450px; /* Limite per evitare card troppo larghe su schermi medi */
+    }
+}
+
+@media (min-width: 1024px) {
+    .product-card {
+        width: calc(33.33% - 20px);
+        max-width: 350px; /* Limite per evitare card troppo larghe su schermi grandi */
+    }
+}
