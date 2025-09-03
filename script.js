@@ -41,4 +41,30 @@ document.addEventListener('DOMContentLoaded', () => {
             showSection(targetSectionId);
         });
     });
+
+    // --- CODICE PER LO SLIDER DI IMMAGINI ---
+    const sliderContainer = document.querySelector('.image-slider-container');
+    if (sliderContainer) {
+        const slider = sliderContainer.querySelector('.image-slider');
+        const prevBtn = sliderContainer.querySelector('.prev-btn');
+        const nextBtn = sliderContainer.querySelector('.next-btn');
+        const images = sliderContainer.querySelectorAll('.slider-image');
+        let currentIndex = 0;
+
+        function updateSlider() {
+            const offset = -currentIndex * 100;
+            slider.style.transform = `translateX(${offset}%)`;
+        }
+
+        nextBtn.addEventListener('click', () => {
+            currentIndex = (currentIndex + 1) % images.length;
+            updateSlider();
+        });
+
+        prevBtn.addEventListener('click', () => {
+            currentIndex = (currentIndex - 1 + images.length) % images.length;
+            updateSlider();
+        });
+    }
+    // --- FINE CODICE SLIDER ---
 });
