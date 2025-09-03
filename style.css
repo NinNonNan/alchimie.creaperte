@@ -1,5 +1,5 @@
-/* IMPORTAZIONE DEI FONT DI GOOGLE */
-@import url('https://fonts.googleapis.com/css2?family=Homemade+Apple&family=Lora:ital,wght@0,400..700;1,400..700&display=swap');
+/* IMPORTAZIONE DEI NUOVI FONT DI GOOGLE */
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600&family=Poppins:wght@400;500&display=swap');
 
 /* RESET E FONT BASE */
 * {
@@ -9,11 +9,11 @@
 }
 
 body {
-    font-family: 'Lora', serif; /* Font per il corpo del testo */
-    background-color: #FBF7F3; /* Sfondo caldo */
+    font-family: 'Poppins', sans-serif;
+    background-color: #FBF7F3;
     line-height: 1.6;
     padding-top: 60px;
-    color: #4A423D; /* Colore testo scuro ma caldo */
+    color: #4A423D;
 }
 
 /* HEADER FISSO */
@@ -24,7 +24,7 @@ body {
     width: 100%;
     height: 60px;
     background-color: #fff;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05); /* Ombra più delicata */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -33,14 +33,14 @@ body {
 }
 
 .header .logo {
-    font-family: 'Homemade Apple', cursive; /* Font "fatto a mano" per il logo */
+    font-family: 'Cormorant Garamond', serif;
     font-size: 1.8rem;
-    font-weight: normal;
-    color: #8B7E74; /* Colore principale */
+    font-weight: 600;
+    color: #8B7E74;
 }
 
 .header-icons .menu-icon {
-    font-size: 1.6rem; /* Icona leggermente più grande */
+    font-size: 1.6rem;
     color: #8B7E74;
     cursor: pointer;
 }
@@ -52,7 +52,7 @@ body {
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(251, 247, 243, 0.98); /* Sfondo menu leggermente trasparente */
+    background-color: rgba(251, 247, 243, 0.98);
     backdrop-filter: blur(2px);
     z-index: 999;
     display: none;
@@ -95,7 +95,7 @@ body {
 }
 
 .menu-overlay ul li a:hover {
-    color: #C8A2A0; /* Colore secondario al passaggio del mouse */
+    color: #C8A2A0;
 }
 
 /* CONTENUTO PRINCIPALE (BODY) */
@@ -112,14 +112,14 @@ body {
 }
 
 .section-title {
-    font-family: 'Homemade Apple', cursive; /* Font "fatto a mano" per i titoli */
+    font-family: 'Cormorant Garamond', serif;
     text-align: center;
-    font-size: 2.5rem; /* Titolo più grande per maggiore impatto */
-    font-weight: normal;
+    font-size: 2.5rem;
+    font-weight: 600;
     color: #6A5F52;
     margin-bottom: 30px;
     padding-bottom: 10px;
-    border-bottom: 2px solid #C8A2A0; /* Bordo con colore secondario */
+    border-bottom: 2px solid #C8A2A0;
 }
 
 /* CARD DEI PRODOTTI */
@@ -146,9 +146,6 @@ body {
     max-width: 100%;
     height: auto;
     display: block;
-    /* Opzionale: decommenta per forzare un aspect ratio quadrato e un'immagine che copre lo spazio */
-    /* aspect-ratio: 1/1; */
-    /* object-fit: cover; */
 }
 
 .product-details {
@@ -157,24 +154,27 @@ body {
 }
 
 .product-name {
-    font-family: 'Lora', serif;
-    font-size: 1.3rem;
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.4rem;
     font-weight: 600;
     color: #4A423D;
     margin-bottom: 5px;
 }
 
 .product-price {
-    font-size: 1.1rem;
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.5rem;
     color: #C8A2A0;
     font-weight: bold;
     margin-bottom: 10px;
+    margin-top: 10px;
 }
 
 .product-description {
+    font-family: 'Poppins', sans-serif;
     font-size: 0.9rem;
     color: #6A5F52;
-    margin-bottom: 15px;
+    margin: 0 10px 15px 10px;
 }
 
 /* SEZIONE CONTATTI */
@@ -206,7 +206,7 @@ body {
 .footer {
     text-align: center;
     padding: 20px;
-    background-color: #6A5F52; /* Sfondo scuro e caldo per il footer */
+    background-color: #6A5F52;
     color: #fff;
     margin-top: 40px;
 }
