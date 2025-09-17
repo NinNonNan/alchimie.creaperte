@@ -58,8 +58,10 @@ section {
 
 .section-hidden {
     max-height: 0;
-    padding: 0 1rem;
-    margin: 0 auto;
+    padding-top: 0;
+    padding-bottom: 0;
+    margin-top: 0;
+    margin-bottom: 0;
     opacity: 0;
 }
 
@@ -154,6 +156,9 @@ section {
     padding: 1rem;
     text-align: left;
 }
+.product-description h3, .product-description p {
+    margin: 0;
+}
 
 /* Stile Form Contatti */
 form {
@@ -198,7 +203,7 @@ button:hover {
 /* Responsive Design */
 @media (max-width: 767px) {
     .product-cards-container {
-        flex-direction: column; /* Impila le schede una sotto l'altra */
-        align-items: center; /* Centra le schede verticalmente */
+        flex-direction: column;
+        align-items: center;
     }
 }
