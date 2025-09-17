@@ -279,33 +279,6 @@ button:hover {
     background-color: #6A3400;
 }
 
-/* Responsive Design */
-@media (max-width: 767px) {
-    .product-cards-container {
-        flex-direction: column;
-        align-items: center;
-    }
-
-    .intro-cards-container {
-        flex-direction: column;
-        align-items: center;
-        gap: 1rem;
-    }
-    
-    .intro-card-link {
-        width: 100%;
-    }
-
-    .intro-card {
-        max-width: unset;
-        width: 100%;
-    }
-
-    .intro-card img {
-        height: auto;
-    }
-}
-
 /* Stile del tasto WhatsApp */
 .whatsapp-button {
     display: inline-flex;
@@ -332,4 +305,31 @@ button:hover {
     width: 24px;
     height: 24px;
     margin-right: 8px;
+}
+
+/* Responsive Design */
+@media (max-width: 767px) {
+    .product-cards-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .intro-cards-container {
+        flex-direction: column;
+        align-items: center;
+        gap: 1rem;
+    }
+    
+    .intro-card-link {
+        width: 100%;
+    }
+
+    .intro-card {
+        max-width: unset;
+        width: 100%;
+    }
+
+    .intro-card img {
+        height: auto;
+    }
 }
