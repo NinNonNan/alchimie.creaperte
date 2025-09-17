@@ -1,11 +1,12 @@
 /* Stile base */
 :root {
-    --primary-color: #A34E3E;
-    --secondary-color: #E2BBA7;
+    --primary-color: #7B3F00; /* Marrone scuro, tipo legno o argilla */
+    --secondary-color: #C08552; /* Arancione-marrone, caldo e terroso */
+    --accent-color: #D2B48C; /* Tonalità più chiara per contrasto, tipo carta da pacco */
     --text-color: #3D2C20;
-    --bg-color: #F8F2ED;
-    --font-serif: 'Playfair Display', serif;
-    --font-sans: 'Lato', sans-serif;
+    --bg-color: #FBF5E9; /* Un beige molto chiaro, quasi panna */
+    --font-serif: 'Cormorant Garamond', serif; /* Font elegante e calligrafico */
+    --font-sans: 'Montserrat', sans-serif; /* Font pulito ma con carattere */
 }
 
 body {
@@ -28,15 +29,21 @@ header {
 }
 
 nav a {
-    color: white;
+    color: var(--accent-color);
     text-decoration: none;
     margin: 0 1rem;
-    font-weight: bold;
+    font-weight: 500;
     transition: color 0.3s;
 }
 
 nav a:hover {
-    color: var(--secondary-color);
+    color: white;
+}
+
+h1, h2, h3 {
+    font-family: var(--font-serif);
+    font-weight: normal;
+    color: var(--primary-color);
 }
 
 /* Stile generale sezioni */
@@ -64,12 +71,18 @@ section {
 
 .product-card {
     background-color: white;
-    border: 1px solid var(--secondary-color);
+    border: 1px solid var(--accent-color);
     border-radius: 8px;
     overflow: hidden;
     width: 100%;
     max-width: 300px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.product-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
 }
 
 .product-slider {
@@ -77,11 +90,13 @@ section {
     overflow-x: scroll;
     scroll-snap-type: x mandatory;
     -webkit-overflow-scrolling: touch;
+    height: 200px; /* Altezza fissa per le immagini */
 }
 
 .product-slider img {
     width: 100%;
-    height: auto;
+    flex-shrink: 0;
+    height: 100%;
     object-fit: cover;
     scroll-snap-align: start;
 }
@@ -102,13 +117,16 @@ form {
 
 label {
     margin-top: 1rem;
+    font-family: var(--font-sans);
+    font-weight: 500;
 }
 
 input, textarea {
     padding: 0.8rem;
-    border: 1px solid var(--secondary-color);
+    border: 1px solid var(--accent-color);
     border-radius: 4px;
     margin-top: 0.5rem;
+    background-color: var(--bg-color);
 }
 
 button {
@@ -121,10 +139,11 @@ button {
     margin-top: 1.5rem;
     font-size: 1rem;
     font-weight: bold;
+    transition: background-color 0.3s;
 }
 
 button:hover {
-    background-color: #8C3E32;
+    background-color: #6A3400;
 }
 
 /* Responsive Design */
