@@ -55,12 +55,13 @@ nav {
     transition: filter 0.3s ease;
 }
 
-.nav-icon:hover {
+/* Stato attivo per l'icona di navigazione */
+.nav-icon.active, .nav-icon:hover {
     transform: scale(1.1);
     border-color: var(--accent-color);
 }
 
-.nav-icon:hover img {
+.nav-icon.active img, .nav-icon:hover img {
     filter: grayscale(0%);
 }
 
@@ -148,12 +149,11 @@ section {
     background-color: white;
     border: 1px solid var(--accent-color);
     border-radius: 8px;
-    /* overflow: hidden;  Rimosso per permettere ai dots di posizionarsi correttamente */
     width: 100%;
     max-width: 300px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
-    position: relative; /* Mantenuto per posizionare i dots */
+    position: relative;
 }
 
 .product-card:hover {
@@ -163,15 +163,14 @@ section {
 
 .product-slider {
     display: flex;
-    overflow-x: scroll; /* Abilita lo scorrimento orizzontale */
+    overflow-x: scroll;
     scroll-snap-type: x mandatory;
     -webkit-overflow-scrolling: touch;
-    /* Nasconde la barra di scorrimento */
-    scrollbar-width: none; /* Per Firefox */
-    -ms-overflow-style: none;  /* Per Internet Explorer ed Edge */
+    position: relative;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
 }
 
-/* Nasconde la barra di scorrimento per Chrome, Safari e Opera */
 .product-slider::-webkit-scrollbar {
     display: none;
 }
@@ -213,12 +212,8 @@ section {
 .slider-dots {
     display: flex;
     justify-content: center;
-    padding: 0.5rem 0; /* Aggiunto padding per spaziatura */
+    padding: 0.5rem 0;
     gap: 0.5rem;
-    /* Rimosso posizionamento assoluto per posizionamento inline-block */
-    /* bottom: 0.5rem; */
-    /* left: 50%; */
-    /* transform: translateX(-50%); */
     z-index: 10;
 }
 
