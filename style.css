@@ -1,6 +1,6 @@
 /* Stile base */
 :root {
-    --primary-color: #7B3F00;
+    --primary-color: #a19894; /* Nuovo colore marrone */
     --secondary-color: #C08552;
     --accent-color: #D2B48C;
     --text-color: #3D2C20;
@@ -287,7 +287,7 @@ button {
 }
 
 button:hover {
-    background-color: #6A3400;
+    background-color: #6A3400; /* Il colore hover è rimasto lo stesso, assicurati che ti piaccia */
 }
 
 /* Stile del testo WhatsApp */
