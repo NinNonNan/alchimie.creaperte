@@ -125,6 +125,14 @@ section {
     object-fit: cover;
 }
 
+/* Nuovo stile per centrare il contenuto e aggiungere margine */
+.intro-content {
+    width: 75%;
+    margin: 0 auto;
+    text-align: center;
+    padding: 1rem 0; /* Aggiunto margine per separare dal tasto */
+}
+
 .intro-card h3 {
     padding: 0.5rem;
     margin: 0;
