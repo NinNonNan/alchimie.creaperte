@@ -48,17 +48,26 @@ h1, h2, h3 {
 
 /* Stile generale sezioni */
 section {
-    padding: 4rem 1rem;
+    padding: 1rem;
     max-width: 900px;
-    margin: auto;
+    margin: 1rem auto;
     text-align: center;
-    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+    overflow: hidden; /* Nasconde il contenuto quando la sezione si comprime */
+    transition: max-height 0.8s ease-in-out, padding 0.8s ease-in-out, opacity 0.8s ease-in-out;
 }
 
 .section-hidden {
+    max-height: 0;
+    padding-top: 0;
+    padding-bottom: 0;
     opacity: 0;
-    transform: translateY(20px);
 }
+
+#intro {
+    max-height: 1000px; /* Un'altezza sufficiente per la sezione intro */
+    padding: 4rem 1rem;
+}
+
 
 /* Stile Prodotti */
 .product-cards-container {
