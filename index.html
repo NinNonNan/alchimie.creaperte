@@ -14,13 +14,18 @@
 <body>
 
     <header>
-        <nav>
+        <nav class="nav-desktop">
             <a href="#intro" class="nav-icon" title="Vai a Introduzione"><img src="uno.png" alt="Icona che rappresenta l'introduzione del sito"></a>
             <a href="#bomboniere" class="nav-icon" title="Vai a Bomboniere"><img src="due.png" alt="Icona della sezione bomboniere"></a>
             <a href="#segnaposto" class="nav-icon" title="Vai a Segnaposto"><img src="tre.png" alt="Icona della sezione segnaposto"></a>
             <a href="#non-solo-candele" class="nav-icon" title="Vai a Non solo Candele"><img src="quattro.png" alt="Icona della sezione non solo candele"></a>
             <a href="#contatti" class="nav-icon" title="Vai a Contatti"><img src="cinque.png" alt="Icona della sezione contatti"></a>
         </nav>
+        <button class="hamburger-menu" aria-label="Apri menu">
+            <span class="bar"></span>
+            <span class="bar"></span>
+            <span class="bar"></span>
+        </button>
     </header>
 
     <main>
@@ -34,6 +39,7 @@
                             <img src="uno.png" alt="Categoria Bomboniere">
                             <h3>Bomboniere</h3>
                             <p class="intro-description">Artigianali e personalizzabili, per celebrare ogni occasione speciale.</p>
+                            <a href="#bomboniere" class="explore-button">Esplora la collezione</a>
                         </div>
                     </a>
                     <a href="#segnaposto" class="intro-card-link">
@@ -41,6 +47,7 @@
                             <img src="due.png" alt="Categoria Segnaposto">
                             <h3>Segnaposto</h3>
                             <p class="intro-description">Dettagli unici che renderanno indimenticabile il tuo evento.</p>
+                            <a href="#segnaposto" class="explore-button">Esplora la collezione</a>
                         </div>
                     </a>
                     <a href="#non-solo-candele" class="intro-card-link">
@@ -48,6 +55,7 @@
                             <img src="tre.png" alt="Categoria Non solo Candele">
                             <h3>Non solo Candele</h3>
                             <p class="intro-description">Candele e profumatori per ambienti, per un'atmosfera magica.</p>
+                            <a href="#non-solo-candele" class="explore-button">Esplora la collezione</a>
                         </div>
                     </a>
                 </div>
@@ -74,11 +82,11 @@
                 <div class="product-cards-container">
                     <div class="product-card">
                         <div class="product-slider">
-                            <img src="images/bomboniere/bomboniera-bamboo-luxe-pianta-1.jpg" alt="Bamboo luxe pianta - foto 1">
-                            <img src="images/bomboniere/bomboniera-bamboo-luxe-pianta-2.jpg" alt="Bamboo luxe pianta - foto 2">
-                            <img src="images/bomboniere/bomboniera-bamboo-luxe-pianta-3.jpg" alt="Bamboo luxe pianta - foto 3">
-                            <img src="images/bomboniere/bomboniera-bamboo-luxe-pianta-4.jpg" alt="Bamboo luxe pianta - foto 4">
-                            <img src="images/bomboniere/bomboniera-bamboo-luxe-pianta-5.jpg" alt="Bamboo luxe pianta - foto 5">
+                            <img src="images/bomboniere/bomboniera-bamboo-luxe-pianta-1.jpg" alt="Bomboniera in vetro con candela, tappo in bambù e una piantina decorativa, vista laterale">
+                            <img src="images/bomboniere/bomboniera-bamboo-luxe-pianta-2.jpg" alt="Bomboniera in vetro con candela, tappo in bambù e una piantina decorativa, vista dall'alto">
+                            <img src="images/bomboniere/bomboniera-bamboo-luxe-pianta-3.jpg" alt="Dettaglio della personalizzazione incisa sul tappo in bambù">
+                            <img src="images/bomboniere/bomboniera-bamboo-luxe-pianta-4.jpg" alt="Bomboniera con scatola di presentazione e nastro in chiffon">
+                            <img src="images/bomboniere/bomboniera-bamboo-luxe-pianta-5.jpg" alt="La bomboniera in un'ambientazione con altre bomboniere e decorazioni">
                         </div>
                         <div class="slider-dots"></div>
                         <div class="product-description">
@@ -92,9 +100,9 @@
                     </div>
                     <div class="product-card">
                         <div class="product-slider">
-                            <img src="images/bomboniere/bomboniera-bamboo-luxe-rosa-1.jpg" alt="Bamboo luxe rosa - foto 1">
-                            <img src="images/bomboniere/bomboniera-bamboo-luxe-rosa-2.jpg" alt="Bamboo luxe rosa - foto 2">
-                            <img src="images/bomboniere/bomboniera-bamboo-luxe-rosa-3.jpg" alt="Bamboo luxe rosa - foto 3">
+                            <img src="images/bomboniere/bomboniera-bamboo-luxe-rosa-1.jpg" alt="Bomboniera in vetro con candela e decorazioni floreali secche">
+                            <img src="images/bomboniere/bomboniera-bamboo-luxe-rosa-2.jpg" alt="Dettaglio del tappo in bambù con personalizzazione incisa">
+                            <img src="images/bomboniere/bomboniera-bamboo-luxe-rosa-3.jpg" alt="La bomboniera presentata con una scatola personalizzata e un nastro in chiffon">
                         </div>
                         <div class="slider-dots"></div>
                         <div class="product-description">
@@ -109,8 +117,8 @@
                     </div>
                     <div class="product-card">
                         <div class="product-slider">
-                            <img src="cinque.png" alt="Bomboniera 3 - foto 1">
-                            <img src="sei.png" alt="Bomboniera 3 - foto 2">
+                            <img src="cinque.png" alt="Bomboniera profumata con decorazioni">
+                            <img src="sei.png" alt="Bomboniera profumata, vista ravvicinata">
                         </div>
                         <div class="slider-dots"></div>
                         <div class="product-description">
@@ -120,10 +128,10 @@
                     </div>
                     <div class="product-card">
                         <div class="product-slider">
-                            <img src="sei.png" alt="Bomboniera 4 - foto 1">
-                            <img src="uno.png" alt="Bomboniera 4 - foto 2">
-                            <img src="sei.png" alt="Bomboniera 4 - foto 1">
-                            <img src="uno.png" alt="Bomboniera 4 - foto 2">
+                            <img src="sei.png" alt="Bomboniera a forma di cono, vista frontale">
+                            <img src="uno.png" alt="Bomboniera a forma di cono, vista dall'alto">
+                            <img src="sei.png" alt="Bomboniera a forma di cono, vista laterale">
+                            <img src="uno.png" alt="Bomboniera a forma di cono, vista dall'alto in un'ambientazione">
                         </div>
                         <div class="slider-dots"></div>
                         <div class="product-description">
@@ -133,10 +141,10 @@
                     </div>
                     <div class="product-card">
                         <div class="product-slider">
-                            <img src="due.png" alt="Bomboniera 5 - foto 1">
-                            <img src="tre.png" alt="Bomboniera 5 - foto 2">
-                            <img src="due.png" alt="Bomboniera 5 - foto 1">
-                            <img src="tre.png" alt="Bomboniera 5 - foto 2">
+                            <img src="due.png" alt="Bomboniera a forma di fiore, vista frontale">
+                            <img src="tre.png" alt="Bomboniera a forma di fiore, vista laterale">
+                            <img src="due.png" alt="Bomboniera a forma di fiore in un'ambientazione">
+                            <img src="tre.png" alt="Bomboniera a forma di fiore, vista dall'alto">
                         </div>
                         <div class="slider-dots"></div>
                         <div class="product-description">
@@ -146,10 +154,10 @@
                     </div>
                     <div class="product-card">
                         <div class="product-slider">
-                            <img src="quattro.png" alt="Bomboniera 6 - foto 1">
-                            <img src="cinque.png" alt="Bomboniera 6 - foto 2">
-                            <img src="quattro.png" alt="Bomboniera 6 - foto 1">
-                            <img src="cinque.png" alt="Bomboniera 6 - foto 2">
+                            <img src="quattro.png" alt="Bomboniera a forma di cuore, vista frontale">
+                            <img src="cinque.png" alt="Bomboniera a forma di cuore, vista dall'alto">
+                            <img src="quattro.png" alt="Bomboniera a forma di cuore in un'ambientazione">
+                            <img src="cinque.png" alt="Bomboniera a forma di cuore, vista laterale">
                         </div>
                         <div class="slider-dots"></div>
                         <div class="product-description">
@@ -168,10 +176,10 @@
                 <div class="product-cards-container">
                     <div class="product-card">
                         <div class="product-slider">
-                            <img src="sei.png" alt="Segnaposto 1 - foto 1">
-                            <img src="cinque.png" alt="Segnaposto 1 - foto 2">
-                            <img src="sei.png" alt="Segnaposto 1 - foto 1">
-                            <img src="cinque.png" alt="Segnaposto 1 - foto 2">
+                            <img src="sei.png" alt="Segnaposto a forma di cuore in legno inciso">
+                            <img src="cinque.png" alt="Segnaposto a forma di cuore in legno, vista ravvicinata">
+                            <img src="sei.png" alt="Segnaposto a forma di cuore in legno, vista laterale">
+                            <img src="cinque.png" alt="Segnaposto a forma di cuore in legno, vista dall'alto">
                         </div>
                         <div class="slider-dots"></div>
                         <div class="product-description">
@@ -181,10 +189,10 @@
                     </div>
                     <div class="product-card">
                         <div class="product-slider">
-                            <img src="uno.png" alt="Segnaposto 1 - foto 1">
-                            <img src="due.png" alt="Segnaposto 2 - foto 2">
-                            <img src="tre.png" alt="Segnaposto 3 - foto 3">
-                            <img src="quattro.png" alt="Segnaposto 4 - foto 4">
+                            <img src="uno.png" alt="Segnaposto a forma di foglia in ceramica">
+                            <img src="due.png" alt="Segnaposto a forma di foglia in ceramica, vista ravvicinata">
+                            <img src="tre.png" alt="Segnaposto a forma di foglia in ceramica in un'ambientazione">
+                            <img src="quattro.png" alt="Segnaposto a forma di foglia in ceramica, vista dall'alto">
                         </div>
                         <div class="slider-dots"></div>
                         <div class="product-description">
@@ -194,10 +202,10 @@
                     </div>
                     <div class="product-card">
                         <div class="product-slider">
-                            <img src="uno.png" alt="Segnaposto 1 - foto 1">
-                            <img src="due.png" alt="Segnaposto 2 - foto 2">
-                            <img src="tre.png" alt="Segnaposto 3 - foto 3">
-                            <img src="quattro.png" alt="Segnaposto 4 - foto 4">
+                            <img src="uno.png" alt="Segnaposto a forma di gatto in legno inciso">
+                            <img src="due.png" alt="Segnaposto a forma di gatto in legno, vista ravvicinata">
+                            <img src="tre.png" alt="Segnaposto a forma di gatto in legno in un'ambientazione">
+                            <img src="quattro.png" alt="Segnaposto a forma di gatto in legno, vista dall'alto">
                         </div>
                         <div class="slider-dots"></div>
                         <div class="product-description">
@@ -207,10 +215,10 @@
                     </div>
                     <div class="product-card">
                         <div class="product-slider">
-                            <img src="uno.png" alt="Segnaposto 1 - foto 1">
-                            <img src="due.png" alt="Segnaposto 2 - foto 2">
-                            <img src="tre.png" alt="Segnaposto 3 - foto 3">
-                            <img src="quattro.png" alt="Segnaposto 4 - foto 4">
+                            <img src="uno.png" alt="Segnaposto a forma di stella in legno inciso">
+                            <img src="due.png" alt="Segnaposto a forma di stella in legno, vista ravvicinata">
+                            <img src="tre.png" alt="Segnaposto a forma di stella in legno in un'ambientazione">
+                            <img src="quattro.png" alt="Segnaposto a forma di stella in legno, vista dall'alto">
                         </div>
                         <div class="slider-dots"></div>
                         <div class="product-description">
@@ -220,10 +228,10 @@
                     </div>
                     <div class="product-card">
                         <div class="product-slider">
-                            <img src="uno.png" alt="Segnaposto 1 - foto 1">
-                            <img src="due.png" alt="Segnaposto 2 - foto 2">
-                            <img src="tre.png" alt="Segnaposto 3 - foto 3">
-                            <img src="quattro.png" alt="Segnaposto 4 - foto 4">
+                            <img src="uno.png" alt="Segnaposto a forma di angelo in legno inciso">
+                            <img src="due.png" alt="Segnaposto a forma di angelo in legno, vista ravvicinata">
+                            <img src="tre.png" alt="Segnaposto a forma di angelo in legno in un'ambientazione">
+                            <img src="quattro.png" alt="Segnaposto a forma di angelo in legno, vista dall'alto">
                         </div>
                         <div class="slider-dots"></div>
                         <div class="product-description">
@@ -233,10 +241,10 @@
                     </div>
                     <div class="product-card">
                         <div class="product-slider">
-                            <img src="uno.png" alt="Segnaposto 1 - foto 1">
-                            <img src="due.png" alt="Segnaposto 2 - foto 2">
-                            <img src="tre.png" alt="Segnaposto 3 - foto 3">
-                            <img src="quattro.png" alt="Segnaposto 4 - foto 4">
+                            <img src="uno.png" alt="Segnaposto a forma di chiave in legno inciso">
+                            <img src="due.png" alt="Segnaposto a forma di chiave in legno, vista ravvicinata">
+                            <img src="tre.png" alt="Segnaposto a forma di chiave in legno in un'ambientazione">
+                            <img src="quattro.png" alt="Segnaposto a forma di chiave in legno, vista dall'alto">
                         </div>
                         <div class="slider-dots"></div>
                         <div class="product-description">
@@ -255,8 +263,8 @@
                 <div class="product-cards-container">
                     <div class="product-card">
                         <div class="product-slider">
-                            <img src="quattro.png" alt="Candela 1 - foto 1">
-                            <img src="cinque.png" alt="Candela 1 - foto 2">
+                            <img src="quattro.png" alt="Candela in un barattolo di vetro con profumo di rosa antica">
+                            <img src="cinque.png" alt="Candela con profumo di rosa antica in un'ambientazione">
                         </div>
                         <div class="slider-dots"></div>
                         <div class="product-description">
@@ -266,8 +274,8 @@
                     </div>
                     <div class="product-card">
                         <div class="product-slider">
-                            <img src="sei.png" alt="Candela 2 - foto 1">
-                            <img src="sette.png" alt="Candela 2 - foto 2">
+                            <img src="sei.png" alt="Candela con profumo di spezie d'Oriente in un barattolo di vetro">
+                            <img src="sette.png" alt="Candela con profumo di spezie d'Oriente in un'ambientazione">
                         </div>
                         <div class="slider-dots"></div>
                         <div class="product-description">
@@ -277,8 +285,8 @@
                     </div>
                     <div class="product-card">
                         <div class="product-slider">
-                            <img src="uno.png" alt="Diffusore 1 - foto 1">
-                            <img src="due.png" alt="Diffusore 1 - foto 2">
+                            <img src="uno.png" alt="Diffusore di essenze alla lavanda con bastoncini di legno">
+                            <img src="due.png" alt="Diffusore di essenze alla lavanda in un'ambientazione">
                         </div>
                         <div class="slider-dots"></div>
                         <div class="product-description">
@@ -288,8 +296,8 @@
                     </div>
                     <div class="product-card">
                         <div class="product-slider">
-                            <img src="tre.png" alt="Diffusore 2 - foto 1">
-                            <img src="quattro.png" alt="Diffusore 2 - foto 2">
+                            <img src="tre.png" alt="Diffusore di essenze agli agrumi e menta con bastoncini di legno">
+                            <img src="quattro.png" alt="Diffusore di essenze agli agrumi e menta in un'ambientazione">
                         </div>
                         <div class="slider-dots"></div>
                         <div class="product-description">
@@ -299,8 +307,8 @@
                     </div>
                     <div class="product-card">
                         <div class="product-slider">
-                            <img src="cinque.png" alt="Candela 3 - foto 1">
-                            <img src="sei.png" alt="Candela 3 - foto 2">
+                            <img src="cinque.png" alt="Candela con profumo di fiori d'arancio in un barattolo di vetro">
+                            <img src="sei.png" alt="Candela con profumo di fiori d'arancio in un'ambientazione">
                         </div>
                         <div class="slider-dots"></div>
                         <div class="product-description">
@@ -310,8 +318,8 @@
                     </div>
                     <div class="product-card">
                         <div class="product-slider">
-                            <img src="sei.png" alt="Diffusore 3 - foto 1">
-                            <img src="uno.png" alt="Diffusore 3 - foto 2">
+                            <img src="sei.png" alt="Diffusore di essenze al muschio bianco con bastoncini di legno">
+                            <img src="uno.png" alt="Diffusore di essenze al muschio bianco in un'ambientazione">
                         </div>
                         <div class="slider-dots"></div>
                         <div class="product-description">
