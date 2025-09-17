@@ -218,12 +218,13 @@ button:hover {
         align-items: center;
         gap: 1rem;
     }
+
+    .intro-card-link {
+        width: 100%;
+        max-width: unset;
+    }
     
     .intro-card {
         max-width: 100%;
-    }
-    
-    .intro-card-link {
-        width: 100%;
     }
 }
