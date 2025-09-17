@@ -305,3 +305,31 @@ button:hover {
         height: auto;
     }
 }
+
+/* Stile del tasto WhatsApp */
+.whatsapp-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #25D366;
+    color: white;
+    font-family: var(--font-sans);
+    font-weight: bold;
+    text-decoration: none;
+    padding: 12px 24px;
+    border-radius: 50px;
+    margin-top: 1.5rem;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.whatsapp-button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+}
+
+.whatsapp-icon {
+    width: 24px;
+    height: 24px;
+    margin-right: 8px;
+}
