@@ -110,8 +110,8 @@ section {
 
 .intro-card {
     background-color: white;
-    border: 1px solid var(--accent-color);
-    border-radius: 8px;
+    border: 1px solid transparent; /* Rimosso border evidente */
+    border-radius: 0; /* Rimosso border-radius */
     overflow: hidden;
     width: 100%;
     max-width: 200px;
@@ -158,8 +158,8 @@ section {
 
 .product-card {
     background-color: white;
-    border: 1px solid var(--accent-color);
-    border-radius: 8px;
+    border: 1px solid transparent; /* Rimosso border evidente */
+    border-radius: 0; /* Rimosso border-radius */
     width: 100%;
     max-width: 300px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
@@ -290,6 +290,23 @@ button:hover {
     background-color: #6A3400; /* Il colore hover è rimasto lo stesso, assicurati che ti piaccia */
 }
 
+/* Nuovo stile per il pulsante "Esplora la Collezione" */
+.explore-button {
+    display: inline-block;
+    background-color: var(--secondary-color);
+    color: white;
+    text-decoration: none;
+    padding: 0.8rem 1.5rem;
+    margin-top: 1rem;
+    border-radius: 4px;
+    transition: background-color 0.3s;
+    font-weight: 500;
+}
+
+.explore-button:hover {
+    background-color: #A36B40;
+}
+
 /* Stile del testo WhatsApp */
 .whatsapp-text {
     margin-top: 1.5rem;
@@ -349,5 +366,40 @@ button:hover {
 
     .intro-card img {
         height: auto;
+    }
+}
+
+/* Stile per il menu hamburger (icona) */
+.hamburger-menu {
+    display: none; /* Inizialmente nascosto */
+    position: fixed;
+    top: 15px;
+    right: 20px;
+    width: 40px;
+    height: 40px;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    z-index: 101; /* Sopra la navigazione */
+    flex-direction: column;
+    justify-content: space-around;
+    padding: 8px;
+}
+
+.hamburger-menu .bar {
+    width: 100%;
+    height: 3px;
+    background-color: var(--bg-color);
+    transition: all 0.3s ease;
+}
+
+/* Nascondi il menu desktop e mostra l'hamburger su schermi più piccoli */
+@media (max-width: 767px) {
+    .nav-desktop {
+        display: none;
+    }
+    
+    .hamburger-menu {
+        display: flex;
     }
 }
