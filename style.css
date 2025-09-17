@@ -218,8 +218,8 @@ button:hover {
         align-items: center;
         gap: 1rem;
     }
-    
+
     .intro-card {
-        max-width: 100%; /* Correzione: le schede introduttive ora si allargano */
+        max-width: 100%;
     }
 }
