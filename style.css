@@ -168,6 +168,16 @@ section {
     margin-top: 0.5rem;
 }
 
+.product-text strong {
+    color: var(--primary-color);
+    font-weight: 500;
+}
+
+.product-text-italic {
+    font-style: italic;
+    font-weight: normal;
+}
+
 /* Stile Form Contatti */
 .intro-contact-form-container, #contatti {
     padding: 1rem;
