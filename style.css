@@ -52,21 +52,14 @@ section {
     max-width: 900px;
     margin: 1rem auto;
     text-align: center;
-    overflow: hidden; 
-    transition: max-height 0.8s ease-in-out, padding 0.8s ease-in-out, opacity 0.8s ease-in-out, margin 0.8s ease-in-out;
+    transition: opacity 0.5s ease-in-out, visibility 0.5s ease-in-out;
 }
 
 .section-hidden {
-    max-height: 0;
-    padding-top: 0;
-    padding-bottom: 0;
-    margin-top: 0;
-    margin-bottom: 0;
-    opacity: 0;
+    display: none;
 }
 
 #intro {
-    max-height: 1000px;
     padding: 4rem 1rem;
 }
 
@@ -202,7 +195,7 @@ button:hover {
 
 /* Responsive Design */
 @media (max-width: 767px) {
-    .product-cards-container {
+    .product-cards-container, .intro-cards-container {
         flex-direction: column;
         align-items: center;
     }
