@@ -3,166 +3,123 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Le Bomboniere di [Il Tuo Brand] - Vetrina Artigianale</title>
+    <title>Alchimie Crea per Te</title>
     <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
 <body>
 
-    <header class="header">
-        <div class="logo">
-            [Il Tuo Brand]
-        </div>
-        <div class="header-icons">
-            <i class="fas fa-bars menu-icon" id="menu-toggle"></i>
-        </div>
+    <header>
+        <nav>
+            <a href="#intro">Alchimie Crea per Te</a>
+            <a href="#bomboniere">Bomboniere</a>
+            <a href="#candele">Candele</a>
+            <a href="#segnaposto">Segnaposto</a>
+            <a href="#diffusori">Diffusori</a>
+            <a href="#contatti">Contatti</a>
+        </nav>
     </header>
 
-    <nav class="menu-overlay" id="menu-overlay">
-        <i class="fas fa-times close-btn" id="menu-close"></i>
-        <ul>
-            <li><a href="#matrimoni" class="nav-link" data-section="matrimoni">Matrimoni</a></li>
-            <li><a href="#battesimi" class="nav-link" data-section="battesimi">Battesimi</a></li>
-            <li><a href="#comunioni" class="nav-link" data-section="comunioni">Comunioni</a></li>
-            <li><a href="#contatti" class="nav-link" data-section="contatti">Contatti</a></li>
-        </ul>
-    </nav>
-
-    <main class="main-content">
-        <section id="matrimoni" class="content-section active">
-            <h2 class="section-title">Le nostre Bomboniere per Matrimoni</h2>
-            <div class="product-grid">
-                <div class="product-card">
-                    <img src="uno.png?text=Bomboniera+Matrimonio+1" alt="Elegante sacchetto in lino con pizzo e fiori secchi" class="product-image">
-                    <div class="product-details">
-                        <h3 class="product-name">Elegante sacchetto in lino</h3>
-                        <p class="product-price">€ 5,50</p>
-                        <p class="product-description">Sacchetto in lino decorato con pizzo, un piccolo rametto di lavanda e un nastrino di raso, ideale per matrimoni a tema rustico-chic.</p>
-                    </div>
-                </div>
-                
-                <div class="product-card">
-                    <img src="due.png?text=Bomboniera+Matrimonio+2" alt="Vasetto di miele artigianale con etichetta personalizzata e fiocco di juta" class="product-image">
-                    <div class="product-details">
-                        <h3 class="product-name">Vasetto di miele artigianale</h3>
-                        <p class="product-price">€ 7,00</p>
-                        <p class="product-description">Piccolo vasetto di miele biologico con etichetta personalizzabile, decorato con spago e un fiocco in juta. Un dolce pensiero per i tuoi invitati.</p>
-                    </div>
-                </div>
-
-                <div class="product-card">
-                    <img src="tre.png?text=Bomboniera+Matrimonio+3" alt="Chiave antica in metallo con nappa e bigliettino, appoggiata su un tavolo di legno" class="product-image">
-                    <div class="product-details">
-                        <h3 class="product-name">Chiave antica portafortuna</h3>
-                        <p class="product-price">€ 6,20</p>
-                        <p class="product-description">Riproduzione di chiave antica in metallo, con nappa colorata e un bigliettino con una frase personalizzata. Simbolo di nuovi inizi.</p>
-                    </div>
-                </div>
-
-                <div class="product-card">
-                    <div class="image-slider-container">
-                        <div class="image-slider">
-                            <img src="sei.png?text=Bomboniera+Matrimonio+1" alt="Elegante sacchetto in lino con pizzo e fiori secchi" class="slider-image active">
-                            <img src="cinque.png?text=Dettaglio+Sacchetto+Lino" alt="Dettaglio ravvicinato del pizzo e dei fiori secchi sul sacchetto" class="slider-image">
-                            <img src="quattro.png?text=Sacchetto+Lino+2" alt="Sacchetto di lino da un'altra angolazione" class="slider-image">
-                        </div>
-                        <div class="slider-controls">
-                            <button class="prev-btn">&lt;</button>
-                            <button class="next-btn">&gt;</button>
-                        </div>
-                    </div>
-                    <div class="product-details">
-                        <h3 class="product-name">Elegante sacchetto in lino</h3>
-                        <p class="product-price">€ 5,50</p>
-                        <p class="product-description">Sacchetto in lino decorato con pizzo, un piccolo rametto di lavanda e un nastrino di raso, ideale per matrimoni a tema rustico-chic.</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section id="battesimi" class="content-section">
-            <h2 class="section-title">Dolci creazioni per Battesimi</h2>
-            <div class="product-grid">
-                <div class="product-card">
-                    <img src="quattro.png?text=Bomboniera+Battesimo+1" alt="Piccolo angioletto in pasta di mais con dettagli dorati e ali delicate, su sfondo sfocato" class="product-image">
-                    <div class="product-details">
-                        <h3 class="product-name">Angioletto in pasta di mais</h3>
-                        <p class="product-price">€ 4,20</p>
-                        <p class="product-description">Un delicato angioletto fatto a mano in pasta di mais, con dettagli dipinti a mano e ali in tessuto trasparente. Perfetto per il battesimo del tuo bambino.</p>
-                    </div>
-                </div>
-                <div class="product-card">
-                    <img src="cinque.png?text=Bomboniera+Battesimo+2" alt="Scatolina azzurra con piedini di neonato in gesso, su un letto di confetti" class="product-image">
-                    <div class="product-details">
-                        <h3 class="product-name">Scatolina con piedini in gesso</h3>
-                        <p class="product-price">€ 3,80</p>
-                        <p class="product-description">Scatolina decorata con fiocco di raso e un piccolo ornamento a forma di piedini di neonato in gesso, con confetti inclusi. Disponibile in rosa e azzurro.</p>
-                    </div>
-                </div>
+    <main>
+        <section id="intro" class="section-hidden">
+            <div class="content-wrapper">
+                <h1>Benvenuti in Alchimie Crea per Te</h1>
+                <p>Dove la passione artigiana si fonde con la magia delle creazioni uniche. Scopri le nostre bomboniere, candele, segnaposto e molto altro, pensati e realizzati per rendere ogni tuo evento un momento indimenticabile.</p>
             </div>
         </section>
         
-        <section id="comunioni" class="content-section">
-            <h2 class="section-title">Bomboniere per la Santa Comunione</h2>
-            <div class="product-grid">
-                <div class="product-card">
-                    <img src="sei.png?text=Bomboniera+Comunione+1" alt="Piccola croce in legno d'ulivo intagliato, con cordino in cuoio" class="product-image">
-                    <div class="product-details">
-                        <h3 class="product-name">Croce in legno d'ulivo</h3>
-                        <p class="product-price">€ 6,80</p>
-                        <p class="product-description">Piccola croce in legno d'ulivo intagliata a mano, con un semplice cordino in cuoio. Un simbolo di fede e spiritualità per un giorno speciale.</p>
+        <section id="bomboniere" class="section-hidden">
+            <div class="content-wrapper">
+                <h2>Bomboniere</h2>
+                <p>Bomboniere uniche e personalizzabili, perfette per matrimoni, battesimi e comunioni.</p>
+                <div class="product-cards-container">
+                    <div class="product-card">
+                        <div class="product-slider">
+                            <img src="placeholder-bomboniera1-1.jpg" alt="Bomboniera 1 - foto 1">
+                            <img src="placeholder-bomboniera1-2.jpg" alt="Bomboniera 1 - foto 2">
+                        </div>
+                        <div class="product-description">
+                            <h3>Bomboniera Fata</h3>
+                            <p>Delicate fatine in ceramica, ideali per battesimi o feste a tema. Realizzate e dipinte a mano, ogni pezzo è un'opera d'arte unica.</p>
+                        </div>
                     </div>
-                </div>
-                <div class="product-card">
-                    <img src="quattro.png?text=Bomboniera+Comunione+2" alt="Libro miniatura rilegato in stoffa bianca con calice dorato, su una tovaglia bianca" class="product-image">
-                    <div class="product-details">
-                        <h3 class="product-name">Libro miniatura con calice</h3>
-                        <p class="product-price">€ 5,90</p>
-                        <p class="product-description">Miniatura di un libro con copertina in stoffa bianca e un piccolo calice dorato applicato. Ideale come ricordo della Prima Comunione.</p>
                     </div>
-                </div>
             </div>
         </section>
 
-<section id="contatti" class="content-section">
-    <h2 class="section-title">Contattaci</h2>
-    <div class="contact-info">
-        <p>Per informazioni, ordini personalizzati o preventivi, non esitare a contattarci.</p>
-        <div class="contact-methods">
-            <p><strong>Email:</strong> info@tuobrand.it</p>
-            <p><strong>Telefono:</strong> 333 1234567</p>
-            <p><strong>Instagram:</strong> <a href="https://instagram.com/tuobrand" target="_blank">@tuobrand</a></p>
-            <p><strong>Facebook:</strong> <a href="https://facebook.com/tuobrand" target="_blank">/tuobrand</a></p>
-        </div>
-        <p class="form-description">In alternativa, puoi compilare il form qui sotto e ti ricontatteremo al più presto.</p>
-        <form action="#" method="POST" class="contact-form">
-            <div class="form-group">
-                <label for="name">Nome</label>
-                <input type="text" id="name" name="name" placeholder="Il tuo nome completo" required>
+        <section id="candele" class="section-hidden">
+            <div class="content-wrapper">
+                <h2>Candele</h2>
+                <p>Candele artigianali in cera di soia, con fragranze naturali e stoppini in legno.</p>
+                <div class="product-cards-container">
+                    <div class="product-card">
+                        <div class="product-slider">
+                            <img src="placeholder-candela1-1.jpg" alt="Candela 1 - foto 1">
+                            <img src="placeholder-candela1-2.jpg" alt="Candela 1 - foto 2">
+                        </div>
+                        <div class="product-description">
+                            <h3>Candela Rosa Antica</h3>
+                            <p>Candela in cera di soia con fragranza di rosa, decorata con petali essiccati. Un profumo avvolgente che decora ogni ambiente.</p>
+                        </div>
+                    </div>
+                    </div>
             </div>
-            <div class="form-group">
-                <label for="email">Email</label>
-                <input type="email" id="email" name="email" placeholder="La tua email" required>
+        </section>
+
+        <section id="segnaposto" class="section-hidden">
+            <div class="content-wrapper">
+                <h2>Segnaposto</h2>
+                <p>Segnaposto personalizzati per ogni evento, realizzati con materiali naturali e dettagli unici.</p>
+                <div class="product-cards-container">
+                    <div class="product-card">
+                        <div class="product-slider">
+                            <img src="placeholder-segnaposto1-1.jpg" alt="Segnaposto 1 - foto 1">
+                            <img src="placeholder-segnaposto1-2.jpg" alt="Segnaposto 1 - foto 2">
+                        </div>
+                        <div class="product-description">
+                            <h3>Segnaposto Cuore</h3>
+                            <p>Piccoli cuori in gesso profumato, personalizzabili con le iniziali degli sposi e la data. Un tocco di romanticismo per il tuo giorno speciale.</p>
+                        </div>
+                    </div>
+                    </div>
             </div>
-            <div class="form-group">
-                <label for="phone">Telefono</label>
-                <input type="tel" id="phone" name="phone" placeholder="Numero di telefono (opzionale)">
+        </section>
+
+        <section id="diffusori" class="section-hidden">
+            <div class="content-wrapper">
+                <h2>Diffusori per Ambienti</h2>
+                <p>Diffusori eleganti con bastoncini in midollino, per profumare la casa con essenze naturali.</p>
+                <div class="product-cards-container">
+                    <div class="product-card">
+                        <div class="product-slider">
+                            <img src="placeholder-diffusore1-1.jpg" alt="Diffusore 1 - foto 1">
+                            <img src="placeholder-diffusore1-2.jpg" alt="Diffusore 1 - foto 2">
+                        </div>
+                        <div class="product-description">
+                            <h3>Diffusore Lavanda</h3>
+                            <p>Una fragranza rilassante di lavanda, per creare un'atmosfera serena e accogliente. Il flacone in vetro è un elegante complemento d'arredo.</p>
+                        </div>
+                    </div>
+                    </div>
             </div>
-            <div class="form-group">
-                <label for="message">Messaggio</label>
-                <textarea id="message" name="message" rows="5" placeholder="Scrivi qui il tuo messaggio..." required></textarea>
+        </section>
+
+        <section id="contatti" class="section-hidden">
+            <div class="content-wrapper">
+                <h2>Contattaci</h2>
+                <p>Per informazioni, ordini o richieste personalizzate, non esitare a contattarci.</p>
+                <form action="#" method="post">
+                    <label for="name">Nome:</label>
+                    <input type="text" id="name" name="name">
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" name="email">
+                    <label for="message">Messaggio:</label>
+                    <textarea id="message" name="message"></textarea>
+                    <button type="submit">Invia</button>
+                </form>
             </div>
-            <button type="submit" class="submit-btn">Invia Messaggio</button>
-        </form>
-    </div>
-</section>
+        </section>
     </main>
 
-    <footer class="footer">
-        <p>&copy; 2025 [Il Tuo Brand]. Tutti i diritti riservati.</p>
-    </footer>
-
     <script src="script.js"></script>
-
 </body>
 </html>
