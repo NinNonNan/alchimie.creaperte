@@ -1,70 +1,64 @@
 document.addEventListener('DOMContentLoaded', () => {
-    const menuToggle = document.getElementById('menu-toggle');
-    const menuClose = document.getElementById('menu-close');
-    const menuOverlay = document.getElementById('menu-overlay');
-    const navLinks = document.querySelectorAll('.nav-link');
-    const sections = document.querySelectorAll('.content-section');
 
-    // Funzione per mostrare/nascondere il menu
-    function toggleMenu() {
-        menuOverlay.classList.toggle('active');
-    }
+    const sections = document.querySelectorAll('main section');
+    const navLinks = document.querySelectorAll('nav a');
+    let activeSection = null;
 
-    // Funzione per mostrare la sezione corretta
-    function showSection(targetSectionId) {
-        // Nascondi tutte le sezioni
-        sections.forEach(section => {
-            section.classList.remove('active');
+    // Funzione per mostrare una sezione
+    const showSection = (sectionId) => {
+        sections.forEach(sec => {
+            sec.classList.add('section-hidden');
         });
-
-        // Mostra la sezione desiderata
-        const targetSection = document.getElementById(targetSectionId);
-        if (targetSection) {
-            targetSection.classList.add('active');
+        const sectionToShow = document.querySelector(sectionId);
+        if (sectionToShow) {
+            sectionToShow.classList.remove('section-hidden');
+            activeSection = sectionId;
         }
-    }
+    };
 
-    // Event listener per aprire il menu
-    menuToggle.addEventListener('click', toggleMenu);
-
-    // Event listener per chiudere il menu
-    menuClose.addEventListener('click', toggleMenu);
-
-    // Event listener per la navigazione
+    // Gestione dei click sui link di navigazione
     navLinks.forEach(link => {
-        link.addEventListener('click', (event) => {
-            event.preventDefault();
-            
-            const targetSectionId = link.getAttribute('data-section');
-            
-            toggleMenu(); // Chiudi il menu dopo aver cliccato
-            showSection(targetSectionId);
+        link.addEventListener('click', (e) => {
+            e.preventDefault();
+            const targetId = e.target.getAttribute('href');
+            showSection(targetId);
         });
     });
 
-    // --- CODICE PER LO SLIDER DI IMMAGINI ---
-    const sliderContainer = document.querySelector('.image-slider-container');
-    if (sliderContainer) {
-        const slider = sliderContainer.querySelector('.image-slider');
-        const prevBtn = sliderContainer.querySelector('.prev-btn');
-        const nextBtn = sliderContainer.querySelector('.next-btn');
-        const images = sliderContainer.querySelectorAll('.slider-image');
-        let currentIndex = 0;
+    // Mostra la prima sezione all'avvio
+    showSection('#intro');
 
-        function updateSlider() {
-            const offset = -currentIndex * 100;
-            slider.style.transform = `translateX(${offset}%)`;
-        }
-
-        nextBtn.addEventListener('click', () => {
-            currentIndex = (currentIndex + 1) % images.length;
-            updateSlider();
+    // Funzionalità per lo slide delle immagini
+    const productSliders = document.querySelectorAll('.product-slider');
+    productSliders.forEach(slider => {
+        slider.addEventListener('scroll', () => {
+            // Qui puoi aggiungere un indicatore di slide se lo desideri
         });
+    });
 
-        prevBtn.addEventListener('click', () => {
-            currentIndex = (currentIndex - 1 + images.length) % images.length;
-            updateSlider();
+    // Funzionalità per lo scorrimento delle sezioni (opzionale)
+    const observerOptions = {
+        root: null,
+        rootMargin: '0px',
+        threshold: 0.5 // Attiva quando il 50% della sezione è visibile
+    };
+
+    const sectionObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                const id = `#${entry.target.id}`;
+                navLinks.forEach(link => {
+                    link.classList.remove('active');
+                    if (link.getAttribute('href') === id) {
+                        link.classList.add('active');
+                    }
+                });
+            }
         });
-    }
-    // --- FINE CODICE SLIDER ---
+    }, observerOptions);
+
+    sections.forEach(section => {
+        sectionObserver.observe(section);
+    });
+
 });
