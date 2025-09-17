@@ -16,6 +16,14 @@ body {
     line-height: 1.6;
     margin: 0;
     padding-top: 60px;
+    /* Rende la barra di scorrimento invisibile */
+    scrollbar-width: none;  /* Per Firefox */
+    -ms-overflow-style: none; /* Per Edge e Internet Explorer */
+}
+
+/* Per i browser basati su WebKit (Chrome, Safari) */
+body::-webkit-scrollbar {
+    display: none;
 }
 
 /* Header e Navigazione */
