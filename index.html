@@ -3,12 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="theme-color" content="#7B3F00">
     <title>Alchimie Crea per Te</title>
     <link rel="stylesheet" href="style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;700&family=Montserrat:wght@400;500&display=swap" rel="stylesheet">
+    <meta name="theme-color" content="#7B3F00">
 </head>
 <body>
 
@@ -46,6 +46,19 @@
                             <h3>Non solo Candele</h3>
                         </div>
                     </a>
+                </div>
+                <div class="intro-contact-form-container">
+                    <h2>Contattaci</h2>
+                    <p>Compila il modulo per qualsiasi informazione o per un preventivo personalizzato.</p>
+                    <form id="intro-contact-form" action="#" method="post">
+                        <label for="name-intro">Nome:</label>
+                        <input type="text" id="name-intro" name="name">
+                        <label for="email-intro">Email:</label>
+                        <input type="email" id="email-intro" name="email">
+                        <label for="message-intro">Messaggio:</label>
+                        <textarea id="message-intro" name="message"></textarea>
+                        <button type="submit">Invia</button>
+                    </form>
                 </div>
             </div>
         </section>
@@ -255,10 +268,10 @@
                 </div>
             </div>
         </section>
-
-        <section id="contatti" class="section-hidden">
+        
+        <section id="contatti">
             <div class="content-wrapper">
-                <h2>Contattaci</h2>
+                <h2>Contatti</h2>
                 <p>Per informazioni, ordini o richieste personalizzate, non esitare a contattarci.</p>
                 <form action="#" method="post">
                     <label for="name">Nome:</label>
@@ -271,6 +284,7 @@
                 </form>
             </div>
         </section>
+
     </main>
 
     <script src="script.js"></script>
