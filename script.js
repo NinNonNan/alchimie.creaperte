@@ -88,4 +88,20 @@ document.addEventListener('DOMContentLoaded', () => {
             dotsContainer.style.display = 'none';
         }
     });
+
+    // *** NUOVO CODICE PER GESTIRE L'ICONA DEL MENU ATTIVA ***
+    const updateActiveNavIcon = () => {
+        const currentHash = window.location.hash || '#intro';
+        navLinks.forEach(link => {
+            link.classList.remove('active');
+            if (link.getAttribute('href') === currentHash) {
+                link.classList.add('active');
+            }
+        });
+    };
+
+    // Chiama la funzione all'avvio e ad ogni cambio di hash
+    updateActiveNavIcon();
+    window.addEventListener('popstate', updateActiveNavIcon);
+    navLinks.forEach(link => link.addEventListener('click', updateActiveNavIcon));
 });
