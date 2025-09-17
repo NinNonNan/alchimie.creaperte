@@ -1,12 +1,12 @@
 /* Stile base */
 :root {
-    --primary-color: #7B3F00; /* Marrone scuro, tipo legno o argilla */
-    --secondary-color: #C08552; /* Arancione-marrone, caldo e terroso */
-    --accent-color: #D2B48C; /* Tonalità più chiara per contrasto, tipo carta da pacco */
+    --primary-color: #7B3F00;
+    --secondary-color: #C08552;
+    --accent-color: #D2B48C;
     --text-color: #3D2C20;
-    --bg-color: #FBF5E9; /* Un beige molto chiaro, quasi panna */
-    --font-serif: 'Cormorant Garamond', serif; /* Font elegante e calligrafico */
-    --font-sans: 'Montserrat', sans-serif; /* Font pulito ma con carattere */
+    --bg-color: #FBF5E9;
+    --font-serif: 'Cormorant Garamond', serif;
+    --font-sans: 'Montserrat', sans-serif;
 }
 
 body {
@@ -15,26 +15,26 @@ body {
     background-color: var(--bg-color);
     line-height: 1.6;
     margin: 0;
-    padding-top: 60px; /* Aggiunto padding per evitare che il contenuto si nasconda dietro l'header fisso */
+    padding-top: 60px;
 }
 
 /* Header e Navigazione */
 header {
     background-color: var(--primary-color);
-    padding: 0.5rem 0; /* Ridotto il padding per icone più piccole */
+    padding: 0.5rem 0;
     text-align: center;
     position: fixed;
     top: 0;
     width: 100%;
     z-index: 100;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Aggiunto ombra per risalto */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 nav {
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 1.5rem; /* Spazio tra le icone */
+    gap: 1.5rem;
 }
 
 .nav-icon {
@@ -147,7 +147,7 @@ section {
     max-width: 300px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
-    position: relative; /* Aggiunto per posizionare i pallini */
+    position: relative;
 }
 
 .product-card:hover {
