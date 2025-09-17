@@ -1,17 +1,43 @@
 document.addEventListener('DOMContentLoaded', () => {
 
-    // Funzione per l'effetto di dissolvenza (fade-in)
-    const sections = document.querySelectorAll('section');
-    const observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                entry.target.classList.remove('section-hidden');
+    // Funzione per la gestione della navigazione tra le sezioni
+    const navLinks = document.querySelectorAll('nav a');
+    const sections = document.querySelectorAll('main section');
+
+    const hideAllSections = () => {
+        sections.forEach(section => {
+            section.style.display = 'none';
+        });
+    };
+
+    const showSection = (id) => {
+        hideAllSections();
+        const targetSection = document.querySelector(id);
+        if (targetSection) {
+            targetSection.style.display = 'block';
+        }
+    };
+
+    // Mostra la sezione corretta al caricamento della pagina
+    const currentHash = window.location.hash || '#intro';
+    showSection(currentHash);
+
+    // Gestisce il click sui link di navigazione
+    navLinks.forEach(link => {
+        link.addEventListener('click', (e) => {
+            const targetId = link.getAttribute('href');
+            if (targetId.startsWith('#')) {
+                e.preventDefault();
+                showSection(targetId);
+                history.pushState(null, '', targetId);
             }
         });
-    }, { threshold: 0.1 });
+    });
 
-    sections.forEach(section => {
-        observer.observe(section);
+    // Gestisce la navigazione con i pulsanti avanti/indietro del browser
+    window.addEventListener('popstate', () => {
+        const currentHash = window.location.hash || '#intro';
+        showSection(currentHash);
     });
 
     // Funzione per gestire gli slider e i pallini
@@ -22,8 +48,9 @@ document.addEventListener('DOMContentLoaded', () => {
         const dotsContainer = card.querySelector('.slider-dots');
         const images = slider.querySelectorAll('img');
 
-        // Crea i pallini dinamicamente
+        // Crea i pallini dinamicamente solo se ci sono più immagini
         if (images.length > 1) {
+            dotsContainer.style.display = 'flex';
             for (let i = 0; i < images.length; i++) {
                 const dot = document.createElement('span');
                 dot.classList.add('dot');
@@ -61,5 +88,4 @@ document.addEventListener('DOMContentLoaded', () => {
             dotsContainer.style.display = 'none';
         }
     });
-
 });
