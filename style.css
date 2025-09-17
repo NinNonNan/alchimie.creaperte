@@ -162,11 +162,16 @@ section {
 }
 
 /* Stile Form Contatti */
+.intro-contact-form-container, #contatti {
+    padding: 1rem;
+    max-width: 400px;
+    margin: 2rem auto;
+    text-align: center;
+}
+
 form {
     display: flex;
     flex-direction: column;
-    max-width: 400px;
-    margin: 2rem auto;
     text-align: left;
 }
 
@@ -213,8 +218,8 @@ button:hover {
         align-items: center;
         gap: 1rem;
     }
-
+    
     .intro-card {
-        max-width: 100%;
+        max-width: 100%; /* Correzione: le schede introduttive ora si allargano */
     }
 }
