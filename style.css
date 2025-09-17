@@ -279,6 +279,14 @@ button:hover {
     background-color: #6A3400;
 }
 
+/* Stile del testo WhatsApp */
+.whatsapp-text {
+    margin-top: 1.5rem;
+    font-size: 1rem;
+    color: var(--text-color);
+    text-align: center;
+}
+
 /* Stile del tasto WhatsApp */
 .whatsapp-button {
     display: inline-flex;
@@ -291,7 +299,7 @@ button:hover {
     text-decoration: none;
     padding: 12px 24px;
     border-radius: 50px;
-    margin-top: 1.5rem;
+    margin-top: 0.5rem; /* Ridotto lo spazio per avvicinarlo al testo */
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
@@ -302,9 +310,8 @@ button:hover {
 }
 
 .whatsapp-icon {
-    width: 24px;
-    height: 24px;
     margin-right: 8px;
+    font-size: 1.2rem;
 }
 
 /* Responsive Design */
