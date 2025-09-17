@@ -1,441 +1,135 @@
-/* IMPORTAZIONE DEI NUOVI FONT DI GOOGLE */
-@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600&family=Poppins:wght@400;500&display=swap');
-
-/* RESET E FONT BASE */
-* {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-}
-
-/* --- MODIFICHE PER IL FOOTER "INCOLLATO" --- */
-html, body {
-    height: 100%; /* Assicura che <html> e <body> occupino tutta l'altezza della viewport */
+/* Stile base */
+:root {
+    --primary-color: #A34E3E;
+    --secondary-color: #E2BBA7;
+    --text-color: #3D2C20;
+    --bg-color: #F8F2ED;
+    --font-serif: 'Playfair Display', serif;
+    --font-sans: 'Lato', sans-serif;
 }
 
 body {
-    display: flex; /* Trasforma il <body> in un contenitore flex */
-    flex-direction: column; /* Impila gli elementi verticalmente */
-    font-family: 'Poppins', sans-serif;
-    background-color: #FBF7F3;
+    font-family: var(--font-sans);
+    color: var(--text-color);
+    background-color: var(--bg-color);
     line-height: 1.6;
-    padding-top: 60px; /* Offset per l'header fisso */
-    color: #4A423D;
-}
-/* --- FINE MODIFICHE --- */
-
-/* HEADER FISSO */
-.header {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 60px;
-    background-color: #fff;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 0 20px;
-    z-index: 1000;
+    margin: 0;
 }
 
-.header .logo {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: 1.8rem;
-    font-weight: 600;
-    color: #8B7E74;
-}
-
-.header-icons .menu-icon {
-    font-size: 1.6rem;
-    color: #8B7E74;
-    cursor: pointer;
-}
-
-/* MENU OVERLAY */
-.menu-overlay {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(251, 247, 243, 0.98);
-    backdrop-filter: blur(2px);
-    z-index: 999;
-    display: none;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    transition: transform 0.3s ease-in-out;
-    transform: translateX(100%);
-}
-
-.menu-overlay.active {
-    display: flex;
-    transform: translateX(0);
-}
-
-.menu-overlay .close-btn {
-    position: absolute;
-    top: 20px;
-    right: 20px;
-    font-size: 2rem;
-    color: #8B7E74;
-    cursor: pointer;
-}
-
-.menu-overlay ul {
-    list-style: none;
+/* Header e Navigazione */
+header {
+    background-color: var(--primary-color);
+    color: white;
+    padding: 1rem 0;
     text-align: center;
+    position: sticky;
+    top: 0;
+    z-index: 100;
 }
 
-.menu-overlay ul li {
-    margin: 25px 0;
-}
-
-.menu-overlay ul li a {
+nav a {
+    color: white;
     text-decoration: none;
-    color: #4A423D;
-    font-size: 1.8rem;
-    font-weight: 500;
-    transition: color 0.2s ease;
+    margin: 0 1rem;
+    font-weight: bold;
+    transition: color 0.3s;
 }
 
-.menu-overlay ul li a:hover {
-    color: #C8A2A0;
+nav a:hover {
+    color: var(--secondary-color);
 }
 
-/* --- MODIFICHE QUI --- */
-/* Il contenuto principale deve crescere per spingere il footer in basso */
-.main-content {
-    flex-grow: 1;
-    padding: 20px;
-}
-/* --- FINE MODIFICHE --- */
-
-.content-section {
-    display: none;
-}
-
-.content-section.active {
-    display: block;
-}
-
-.section-title {
-    font-family: 'Cormorant Garamond', serif;
+/* Stile generale sezioni */
+section {
+    padding: 4rem 1rem;
+    max-width: 900px;
+    margin: auto;
     text-align: center;
-    font-size: 2.5rem;
-    font-weight: 600;
-    color: #6A5F52;
-    margin-bottom: 30px;
-    padding-bottom: 10px;
-    border-bottom: 2px solid #C8A2A0;
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
 }
 
-/* CARD DEI PRODOTTI */
-.product-grid {
+.section-hidden {
+    opacity: 0;
+    transform: translateY(20px);
+}
+
+/* Stile Prodotti */
+.product-cards-container {
     display: flex;
-    flex-direction: column;
-    gap: 20px;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 2rem;
+    margin-top: 2rem;
 }
 
 .product-card {
-    background-color: #fff;
-    border-radius: 10px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+    background-color: white;
+    border: 1px solid var(--secondary-color);
+    border-radius: 8px;
     overflow: hidden;
-    transition: transform 0.2s ease;
+    width: 100%;
+    max-width: 300px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
-.product-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+.product-slider {
+    display: flex;
+    overflow-x: scroll;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
 }
 
-.product-image {
-    max-width: 100%;
+.product-slider img {
+    width: 100%;
     height: auto;
-    display: block;
-}
-
-.product-details {
-    padding: 15px;
-    text-align: center;
-}
-
-.product-name {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: 1.4rem;
-    font-weight: 600;
-    color: #4A423D;
-    margin-bottom: 5px;
-}
-
-.product-price {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: 1.5rem;
-    color: #C8A2A0;
-    font-weight: bold;
-    margin-bottom: 10px;
-    margin-top: 10px;
+    object-fit: cover;
+    scroll-snap-align: start;
 }
 
 .product-description {
-    font-family: 'Poppins', sans-serif;
-    font-size: 0.9rem;
-    color: #6A5F52;
-    margin: 0 10px 15px 10px;
+    padding: 1rem;
+    text-align: left;
 }
 
-/* SEZIONE CONTATTI */
-.contact-info {
-    text-align: center;
-    padding: 20px;
-    background-color: #fff;
-    border-radius: 10px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
-    max-width: 500px;
-    margin: 0 auto;
+/* Stile Form Contatti */
+form {
+    display: flex;
+    flex-direction: column;
+    max-width: 400px;
+    margin: 2rem auto;
+    text-align: left;
 }
 
-.contact-info p {
-    font-size: 1.1rem;
-    margin: 10px 0;
-    color: #4A423D;
+label {
+    margin-top: 1rem;
 }
 
-.contact-info a {
-    color: #C8A2A0;
-    text-decoration: none;
+input, textarea {
+    padding: 0.8rem;
+    border: 1px solid var(--secondary-color);
+    border-radius: 4px;
+    margin-top: 0.5rem;
+}
+
+button {
+    background-color: var(--primary-color);
+    color: white;
+    padding: 1rem;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-top: 1.5rem;
+    font-size: 1rem;
     font-weight: bold;
 }
 
-.contact-info a:hover {
-    text-decoration: underline;
+button:hover {
+    background-color: #8C3E32;
 }
 
-/* FOOTER */
-.footer {
-    text-align: center;
-    padding: 20px;
-    background-color: #6A5F52;
-    color: #fff;
-    margin-top: auto; /* Questo è il segreto per spingerlo in fondo */
-}
-
-/* MEDIA QUERIES PER TABLET E DESKTOP */
+/* Responsive Design */
 @media (min-width: 768px) {
-    .product-grid {
-        flex-direction: row;
-        flex-wrap: wrap;
-        justify-content: center;
-        gap: 30px;
+    .product-cards-container {
+        justify-content: space-between;
     }
-
-    .product-card {
-        width: calc(50% - 15px);
-        max-width: 450px;
-    }
-}
-
-@media (min-width: 1024px) {
-    .product-card {
-        width: calc(33.33% - 20px);
-        max-width: 350px;
-    }
-}
-
-/* Stili per lo slider di immagini */
-.image-slider-container {
-    position: relative;
-    width: 100%;
-    overflow: hidden; /* Nasconde le immagini che non sono in vista */
-}
-
-.image-slider {
-    display: flex; /* Mette le immagini una accanto all'altra */
-    transition: transform 0.4s ease-in-out; /* Transizione fluida tra le immagini */
-}
-
-.slider-image {
-    min-width: 100%; /* Ogni immagine occupa tutta la larghezza del contenitore */
-    height: auto;
-    display: block;
-}
-
-.slider-controls {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    width: 100%;
-    display: flex;
-    justify-content: space-between;
-    padding: 0 10px;
-    z-index: 10;
-}
-
-.slider-controls button {
-    background-color: rgba(255, 255, 255, 0.5);
-    border: none;
-    font-size: 1.5rem;
-    cursor: pointer;
-    border-radius: 50%;
-    width: 30px;
-    height: 30px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: #4A423D;
-    transition: background-color 0.2s ease;
-}
-
-.slider-controls button:hover {
-    background-color: rgba(255, 255, 255, 0.8);
-}
-
-/* SEZIONE CONTATTI */
-.contact-info {
-    text-align: center;
-    padding: 20px;
-    background-color: #fff;
-    border-radius: 10px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
-    max-width: 500px;
-    margin: 0 auto;
-}
-
-.contact-info p {
-    font-size: 1.1rem;
-    margin: 10px 0;
-    color: #4A423D;
-}
-
-/* Stile per i contatti diretti (aggiunto per separare le due sezioni) */
-.contact-methods {
-    margin-bottom: 20px;
-}
-.contact-methods p {
-    margin: 5px 0;
-}
-
-/* Descrizione sopra il form */
-.form-description {
-    font-style: italic;
-    margin-top: 30px;
-}
-
-/* Stili per il form di contatto */
-.contact-form {
-    display: flex;
-    flex-direction: column;
-    gap: 15px;
-    margin-top: 20px;
-}
-
-.form-group {
-    display: flex;
-    flex-direction: column;
-    text-align: left; /* Allinea etichetta e input a sinistra */
-}
-
-.form-group label {
-    font-size: 0.9rem;
-    color: #6A5F52;
-    margin-bottom: 5px;
-    font-weight: 500;
-}
-
-.form-group input,
-.form-group textarea {
-    padding: 10px;
-    border: 1px solid #ddd;
-    border-radius: 5px;
-    font-family: 'Poppins', sans-serif;
-    font-size: 0.9rem;
-    color: #4A423D;
-}
-
-.form-group input:focus,
-.form-group textarea:focus {
-    outline: none;
-    border-color: #C8A2A0;
-    box-shadow: 0 0 5px rgba(200, 162, 160, 0.5);
-}
-
-.submit-btn {
-    background-color: #C8A2A0;
-    color: white;
-    padding: 12px 20px;
-    border: none;
-    border-radius: 5px;
-    font-size: 1rem;
-    font-weight: 500;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-    align-self: center; /* Centra il bottone */
-}
-
-.submit-btn:hover {
-    background-color: #a0522d;
-}
-
-
-
-/* --- STILI PER IL FORM DI CONTATTO --- */
-.contact-form {
-    display: flex;
-    flex-direction: column;
-    gap: 15px; /* Spazio tra i campi del form */
-    margin-top: 20px;
-}
-
-.form-group {
-    display: flex;
-    flex-direction: column;
-    text-align: left; /* Allinea etichetta e input a sinistra */
-}
-
-.form-group label {
-    font-size: 0.9rem;
-    color: #6A5F52;
-    margin-bottom: 5px;
-    font-weight: 500;
-}
-
-.form-group input,
-.form-group textarea {
-    padding: 10px;
-    border: 1px solid #ddd; /* Bordo leggero */
-    border-radius: 5px;
-    font-family: 'Poppins', sans-serif;
-    font-size: 0.9rem;
-    color: #4A423D;
-    transition: all 0.3s ease; /* Transizione per un effetto più fluido */
-    /* Aggiungiamo una sottile ombra per un effetto "leggermente sollevato" */
-    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
-}
-
-.form-group input:focus,
-.form-group textarea:focus {
-    outline: none;
-    border-color: #C8A2A0; /* Colore dell'accento quando il campo è selezionato */
-    box-shadow: 0 0 8px rgba(200, 162, 160, 0.6); /* Ombra più evidente al focus */
-}
-
-.submit-btn {
-    background-color: #C8A2A0; /* Colore del bottone, in linea con l'accento */
-    color: white;
-    padding: 12px 20px;
-    border: none;
-    border-radius: 5px;
-    font-size: 1rem;
-    font-weight: 500;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-    align-self: center; /* Centra il bottone */
-}
-
-.submit-btn:hover {
-    background-color: #a0522d;
 }
