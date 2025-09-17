@@ -15,6 +15,7 @@ body {
     background-color: var(--bg-color);
     line-height: 1.6;
     margin: 0;
+    padding-top: 60px; /* Aggiunto padding per evitare che il contenuto si nasconda dietro l'header fisso */
 }
 
 /* Header e Navigazione */
@@ -23,8 +24,9 @@ header {
     color: white;
     padding: 1rem 0;
     text-align: center;
-    position: sticky;
+    position: fixed;
     top: 0;
+    width: 100%;
     z-index: 100;
 }
 
