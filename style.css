@@ -53,13 +53,13 @@ section {
     margin: 1rem auto;
     text-align: center;
     overflow: hidden; 
-    transition: max-height 0.8s ease-in-out, padding 0.8s ease-in-out, opacity 0.8s ease-in-out;
+    transition: max-height 0.8s ease-in-out, padding 0.8s ease-in-out, opacity 0.8s ease-in-out, margin 0.8s ease-in-out;
 }
 
 .section-hidden {
     max-height: 0;
-    padding-top: 0;
-    padding-bottom: 0;
+    padding: 0 1rem;
+    margin: 0 auto;
     opacity: 0;
 }
 
@@ -196,8 +196,9 @@ button:hover {
 }
 
 /* Responsive Design */
-@media (min-width: 768px) {
+@media (max-width: 767px) {
     .product-cards-container {
-        justify-content: space-between;
+        flex-direction: column; /* Impila le schede una sotto l'altra */
+        align-items: center; /* Centra le schede verticalmente */
     }
 }
