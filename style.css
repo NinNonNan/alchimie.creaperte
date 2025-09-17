@@ -16,14 +16,17 @@ body {
     line-height: 1.6;
     margin: 0;
     padding-top: 60px;
-    /* Rende la barra di scorrimento invisibile */
-    scrollbar-width: none;  /* Per Firefox */
-    -ms-overflow-style: none; /* Per Edge e Internet Explorer */
+    
+    /* Per nascondere visivamente la scrollbar senza disabilitare lo scorrimento */
+    overflow-y: scroll; /* Abilita lo scorrimento verticale */
+    scrollbar-width: none;  /* Nasconde la scrollbar per Firefox */
+    -ms-overflow-style: none; /* Nasconde la scrollbar per Edge e IE */
 }
 
-/* Per i browser basati su WebKit (Chrome, Safari) */
+/* Nasconde la scrollbar per i browser basati su WebKit (Chrome, Safari) */
 body::-webkit-scrollbar {
     display: none;
+    width: 0; /* Rimuove lo spazio occupato dalla barra */
 }
 
 /* Header e Navigazione */
