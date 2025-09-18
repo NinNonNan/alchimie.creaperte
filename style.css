@@ -61,7 +61,7 @@ header {
 }
 
 .logo {
-    max-height: 80px; /* Imposta un'altezza massima per il logo su desktop */
+    max-height: 80px; /* Imposta un'altezza massima per il logo */
     width: auto;
     display: block;
 }
