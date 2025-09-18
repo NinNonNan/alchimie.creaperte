@@ -1,4 +1,4 @@
-/* Stile base per il corpo del sito e i font */
+/* General body and font styles */
 body {
     font-family: 'Montserrat', sans-serif;
     margin: 0;
@@ -39,10 +39,7 @@ p {
     padding: 20px;
 }
 
-/* ------------------------------------- */
-/* Stile per l'header e il menu di navigazione */
-/* ------------------------------------- */
-
+/* Header, navigation menu and hamburger menu */
 header {
     display: flex;
     justify-content: space-between;
@@ -64,13 +61,9 @@ header {
 }
 
 .logo {
-    max-height: 80px; /* Altezza massima per desktop */
+    max-height: 80px; /* Imposta un'altezza massima per il logo su desktop */
     width: auto;
     display: block;
-}
-
-.nav-desktop {
-    display: none; /* Nascondi il menu desktop di default */
 }
 
 .hamburger-menu {
@@ -96,7 +89,7 @@ header {
 
 .nav-mobile {
     position: fixed;
-    top: 80px; /* Regola l'altezza in base all'header */
+    top: 80px;
     left: 0;
     width: 100%;
     background-color: #fff;
@@ -124,12 +117,9 @@ header {
     background-color: #f4f4f4;
 }
 
-/* ------------------------------------- */
-/* Stile per le sezioni principali */
-/* ------------------------------------- */
-
+/* Main sections */
 main {
-    padding-top: 100px; /* Offset per l'header fisso */
+    padding-top: 100px;
 }
 
 section {
@@ -140,10 +130,7 @@ section {
     display: none;
 }
 
-/* ------------------------------------- */
-/* Stile per la sezione "Introduzione" */
-/* ------------------------------------- */
-
+/* Introduction section */
 #intro {
     text-align: center;
 }
@@ -213,10 +200,7 @@ section {
     background-color: #5a2e00;
 }
 
-/* ------------------------------------- */
-/* Stile per il modulo di contatto in "Introduzione" */
-/* ------------------------------------- */
-
+/* Contact form in Introduction */
 .intro-contact-form-container {
     background-color: #f4f4f4;
     padding: 30px;
@@ -267,10 +251,7 @@ section {
     background-color: #5a2e00;
 }
 
-/* ------------------------------------- */
-/* Stile per le schede prodotto (Bomboniere, Segnaposto, Non solo Candele) */
-/* ------------------------------------- */
-
+/* Product cards section (Bomboniere, Segnaposto, Non solo Candele) */
 .product-cards-container {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
@@ -356,10 +337,7 @@ section {
     font-weight: 500;
 }
 
-/* ------------------------------------- */
-/* Stile per la sezione "Contatti" */
-/* ------------------------------------- */
-
+/* Contact section */
 #contatti {
     text-align: center;
     background-color: #f4f4f4;
@@ -439,25 +417,13 @@ section {
     font-size: 1.5em;
 }
 
-/* ------------------------------------- */
-/* Media Queries per dispositivi mobili e tablet */
-/* ------------------------------------- */
-
+/* Media queries for mobile and tablets */
 @media (min-width: 769px) {
     .nav-mobile {
         display: none;
     }
     .hamburger-menu {
         display: none;
-    }
-    .nav-desktop {
-        display: flex;
-        gap: 25px;
-    }
-    .nav-desktop .nav-item {
-        color: #7B3F00;
-        font-weight: 500;
-        text-decoration: none;
     }
 }
 
