@@ -14,18 +14,21 @@
 <body>
 
     <header>
-        <nav class="nav-desktop">
-            <a href="#intro" class="nav-icon" title="Vai a Introduzione"><img src="uno.png" alt="Icona che rappresenta l'introduzione del sito"></a>
-            <a href="#bomboniere" class="nav-icon" title="Vai a Bomboniere"><img src="due.png" alt="Icona della sezione bomboniere"></a>
-            <a href="#segnaposto" class="nav-icon" title="Vai a Segnaposto"><img src="tre.png" alt="Icona della sezione segnaposto"></a>
-            <a href="#non-solo-candele" class="nav-icon" title="Vai a Non solo Candele"><img src="quattro.png" alt="Icona della sezione non solo candele"></a>
-            <a href="#contatti" class="nav-icon" title="Vai a Contatti"><img src="cinque.png" alt="Icona della sezione contatti"></a>
-        </nav>
+        <div class="header-content">
+            <img src="logo-alchimie1.png" alt="Logo Alchimie Crea per Te" class="logo">
+        </div>
         <button class="hamburger-menu" aria-label="Apri menu">
             <span class="bar"></span>
             <span class="bar"></span>
             <span class="bar"></span>
         </button>
+        <nav class="nav-mobile hidden">
+            <a href="#intro" class="nav-item">Introduzione</a>
+            <a href="#bomboniere" class="nav-item">Bomboniere</a>
+            <a href="#segnaposto" class="nav-item">Segnaposto</a>
+            <a href="#non-solo-candele" class="nav-item">Non solo Candele</a>
+            <a href="#contatti" class="nav-item">Contatti</a>
+        </nav>
     </header>
 
     <main>
@@ -37,25 +40,31 @@
                     <a href="#bomboniere" class="intro-card-link">
                         <div class="intro-card">
                             <img src="uno.png" alt="Categoria Bomboniere">
-                            <h3>Bomboniere</h3>
-                            <p class="intro-description">Artigianali e personalizzabili, per celebrare ogni occasione speciale.</p>
-                            <a href="#bomboniere" class="explore-button">Esplora la collezione</a>
+                            <div class="intro-content">
+                                <h3>Bomboniere</h3>
+                                <p class="intro-description">Artigianali e personalizzabili, per celebrare ogni occasione speciale.</p>
+                                <a href="#bomboniere" class="explore-button">Esplora la collezione</a>
+                            </div>
                         </div>
                     </a>
                     <a href="#segnaposto" class="intro-card-link">
                         <div class="intro-card">
                             <img src="due.png" alt="Categoria Segnaposto">
-                            <h3>Segnaposto</h3>
-                            <p class="intro-description">Dettagli unici che renderanno indimenticabile il tuo evento.</p>
-                            <a href="#segnaposto" class="explore-button">Esplora la collezione</a>
+                            <div class="intro-content">
+                                <h3>Segnaposto</h3>
+                                <p class="intro-description">Dettagli unici che renderanno indimenticabile il tuo evento.</p>
+                                <a href="#segnaposto" class="explore-button">Esplora la collezione</a>
+                            </div>
                         </div>
                     </a>
                     <a href="#non-solo-candele" class="intro-card-link">
                         <div class="intro-card">
                             <img src="tre.png" alt="Categoria Non solo Candele">
-                            <h3>Non solo Candele</h3>
-                            <p class="intro-description">Candele e profumatori per ambienti, per un'atmosfera magica.</p>
-                            <a href="#non-solo-candele" class="explore-button">Esplora la collezione</a>
+                            <div class="intro-content">
+                                <h3>Non solo Candele</h3>
+                                <p class="intro-description">Candele e profumatori per ambienti, per un'atmosfera magica.</p>
+                                <a href="#non-solo-candele" class="explore-button">Esplora la collezione</a>
+                            </div>
                         </div>
                     </a>
                 </div>
@@ -168,7 +177,7 @@
                 </div>
             </div>
         </section>
-
+        
         <section id="segnaposto" class="section-hidden">
             <div class="content-wrapper">
                 <h2>Segnaposto</h2>
