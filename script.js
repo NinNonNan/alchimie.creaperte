@@ -1,107 +1,95 @@
 document.addEventListener('DOMContentLoaded', () => {
+    const hamburgerMenu = document.querySelector('.hamburger-menu');
+    const navMobile = document.querySelector('.nav-mobile');
+    const navItems = document.querySelectorAll('.nav-item');
 
-    // Funzione per la gestione della navigazione tra le sezioni
-    const navLinks = document.querySelectorAll('nav a');
-    const sections = document.querySelectorAll('main section');
-
-    const hideAllSections = () => {
-        sections.forEach(section => {
-            section.style.display = 'none';
+    // Funzione per nascondere il menu e le sezioni
+    const hideMenuAndSections = () => {
+        navMobile.classList.add('hidden');
+        document.querySelectorAll('section').forEach(section => {
+            section.classList.add('section-hidden');
         });
     };
 
-    const showSection = (id) => {
-        hideAllSections();
-        const targetSection = document.querySelector(id);
-        if (targetSection) {
-            targetSection.style.display = 'block';
-        }
-    };
+    // Gestione del menu hamburger
+    if (hamburgerMenu && navMobile) {
+        hamburgerMenu.addEventListener('click', () => {
+            navMobile.classList.toggle('hidden');
+        });
+    }
 
-    // Mostra la sezione corretta al caricamento della pagina
-    const currentHash = window.location.hash || '#intro';
-    showSection(currentHash);
-
-    // Gestisce il click sui link di navigazione
-    navLinks.forEach(link => {
-        link.addEventListener('click', (e) => {
-            const targetId = link.getAttribute('href');
-            if (targetId.startsWith('#')) {
+    // Gestione della navigazione (nasconde/mostra le sezioni)
+    if (navItems.length > 0) {
+        navItems.forEach(item => {
+            item.addEventListener('click', (e) => {
                 e.preventDefault();
-                showSection(targetId);
-                history.pushState(null, '', targetId);
-            }
+                const targetId = item.getAttribute('href').substring(1);
+                const targetSection = document.getElementById(targetId);
+
+                hideMenuAndSections();
+
+                if (targetSection) {
+                    targetSection.classList.remove('section-hidden');
+                }
+            });
         });
-    });
+    }
 
-    // Gestisce la navigazione con i pulsanti avanti/indietro del browser
-    window.addEventListener('popstate', () => {
-        const currentHash = window.location.hash || '#intro';
-        showSection(currentHash);
-    });
-
-    // Funzione per gestire gli slider e i pallini
-    const productCards = document.querySelectorAll('.product-card');
-
-    productCards.forEach(card => {
+    // Inizializza gli slider dei prodotti
+    document.querySelectorAll('.product-card').forEach(card => {
         const slider = card.querySelector('.product-slider');
-        const dotsContainer = card.querySelector('.slider-dots');
         const images = slider.querySelectorAll('img');
-
-        // Crea i pallini dinamicamente solo se ci sono più immagini
+        const dotsContainer = card.querySelector('.slider-dots');
+        
         if (images.length > 1) {
-            dotsContainer.style.display = 'flex';
-            for (let i = 0; i < images.length; i++) {
+            images.forEach((img, index) => {
                 const dot = document.createElement('span');
                 dot.classList.add('dot');
+                if (index === 0) {
+                    dot.classList.add('active');
+                }
                 dotsContainer.appendChild(dot);
+            });
 
-                // Aggiunge un click listener per la navigazione
-                dot.addEventListener('click', () => {
-                    const scrollPosition = i * slider.offsetWidth;
-                    slider.scrollTo({
-                        left: scrollPosition,
-                        behavior: 'smooth'
-                    });
-                });
+            let currentIndex = 0;
+            const dots = dotsContainer.querySelectorAll('.dot');
+
+            function updateSlider() {
+                slider.style.transform = `translateX(${-currentIndex * 100}%)`;
+                dots.forEach(dot => dot.classList.remove('active'));
+                dots[currentIndex].classList.add('active');
             }
 
-            const dots = dotsContainer.querySelectorAll('.dot');
-            dots[0].classList.add('active'); // Imposta il primo pallino come attivo
-
-            // Gestisce lo scorrimento per aggiornare il pallino attivo
-            slider.addEventListener('scroll', () => {
-                const scrollLeft = slider.scrollLeft;
-                const cardWidth = slider.offsetWidth;
-                const activeIndex = Math.round(scrollLeft / cardWidth);
-
-                dots.forEach((dot, index) => {
-                    if (index === activeIndex) {
-                        dot.classList.add('active');
-                    } else {
-                        dot.classList.remove('active');
-                    }
+            dots.forEach((dot, index) => {
+                dot.addEventListener('click', () => {
+                    currentIndex = index;
+                    updateSlider();
                 });
             });
+
+            let touchstartX = 0;
+            let touchendX = 0;
+
+            function checkDirection() {
+                if (touchendX < touchstartX && currentIndex < images.length - 1) {
+                    currentIndex++;
+                }
+                if (touchendX > touchstartX && currentIndex > 0) {
+                    currentIndex--;
+                }
+                updateSlider();
+            }
+
+            slider.addEventListener('touchstart', e => {
+                touchstartX = e.changedTouches[0].screenX;
+            });
+
+            slider.addEventListener('touchend', e => {
+                touchendX = e.changedTouches[0].screenX;
+                checkDirection();
+            });
         } else {
-            // Nasconde il contenitore dei pallini se c'è solo un'immagine
             dotsContainer.style.display = 'none';
         }
     });
-
-    // *** NUOVO CODICE PER GESTIRE L'ICONA DEL MENU ATTIVA ***
-    const updateActiveNavIcon = () => {
-        const currentHash = window.location.hash || '#intro';
-        navLinks.forEach(link => {
-            link.classList.remove('active');
-            if (link.getAttribute('href') === currentHash) {
-                link.classList.add('active');
-            }
-        });
-    };
-
-    // Chiama la funzione all'avvio e ad ogni cambio di hash
-    updateActiveNavIcon();
-    window.addEventListener('popstate', updateActiveNavIcon);
-    navLinks.forEach(link => link.addEventListener('click', updateActiveNavIcon));
 });
