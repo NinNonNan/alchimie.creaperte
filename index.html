@@ -13,356 +13,387 @@
 </head>
 <body>
 
-    <header>
-        <div class="header-content">
-            <img src="images/logo-alchimie1.png" alt="Logo Alchimie Crea per Te" class="logo">
-        </div>
-        <button class="hamburger-menu" aria-label="Apri menu">
-            <span class="bar"></span>
-            <span class="bar"></span>
-            <span class="bar"></span>
-        </button>
-        <nav class="nav-mobile hidden">
-            <a href="#intro" class="nav-item">Introduzione</a>
-            <a href="#bomboniere" class="nav-item">Bomboniere</a>
-            <a href="#segnaposto" class="nav-item">Segnaposto</a>
-            <a href="#non-solo-candele" class="nav-item">Non solo Candele</a>
-            <a href="#contatti" class="nav-item">Contatti</a>
-        </nav>
-    </header>
+<header>
+    <div class="social-contact">
+        <a href="mailto:info@tuoindirizzo.com" target="_blank" aria-label="Email">
+            <i class="fas fa-envelope"></i>
+        </a>
+        <a href="https://www.facebook.com/share/17FijAo7ue/" target="_blank" aria-label="Facebook">
+            <i class="fab fa-facebook-f"></i>
+        </a>
+        <!--
+        <a href="https://www.pinterest.it/tuapagina" target="_blank" aria-label="Pinterest">
+            <i class="fab fa-pinterest-p"></i>
+        </a>
+        -->
+        <a href="https://www.instagram.com/alchimie.creaperte?igsh=MTAwang5M2VwMGk5NQ==" target="_blank" aria-label="Instagram">
+            <i class="fab fa-instagram"></i>
+        </a>
+        <a href="https://wa.me/[+393518644668]" target="_blank" aria-label="WhatsApp">
+            <i class="fab fa-whatsapp"></i>
+        </a>
+        <a href="tel:[+393518644668]" class="phone-number" target="_blank">(+ 39) 351.8644668</a>
+    </div>
 
-    <main>
-        <section id="intro">
-            <div class="content-wrapper">
-                <h1>Benvenuti in Alchimie Crea per Te</h1>
-                <p>Dove la passione artigiana si fonde con la magia delle creazioni uniche. Scopri le nostre bomboniere, candele, segnaposto e molto altro, pensati e realizzati per rendere ogni tuo evento un momento indimenticabile.</p>
-                <div class="intro-cards-container">
-                    <a href="#bomboniere" class="intro-card-link">
-                        <div class="intro-card">
-                            <img src="uno.png" alt="Categoria Bomboniere">
-                            <div class="intro-content">
-                                <h3>Bomboniere</h3>
-                                <p class="intro-description">Artigianali e personalizzabili, per celebrare ogni occasione speciale.</p>
-                                <a href="#bomboniere" class="explore-button">Esplora la collezione</a>
-                            </div>
-                        </div>
-                    </a>
-                    <a href="#segnaposto" class="intro-card-link">
-                        <div class="intro-card">
-                            <img src="due.png" alt="Categoria Segnaposto">
-                            <div class="intro-content">
-                                <h3>Segnaposto</h3>
-                                <p class="intro-description">Dettagli unici che renderanno indimenticabile il tuo evento.</p>
-                                <a href="#segnaposto" class="explore-button">Esplora la collezione</a>
-                            </div>
-                        </div>
-                    </a>
-                    <a href="#non-solo-candele" class="intro-card-link">
-                        <div class="intro-card">
-                            <img src="tre.png" alt="Categoria Non solo Candele">
-                            <div class="intro-content">
-                                <h3>Non solo Candele</h3>
-                                <p class="intro-description">Candele e profumatori per ambienti, per un'atmosfera magica.</p>
-                                <a href="#non-solo-candele" class="explore-button">Esplora la collezione</a>
-                            </div>
-                        </div>
-                    </a>
-                </div>
-                <div class="intro-contact-form-container">
-                    <h2>Contattaci</h2>
-                    <p>Compila il modulo per qualsiasi informazione o per un preventivo personalizzato.</p>
-                    <form id="intro-contact-form" action="#" method="post">
-                        <label for="name-intro">Nome:</label>
-                        <input type="text" id="name-intro" name="name">
-                        <label for="email-intro">Email:</label>
-                        <input type="email" id="email-intro" name="email">
-                        <label for="message-intro">Messaggio:</label>
-                        <textarea id="message-intro" name="message"></textarea>
-                        <button type="submit">Invia</button>
-                    </form>
-                </div>
-            </div>
-        </section>
-        
-        <section id="bomboniere" class="section-hidden">
-            <div class="content-wrapper">
-                <h2>Bomboniere</h2>
-                <p>Bomboniere uniche e personalizzabili, perfette per matrimoni, battesimi e comunioni.</p>
-                <div class="product-cards-container">
-                    <div class="product-card">
-                        <div class="product-slider">
-                            <img src="images/bomboniere/bomboniera-bamboo-luxe-pianta-1.jpg" alt="Bomboniera in vetro con candela, tappo in bambù e una piantina decorativa, vista laterale">
-                            <img src="images/bomboniere/bomboniera-bamboo-luxe-pianta-2.jpg" alt="Bomboniera in vetro con candela, tappo in bambù e una piantina decorativa, vista dall'alto">
-                            <img src="images/bomboniere/bomboniera-bamboo-luxe-pianta-3.jpg" alt="Dettaglio della personalizzazione incisa sul tappo in bambù">
-                            <img src="images/bomboniere/bomboniera-bamboo-luxe-pianta-4.jpg" alt="Bomboniera con scatola di presentazione e nastro in chiffon">
-                            <img src="images/bomboniere/bomboniera-bamboo-luxe-pianta-5.jpg" alt="La bomboniera in un'ambientazione con altre bomboniere e decorazioni">
-                        </div>
-                        <div class="slider-dots"></div>
-                        <div class="product-description">
-                            <h3>Bamboo Luxe Pianta</h3>
-                            <p class="product-text">
-                                <span class="product-text-italic">Candela in vetro, con doppia personalizzazione. Barattolo + tappo.<br>vasta scelta di piantine</span><br>
-                                <strong>Materiale:</strong> miscela artigianale di cere naturali (girasole, api, oliva)<br>
-                                <strong>Misura:</strong> diametro 10cm
-                            </p>
-                        </div>
-                    </div>
-                    <div class="product-card">
-                        <div class="product-slider">
-                            <img src="images/bomboniere/bomboniera-bamboo-luxe-rosa-1.jpg" alt="Bomboniera in vetro con candela e decorazioni floreali secche">
-                            <img src="images/bomboniere/bomboniera-bamboo-luxe-rosa-2.jpg" alt="Dettaglio del tappo in bambù con personalizzazione incisa">
-                            <img src="images/bomboniere/bomboniera-bamboo-luxe-rosa-3.jpg" alt="La bomboniera presentata con una scatola personalizzata e un nastro in chiffon">
-                        </div>
-                        <div class="slider-dots"></div>
-                        <div class="product-description">
-                            <h3>Bomboniera Luxe Rosa</h3>
-                            <p class="product-text">
-                                <span class="product-text-italic">Candela in vetro, con doppia personalizzazione. Barattolo + tappo.</span><br>
-                                <strong>Materiale:</strong> miscela artigianale di cere naturali (girasole, api, oliva)<br>
-                                <strong>Misura:</strong> diametro 10cm<br>
-                                <span class="product-text-italic">Può essere scelta la confezione con scatola personalizzata oppure "nuda" con nastro in chiffon</span><br>
-                            </p>
-                        </div>
-                    </div>
-                    <div class="product-card">
-                        <div class="product-slider">
-                            <img src="cinque.png" alt="Bomboniera profumata con decorazioni">
-                            <img src="sei.png" alt="Bomboniera profumata, vista ravvicinata">
-                        </div>
-                        <div class="slider-dots"></div>
-                        <div class="product-description">
-                            <h3>Bomboniera Profumata</h3>
-                            <p class="product-text">Una bomboniera profumata per un ricordo che dura nel tempo.</p>
-                        </div>
-                    </div>
-                    <div class="product-card">
-                        <div class="product-slider">
-                            <img src="sei.png" alt="Bomboniera a forma di cono, vista frontale">
-                            <img src="uno.png" alt="Bomboniera a forma di cono, vista dall'alto">
-                            <img src="sei.png" alt="Bomboniera a forma di cono, vista laterale">
-                            <img src="uno.png" alt="Bomboniera a forma di cono, vista dall'alto in un'ambientazione">
-                        </div>
-                        <div class="slider-dots"></div>
-                        <div class="product-description">
-                            <h3>Bomboniera Cono</h3>
-                            <p class="product-text">Un cono decorativo, ideale per un regalo elegante e raffinato.</p>
-                        </div>
-                    </div>
-                    <div class="product-card">
-                        <div class="product-slider">
-                            <img src="due.png" alt="Bomboniera a forma di fiore, vista frontale">
-                            <img src="tre.png" alt="Bomboniera a forma di fiore, vista laterale">
-                            <img src="due.png" alt="Bomboniera a forma di fiore in un'ambientazione">
-                            <img src="tre.png" alt="Bomboniera a forma di fiore, vista dall'alto">
-                        </div>
-                        <div class="slider-dots"></div>
-                        <div class="product-description">
-                            <h3>Bomboniera Fiore</h3>
-                            <p class="product-text">Un fiore che non appassisce, per un ricordo speciale del tuo giorno.</p>
-                        </div>
-                    </div>
-                    <div class="product-card">
-                        <div class="product-slider">
-                            <img src="quattro.png" alt="Bomboniera a forma di cuore, vista frontale">
-                            <img src="cinque.png" alt="Bomboniera a forma di cuore, vista dall'alto">
-                            <img src="quattro.png" alt="Bomboniera a forma di cuore in un'ambientazione">
-                            <img src="cinque.png" alt="Bomboniera a forma di cuore, vista laterale">
-                        </div>
-                        <div class="slider-dots"></div>
-                        <div class="product-description">
-                            <h3>Bomboniera Cuore</h3>
-                            <p class="product-text">Un piccolo cuore, simbolo d'amore e affetto.</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-        
-        <section id="segnaposto" class="section-hidden">
-            <div class="content-wrapper">
-                <h2>Segnaposto</h2>
-                <p>Segnaposto personalizzati per ogni evento, realizzati con materiali naturali e dettagli unici.</p>
-                <div class="product-cards-container">
-                    <div class="product-card">
-                        <div class="product-slider">
-                            <img src="sei.png" alt="Segnaposto a forma di cuore in legno inciso">
-                            <img src="cinque.png" alt="Segnaposto a forma di cuore in legno, vista ravvicinata">
-                            <img src="sei.png" alt="Segnaposto a forma di cuore in legno, vista laterale">
-                            <img src="cinque.png" alt="Segnaposto a forma di cuore in legno, vista dall'alto">
-                        </div>
-                        <div class="slider-dots"></div>
-                        <div class="product-description">
-                            <h3>Segnaposto Cuore</h3>
-                            <p class="product-text">Un piccolo cuore in legno inciso con il nome dei tuoi invitati.</p>
-                        </div>
-                    </div>
-                    <div class="product-card">
-                        <div class="product-slider">
-                            <img src="uno.png" alt="Segnaposto a forma di foglia in ceramica">
-                            <img src="due.png" alt="Segnaposto a forma di foglia in ceramica, vista ravvicinata">
-                            <img src="tre.png" alt="Segnaposto a forma di foglia in ceramica in un'ambientazione">
-                            <img src="quattro.png" alt="Segnaposto a forma di foglia in ceramica, vista dall'alto">
-                        </div>
-                        <div class="slider-dots"></div>
-                        <div class="product-description">
-                            <h3>Segnaposto Foglia</h3>
-                            <p class="product-text">Una foglia in ceramica, perfetta per un evento in stile naturale.</p>
-                        </div>
-                    </div>
-                    <div class="product-card">
-                        <div class="product-slider">
-                            <img src="uno.png" alt="Segnaposto a forma di gatto in legno inciso">
-                            <img src="due.png" alt="Segnaposto a forma di gatto in legno, vista ravvicinata">
-                            <img src="tre.png" alt="Segnaposto a forma di gatto in legno in un'ambientazione">
-                            <img src="quattro.png" alt="Segnaposto a forma di gatto in legno, vista dall'alto">
-                        </div>
-                        <div class="slider-dots"></div>
-                        <div class="product-description">
-                            <h3>Segnaposto Gatto</h3>
-                            <p class="product-text">Un segnaposto divertente e originale per gli amanti dei gatti.</p>
-                        </div>
-                    </div>
-                    <div class="product-card">
-                        <div class="product-slider">
-                            <img src="uno.png" alt="Segnaposto a forma di stella in legno inciso">
-                            <img src="due.png" alt="Segnaposto a forma di stella in legno, vista ravvicinata">
-                            <img src="tre.png" alt="Segnaposto a forma di stella in legno in un'ambientazione">
-                            <img src="quattro.png" alt="Segnaposto a forma di stella in legno, vista dall'alto">
-                        </div>
-                        <div class="slider-dots"></div>
-                        <div class="product-description">
-                            <h3>Segnaposto Stella</h3>
-                            <p class="product-text">Un tocco di magia per il tuo evento, con una stella personalizzata.</p>
-                        </div>
-                    </div>
-                    <div class="product-card">
-                        <div class="product-slider">
-                            <img src="uno.png" alt="Segnaposto a forma di angelo in legno inciso">
-                            <img src="due.png" alt="Segnaposto a forma di angelo in legno, vista ravvicinata">
-                            <img src="tre.png" alt="Segnaposto a forma di angelo in legno in un'ambientazione">
-                            <img src="quattro.png" alt="Segnaposto a forma di angelo in legno, vista dall'alto">
-                        </div>
-                        <div class="slider-dots"></div>
-                        <div class="product-description">
-                            <h3>Segnaposto Angelo</h3>
-                            <p class="product-text">Un angelo custode per proteggere i tuoi invitati.</p>
-                        </div>
-                    </div>
-                    <div class="product-card">
-                        <div class="product-slider">
-                            <img src="uno.png" alt="Segnaposto a forma di chiave in legno inciso">
-                            <img src="due.png" alt="Segnaposto a forma di chiave in legno, vista ravvicinata">
-                            <img src="tre.png" alt="Segnaposto a forma di chiave in legno in un'ambientazione">
-                            <img src="quattro.png" alt="Segnaposto a forma di chiave in legno, vista dall'alto">
-                        </div>
-                        <div class="slider-dots"></div>
-                        <div class="product-description">
-                            <h3>Segnaposto Chiave</h3>
-                            <p class="product-text">Una chiave simbolica per aprire le porte della felicità.</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-        
-        <section id="non-solo-candele" class="section-hidden">
-            <div class="content-wrapper">
-                <h2>Non solo Candele</h2>
-                <p>Candele artigianali e diffusori per ambienti, per profumare la tua casa con fragranze naturali.</p>
-                <div class="product-cards-container">
-                    <div class="product-card">
-                        <div class="product-slider">
-                            <img src="quattro.png" alt="Candela in un barattolo di vetro con profumo di rosa antica">
-                            <img src="cinque.png" alt="Candela con profumo di rosa antica in un'ambientazione">
-                        </div>
-                        <div class="slider-dots"></div>
-                        <div class="product-description">
-                            <h3>Candela Rosa Antica</h3>
-                            <p class="product-text">Un profumo romantico e delicato, per un'atmosfera unica.</p>
-                        </div>
-                    </div>
-                    <div class="product-card">
-                        <div class="product-slider">
-                            <img src="sei.png" alt="Candela con profumo di spezie d'Oriente in un barattolo di vetro">
-                            <img src="sette.png" alt="Candela con profumo di spezie d'Oriente in un'ambientazione">
-                        </div>
-                        <div class="slider-dots"></div>
-                        <div class="product-description">
-                            <h3>Candela Spezie d'Oriente</h3>
-                            <p class="product-text">Un profumo avvolgente e misterioso, con note di cannella e chiodi di garofano.</p>
-                        </div>
-                    </div>
-                    <div class="product-card">
-                        <div class="product-slider">
-                            <img src="uno.png" alt="Diffusore di essenze alla lavanda con bastoncini di legno">
-                            <img src="due.png" alt="Diffusore di essenze alla lavanda in un'ambientazione">
-                        </div>
-                        <div class="slider-dots"></div>
-                        <div class="product-description">
-                            <h3>Diffusore Lavanda</h3>
-                            <p class="product-text">Un diffusore rilassante e calmante, perfetto per la camera da letto.</p>
-                        </div>
-                    </div>
-                    <div class="product-card">
-                        <div class="product-slider">
-                            <img src="tre.png" alt="Diffusore di essenze agli agrumi e menta con bastoncini di legno">
-                            <img src="quattro.png" alt="Diffusore di essenze agli agrumi e menta in un'ambientazione">
-                        </div>
-                        <div class="slider-dots"></div>
-                        <div class="product-description">
-                            <h3>Diffusore Agrumi e Menta</h3>
-                            <p class="product-text">Un profumo fresco ed energizzante, ideale per il soggiorno.</p>
-                        </div>
-                    </div>
-                    <div class="product-card">
-                        <div class="product-slider">
-                            <img src="cinque.png" alt="Candela con profumo di fiori d'arancio in un barattolo di vetro">
-                            <img src="sei.png" alt="Candela con profumo di fiori d'arancio in un'ambientazione">
-                        </div>
-                        <div class="slider-dots"></div>
-                        <div class="product-description">
-                            <h3>Candela Fiori d'Arancio</h3>
-                            <p class="product-text">Un profumo dolce e floreale, per un'atmosfera romantica.</p>
-                        </div>
-                    </div>
-                    <div class="product-card">
-                        <div class="product-slider">
-                            <img src="sei.png" alt="Diffusore di essenze al muschio bianco con bastoncini di legno">
-                            <img src="uno.png" alt="Diffusore di essenze al muschio bianco in un'ambientazione">
-                        </div>
-                        <div class="slider-dots"></div>
-                        <div class="product-description">
-                            <h3>Diffusore Muschio Bianco</h3>
-                            <p class="product-text">Un profumo pulito e delicato, per una sensazione di freschezza.</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-        
-        <section id="contatti">
-            <div class="content-wrapper">
-                <h2>Contatti</h2>
-                <p>Per informazioni, ordini o richieste personalizzate, non esitare a contattarci.</p>
-                <form action="#" method="post">
-                    <label for="name">Nome:</label>
-                    <input type="text" id="name" name="name">
-                    <label for="email">Email:</label>
-                    <input type="email" id="email" name="email">
-                    <label for="message">Messaggio:</label>
-                    <textarea id="message" name="message"></textarea>
-                    <button type="submit">Invia</button>
-                </form>
-                <p class="whatsapp-text">Oppure scrivici direttamente su WhatsApp</p>
-                <a href="https://wa.me/[NUMERO]" class="whatsapp-button" target="_blank" rel="noopener noreferrer">
-                    <i class="fab fa-whatsapp whatsapp-icon"></i>
-                    Chatta su WhatsApp
-                </a>
-            </div>
-        </section>
+    <div class="header-logo">
+        <img src="images/logo-alchimie1.png" alt="Logo Alchimie Crea per Te" class="logo">
+    </div>
 
-    </main>
+    <button class="hamburger-menu" aria-label="Apri menu">
+        <span class="bar"></span>
+        <span class="bar"></span>
+        <span class="bar"></span>
+    </button>
 
-    <script src="script.js"></script>
+    <nav class="nav-mobile hidden">
+        <a href="#intro" class="nav-item">Introduzione</a>
+        <a href="#bomboniere" class="nav-item">Bomboniere</a>
+        <a href="#segnaposto" class="nav-item">Segnaposto</a>
+        <a href="#non-solo-candele" class="nav-item">Non solo Candele</a>
+        <a href="#contatti" class="nav-item">Contatti</a>
+    </nav>
+
+    <nav class="nav-desktop">
+        <a href="#intro" class="nav-item">Introduzione</a>
+        <a href="#bomboniere" class="nav-item">Bomboniere</a>
+        <a href="#segnaposto" class="nav-item">Segnaposto</a>
+        <a href="#non-solo-candele" class="nav-item">Non solo Candele</a>
+        <a href="#contatti" class="nav-item">Contatti</a>
+    </nav>
+</header>
+
+    <main>
+        <section id="intro">
+            <div class="content-wrapper">
+                <h1>Benvenuti in Alchimie Crea per Te</h1>
+                <p>Dove la passione artigiana si fonde con la magia delle creazioni uniche. Scopri le nostre bomboniere, candele, segnaposto e molto altro, pensati e realizzati per rendere ogni tuo evento un momento indimenticabile.</p>
+                <div class="intro-cards-container">
+                    <a href="#bomboniere" class="intro-card-link">
+                        <div class="intro-card">
+                            <img src="uno.png" alt="Categoria Bomboniere">
+                            <div class="intro-content">
+                                <h3>Bomboniere</h3>
+                                <p class="intro-description">Artigianali e personalizzabili, per celebrare ogni occasione speciale.</p>
+                                <a href="#bomboniere" class="explore-button">Esplora la collezione</a>
+                            </div>
+                        </div>
+                    </a>
+                    <a href="#segnaposto" class="intro-card-link">
+                        <div class="intro-card">
+                            <img src="due.png" alt="Categoria Segnaposto">
+                            <div class="intro-content">
+                                <h3>Segnaposto</h3>
+                                <p class="intro-description">Dettagli unici che renderanno indimenticabile il tuo evento.</p>
+                                <a href="#segnaposto" class="explore-button">Esplora la collezione</a>
+                            </div>
+                        </div>
+                    </a>
+                    <a href="#non-solo-candele" class="intro-card-link">
+                        <div class="intro-card">
+                            <img src="tre.png" alt="Categoria Non solo Candele">
+                            <div class="intro-content">
+                                <h3>Non solo Candele</h3>
+                                <p class="intro-description">Candele e profumatori per ambienti, per un'atmosfera magica.</p>
+                                <a href="#non-solo-candele" class="explore-button">Esplora la collezione</a>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <div class="intro-contact-form-container">
+                    <h2>Contattaci</h2>
+                    <p>Compila il modulo per qualsiasi informazione o per un preventivo personalizzato.</p>
+                    <form id="intro-contact-form" action="#" method="post">
+                        <label for="name-intro">Nome:</label>
+                        <input type="text" id="name-intro" name="name">
+                        <label for="email-intro">Email:</label>
+                        <input type="email" id="email-intro" name="email">
+                        <label for="message-intro">Messaggio:</label>
+                        <textarea id="message-intro" name="message"></textarea>
+                        <button type="submit">Invia</button>
+                    </form>
+                </div>
+            </div>
+        </section>
+        
+        <section id="bomboniere" class="section-hidden">
+            <div class="content-wrapper">
+                <h2>Bomboniere</h2>
+                <p>Bomboniere uniche e personalizzabili, perfette per matrimoni, battesimi e comunioni.</p>
+                <div class="product-cards-container">
+                    <div class="product-card">
+                        <div class="product-slider">
+                            <img src="images/bomboniere/bomboniera-bamboo-luxe-pianta-1.jpg" alt="Bomboniera in vetro con candela, tappo in bambù e una piantina decorativa, vista laterale">
+                            <img src="images/bomboniere/bomboniera-bamboo-luxe-pianta-2.jpg" alt="Bomboniera in vetro con candela, tappo in bambù e una piantina decorativa, vista dall'alto">
+                            <img src="images/bomboniere/bomboniera-bamboo-luxe-pianta-3.jpg" alt="Dettaglio della personalizzazione incisa sul tappo in bambù">
+                            <img src="images/bomboniere/bomboniera-bamboo-luxe-pianta-4.jpg" alt="Bomboniera con scatola di presentazione e nastro in chiffon">
+                            <img src="images/bomboniere/bomboniera-bamboo-luxe-pianta-5.jpg" alt="La bomboniera in un'ambientazione con altre bomboniere e decorazioni">
+                        </div>
+                        <div class="slider-dots"></div>
+                        <div class="product-description">
+                            <h3>Bamboo Luxe Pianta</h3>
+                            <p class="product-text">
+                                <span class="product-text-italic">Candela in vetro, con doppia personalizzazione. Barattolo + tappo.<br>vasta scelta di piantine</span><br>
+                                <strong>Materiale:</strong> miscela artigianale di cere naturali (girasole, api, oliva)<br>
+                                <strong>Misura:</strong> diametro 10cm
+                            </p>
+                        </div>
+                    </div>
+                    <div class="product-card">
+                        <div class="product-slider">
+                            <img src="images/bomboniere/bomboniera-bamboo-luxe-rosa-1.jpg" alt="Bomboniera in vetro con candela e decorazioni floreali secche">
+                            <img src="images/bomboniere/bomboniera-bamboo-luxe-rosa-2.jpg" alt="Dettaglio del tappo in bambù con personalizzazione incisa">
+                            <img src="images/bomboniere/bomboniera-bamboo-luxe-rosa-3.jpg" alt="La bomboniera presentata con una scatola personalizzata e un nastro in chiffon">
+                        </div>
+                        <div class="slider-dots"></div>
+                        <div class="product-description">
+                            <h3>Bomboniera Luxe Rosa</h3>
+                            <p class="product-text">
+                                <span class="product-text-italic">Candela in vetro, con doppia personalizzazione. Barattolo + tappo.</span><br>
+                                <strong>Materiale:</strong> miscela artigianale di cere naturali (girasole, api, oliva)<br>
+                                <strong>Misura:</strong> diametro 10cm<br>
+                                <span class="product-text-italic">Può essere scelta la confezione con scatola personalizzata oppure "nuda" con nastro in chiffon</span><br>
+                            </p>
+                        </div>
+                    </div>
+                    <div class="product-card">
+                        <div class="product-slider">
+                            <img src="cinque.png" alt="Bomboniera profumata con decorazioni">
+                            <img src="sei.png" alt="Bomboniera profumata, vista ravvicinata">
+                        </div>
+                        <div class="slider-dots"></div>
+                        <div class="product-description">
+                            <h3>Bomboniera Profumata</h3>
+                            <p class="product-text">Una bomboniera profumata per un ricordo che dura nel tempo.</p>
+                        </div>
+                    </div>
+                    <div class="product-card">
+                        <div class="product-slider">
+                            <img src="sei.png" alt="Bomboniera a forma di cono, vista frontale">
+                            <img src="uno.png" alt="Bomboniera a forma di cono, vista dall'alto">
+                            <img src="sei.png" alt="Bomboniera a forma di cono, vista laterale">
+                            <img src="uno.png" alt="Bomboniera a forma di cono, vista dall'alto in un'ambientazione">
+                        </div>
+                        <div class="slider-dots"></div>
+                        <div class="product-description">
+                            <h3>Bomboniera Cono</h3>
+                            <p class="product-text">Un cono decorativo, ideale per un regalo elegante e raffinato.</p>
+                        </div>
+                    </div>
+                    <div class="product-card">
+                        <div class="product-slider">
+                            <img src="due.png" alt="Bomboniera a forma di fiore, vista frontale">
+                            <img src="tre.png" alt="Bomboniera a forma di fiore, vista laterale">
+                            <img src="due.png" alt="Bomboniera a forma di fiore in un'ambientazione">
+                            <img src="tre.png" alt="Bomboniera a forma di fiore, vista dall'alto">
+                        </div>
+                        <div class="slider-dots"></div>
+                        <div class="product-description">
+                            <h3>Bomboniera Fiore</h3>
+                            <p class="product-text">Un fiore che non appassisce, per un ricordo speciale del tuo giorno.</p>
+                        </div>
+                    </div>
+                    <div class="product-card">
+                        <div class="product-slider">
+                            <img src="quattro.png" alt="Bomboniera a forma di cuore, vista frontale">
+                            <img src="cinque.png" alt="Bomboniera a forma di cuore, vista dall'alto">
+                            <img src="quattro.png" alt="Bomboniera a forma di cuore in un'ambientazione">
+                            <img src="cinque.png" alt="Bomboniera a forma di cuore, vista laterale">
+                        </div>
+                        <div class="slider-dots"></div>
+                        <div class="product-description">
+                            <h3>Bomboniera Cuore</h3>
+                            <p class="product-text">Un piccolo cuore, simbolo d'amore e affetto.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <section id="segnaposto" class="section-hidden">
+            <div class="content-wrapper">
+                <h2>Segnaposto</h2>
+                <p>Segnaposto personalizzati per ogni evento, realizzati con materiali naturali e dettagli unici.</p>
+                <div class="product-cards-container">
+                    <div class="product-card">
+                        <div class="product-slider">
+                            <img src="sei.png" alt="Segnaposto a forma di cuore in legno inciso">
+                            <img src="cinque.png" alt="Segnaposto a forma di cuore in legno, vista ravvicinata">
+                            <img src="sei.png" alt="Segnaposto a forma di cuore in legno, vista laterale">
+                            <img src="cinque.png" alt="Segnaposto a forma di cuore in legno, vista dall'alto">
+                        </div>
+                        <div class="slider-dots"></div>
+                        <div class="product-description">
+                            <h3>Segnaposto Cuore</h3>
+                            <p class="product-text">Un piccolo cuore in legno inciso con il nome dei tuoi invitati.</p>
+                        </div>
+                    </div>
+                    <div class="product-card">
+                        <div class="product-slider">
+                            <img src="uno.png" alt="Segnaposto a forma di foglia in ceramica">
+                            <img src="due.png" alt="Segnaposto a forma di foglia in ceramica, vista ravvicinata">
+                            <img src="tre.png" alt="Segnaposto a forma di foglia in ceramica in un'ambientazione">
+                            <img src="quattro.png" alt="Segnaposto a forma di foglia in ceramica, vista dall'alto">
+                        </div>
+                        <div class="slider-dots"></div>
+                        <div class="product-description">
+                            <h3>Segnaposto Foglia</h3>
+                            <p class="product-text">Una foglia in ceramica, perfetta per un evento in stile naturale.</p>
+                        </div>
+                    </div>
+                    <div class="product-card">
+                        <div class="product-slider">
+                            <img src="uno.png" alt="Segnaposto a forma di gatto in legno inciso">
+                            <img src="due.png" alt="Segnaposto a forma di gatto in legno, vista ravvicinata">
+                            <img src="tre.png" alt="Segnaposto a forma di gatto in legno in un'ambientazione">
+                            <img src="quattro.png" alt="Segnaposto a forma di gatto in legno, vista dall'alto">
+                        </div>
+                        <div class="slider-dots"></div>
+                        <div class="product-description">
+                            <h3>Segnaposto Gatto</h3>
+                            <p class="product-text">Un segnaposto divertente e originale per gli amanti dei gatti.</p>
+                        </div>
+                    </div>
+                    <div class="product-card">
+                        <div class="product-slider">
+                            <img src="uno.png" alt="Segnaposto a forma di stella in legno inciso">
+                            <img src="due.png" alt="Segnaposto a forma di stella in legno, vista ravvicinata">
+                            <img src="tre.png" alt="Segnaposto a forma di stella in legno in un'ambientazione">
+                            <img src="quattro.png" alt="Segnaposto a forma di stella in legno, vista dall'alto">
+                        </div>
+                        <div class="slider-dots"></div>
+                        <div class="product-description">
+                            <h3>Segnaposto Stella</h3>
+                            <p class="product-text">Un tocco di magia per il tuo evento, con una stella personalizzata.</p>
+                        </div>
+                    </div>
+                    <div class="product-card">
+                        <div class="product-slider">
+                            <img src="uno.png" alt="Segnaposto a forma di angelo in legno inciso">
+                            <img src="due.png" alt="Segnaposto a forma di angelo in legno, vista ravvicinata">
+                            <img src="tre.png" alt="Segnaposto a forma di angelo in legno in un'ambientazione">
+                            <img src="quattro.png" alt="Segnaposto a forma di angelo in legno, vista dall'alto">
+                        </div>
+                        <div class="slider-dots"></div>
+                        <div class="product-description">
+                            <h3>Segnaposto Angelo</h3>
+                            <p class="product-text">Un angelo custode per proteggere i tuoi invitati.</p>
+                        </div>
+                    </div>
+                    <div class="product-card">
+                        <div class="product-slider">
+                            <img src="uno.png" alt="Segnaposto a forma di chiave in legno inciso">
+                            <img src="due.png" alt="Segnaposto a forma di chiave in legno, vista ravvicinata">
+                            <img src="tre.png" alt="Segnaposto a forma di chiave in legno in un'ambientazione">
+                            <img src="quattro.png" alt="Segnaposto a forma di chiave in legno, vista dall'alto">
+                        </div>
+                        <div class="slider-dots"></div>
+                        <div class="product-description">
+                            <h3>Segnaposto Chiave</h3>
+                            <p class="product-text">Una chiave simbolica per aprire le porte della felicità.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <section id="non-solo-candele" class="section-hidden">
+            <div class="content-wrapper">
+                <h2>Non solo Candele</h2>
+                <p>Candele artigianali e diffusori per ambienti, per profumare la tua casa con fragranze naturali.</p>
+                <div class="product-cards-container">
+                    <div class="product-card">
+                        <div class="product-slider">
+                            <img src="quattro.png" alt="Candela in un barattolo di vetro con profumo di rosa antica">
+                            <img src="cinque.png" alt="Candela con profumo di rosa antica in un'ambientazione">
+                        </div>
+                        <div class="slider-dots"></div>
+                        <div class="product-description">
+                            <h3>Candela Rosa Antica</h3>
+                            <p class="product-text">Un profumo romantico e delicato, per un'atmosfera unica.</p>
+                        </div>
+                    </div>
+                    <div class="product-card">
+                        <div class="product-slider">
+                            <img src="sei.png" alt="Candela con profumo di spezie d'Oriente in un barattolo di vetro">
+                            <img src="sette.png" alt="Candela con profumo di spezie d'Oriente in un'ambientazione">
+                        </div>
+                        <div class="slider-dots"></div>
+                        <div class="product-description">
+                            <h3>Candela Spezie d'Oriente</h3>
+                            <p class="product-text">Un profumo avvolgente e misterioso, con note di cannella e chiodi di garofano.</p>
+                        </div>
+                    </div>
+                    <div class="product-card">
+                        <div class="product-slider">
+                            <img src="uno.png" alt="Diffusore di essenze alla lavanda con bastoncini di legno">
+                            <img src="due.png" alt="Diffusore di essenze alla lavanda in un'ambientazione">
+                        </div>
+                        <div class="slider-dots"></div>
+                        <div class="product-description">
+                            <h3>Diffusore Lavanda</h3>
+                            <p class="product-text">Un diffusore rilassante e calmante, perfetto per la camera da letto.</p>
+                        </div>
+                    </div>
+                    <div class="product-card">
+                        <div class="product-slider">
+                            <img src="tre.png" alt="Diffusore di essenze agli agrumi e menta con bastoncini di legno">
+                            <img src="quattro.png" alt="Diffusore di essenze agli agrumi e menta in un'ambientazione">
+                        </div>
+                        <div class="slider-dots"></div>
+                        <div class="product-description">
+                            <h3>Diffusore Agrumi e Menta</h3>
+                            <p class="product-text">Un profumo fresco ed energizzante, ideale per il soggiorno.</p>
+                        </div>
+                    </div>
+                    <div class="product-card">
+                        <div class="product-slider">
+                            <img src="cinque.png" alt="Candela con profumo di fiori d'arancio in un barattolo di vetro">
+                            <img src="sei.png" alt="Candela con profumo di fiori d'arancio in un'ambientazione">
+                        </div>
+                        <div class="slider-dots"></div>
+                        <div class="product-description">
+                            <h3>Candela Fiori d'Arancio</h3>
+                            <p class="product-text">Un profumo dolce e floreale, per un'atmosfera romantica.</p>
+                        </div>
+                    </div>
+                    <div class="product-card">
+                        <div class="product-slider">
+                            <img src="sei.png" alt="Diffusore di essenze al muschio bianco con bastoncini di legno">
+                            <img src="uno.png" alt="Diffusore di essenze al muschio bianco in un'ambientazione">
+                        </div>
+                        <div class="slider-dots"></div>
+                        <div class="product-description">
+                            <h3>Diffusore Muschio Bianco</h3>
+                            <p class="product-text">Un profumo pulito e delicato, per una sensazione di freschezza.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <section id="contatti">
+            <div class="content-wrapper">
+                <h2>Contatti</h2>
+                <p>Per informazioni, ordini o richieste personalizzate, non esitare a contattarci.</p>
+                <form action="#" method="post">
+                    <label for="name">Nome:</label>
+                    <input type="text" id="name" name="name">
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" name="email">
+                    <label for="message">Messaggio:</label>
+                    <textarea id="message" name="message"></textarea>
+                    <button type="submit">Invia</button>
+                </form>
+                <p class="whatsapp-text">Oppure scrivici direttamente su WhatsApp</p>
+                <a href="https://wa.me/[NUMERO]" class="whatsapp-button" target="_blank" rel="noopener noreferrer">
+                    <i class="fab fa-whatsapp whatsapp-icon"></i>
+                    Chatta su WhatsApp
+                </a>
+            </div>
+        </section>
+
+    </main>
+
+    <script src="script.js"></script>
 </body>
 </html>
