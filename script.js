@@ -1,95 +1,72 @@
 document.addEventListener('DOMContentLoaded', () => {
-    const hamburgerMenu = document.querySelector('.hamburger-menu');
-    const navMobile = document.querySelector('.nav-mobile');
-    const navItems = document.querySelectorAll('.nav-item');
+    const sections = document.querySelectorAll('section');
+    const navLinks = document.querySelectorAll('.nav-item');
 
-    // Funzione per nascondere il menu e le sezioni
-    const hideMenuAndSections = () => {
-        navMobile.classList.add('hidden');
-        document.querySelectorAll('section').forEach(section => {
-            section.classList.add('section-hidden');
-        });
-    };
-
-    // Gestione del menu hamburger
-    if (hamburgerMenu && navMobile) {
-        hamburgerMenu.addEventListener('click', () => {
-            navMobile.classList.toggle('hidden');
+    function showSection(sectionId) {
+        sections.forEach(section => {
+            if(section.id === sectionId) {
+                section.classList.remove('section-hidden');
+            } else {
+                section.classList.add('section-hidden');
+            }
         });
     }
 
-    // Gestione della navigazione (nasconde/mostra le sezioni)
-    if (navItems.length > 0) {
-        navItems.forEach(item => {
-            item.addEventListener('click', (e) => {
-                e.preventDefault();
-                const targetId = item.getAttribute('href').substring(1);
-                const targetSection = document.getElementById(targetId);
-
-                hideMenuAndSections();
-
-                if (targetSection) {
-                    targetSection.classList.remove('section-hidden');
-                }
-            });
+    navLinks.forEach(link => {
+        link.addEventListener('click', e => {
+            e.preventDefault();
+            const targetId = link.getAttribute('href').substring(1);
+            showSection(targetId);
+            window.scrollTo({ top: 0, behavior: 'smooth' });
         });
-    }
+    });
 
-    // Inizializza gli slider dei prodotti
-    document.querySelectorAll('.product-card').forEach(card => {
-        const slider = card.querySelector('.product-slider');
-        const images = slider.querySelectorAll('img');
-        const dotsContainer = card.querySelector('.slider-dots');
-        
-        if (images.length > 1) {
-            images.forEach((img, index) => {
+    // Mostra la sezione intro all'avvio
+    showSection('intro');
+
+    // Hamburger menu toggle
+    const hamburger = document.querySelector('.hamburger-menu');
+    const mobileNav = document.querySelector('.nav-mobile');
+
+    hamburger.addEventListener('click', () => {
+        mobileNav.classList.toggle('hidden');
+    });
+
+    // Carousel dei prodotti
+    const sliders = document.querySelectorAll('.product-slider');
+
+    sliders.forEach(slider => {
+        const slides = slider.querySelectorAll('img');
+        let currentIndex = 0;
+
+        const dotsContainer = slider.nextElementSibling; // slider-dots
+        if(dotsContainer) {
+            slides.forEach((_, index) => {
                 const dot = document.createElement('span');
                 dot.classList.add('dot');
-                if (index === 0) {
+                if(index === 0) dot.classList.add('active');
+                dot.addEventListener('click', () => {
+                    slides[currentIndex].style.display = 'none';
+                    slides[index].style.display = 'block';
+                    dotsContainer.children[currentIndex].classList.remove('active');
                     dot.classList.add('active');
-                }
+                    currentIndex = index;
+                });
                 dotsContainer.appendChild(dot);
             });
-
-            let currentIndex = 0;
-            const dots = dotsContainer.querySelectorAll('.dot');
-
-            function updateSlider() {
-                slider.style.transform = `translateX(${-currentIndex * 100}%)`;
-                dots.forEach(dot => dot.classList.remove('active'));
-                dots[currentIndex].classList.add('active');
-            }
-
-            dots.forEach((dot, index) => {
-                dot.addEventListener('click', () => {
-                    currentIndex = index;
-                    updateSlider();
-                });
-            });
-
-            let touchstartX = 0;
-            let touchendX = 0;
-
-            function checkDirection() {
-                if (touchendX < touchstartX && currentIndex < images.length - 1) {
-                    currentIndex++;
-                }
-                if (touchendX > touchstartX && currentIndex > 0) {
-                    currentIndex--;
-                }
-                updateSlider();
-            }
-
-            slider.addEventListener('touchstart', e => {
-                touchstartX = e.changedTouches[0].screenX;
-            });
-
-            slider.addEventListener('touchend', e => {
-                touchendX = e.changedTouches[0].screenX;
-                checkDirection();
-            });
-        } else {
-            dotsContainer.style.display = 'none';
         }
+
+        slides.forEach((slide, idx) => {
+            if(idx !== 0) slide.style.display = 'none';
+        });
+
+        // Auto slide (opzionale)
+        setInterval(() => {
+            slides[currentIndex].style.display = 'none';
+            dotsContainer.children[currentIndex].classList.remove('active');
+            currentIndex = (currentIndex + 1) % slides.length;
+            slides[currentIndex].style.display = 'block';
+            dotsContainer.children[currentIndex].classList.add('active');
+        }, 5000);
     });
 });

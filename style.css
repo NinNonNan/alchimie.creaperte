@@ -53,7 +53,7 @@ header {
     left: 50%;
     transform: translateX(-50%);
     background-color: #86776f;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
     flex-wrap: wrap;
 }
 
@@ -74,11 +74,10 @@ header {
 .social-contact {
     display: flex;
     align-items: center;
-    gap: 15px; /* maggiore spazio tra le icone */
+    gap: 15px;
     width: 20%;
     min-width: 140px;
     flex-wrap: wrap;
-    order: 0;
 }
 
 .social-contact a {
@@ -95,8 +94,8 @@ header {
 
 .phone-number {
     font-size: 1em;
+    font-weight: 400;
     color: #f4f4f4;
-    font-weight: normal; /* alleggerito */
 }
 
 /* Desktop menu */
@@ -110,7 +109,7 @@ header {
 }
 
 .nav-desktop .nav-item {
-    text-decoration: none; /* rimosso sottolineato */
+    text-decoration: none;
     color: white;
     font-weight: 500;
     transition: color 0.3s ease;
@@ -144,23 +143,24 @@ header {
 /* Mobile nav */
 .nav-mobile {
     position: fixed;
-    top: 120px;
+    top: 100px;
     left: 0;
     width: 100%;
     background-color: #fff;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
     z-index: 999;
-    transition: transform 0.3s ease-in-out;
     display: flex;
     flex-direction: column;
     text-align: center;
+    transform: translateY(-200%);
+    transition: transform 0.3s ease-in-out;
 }
 
-.nav-mobile.hidden {
-    transform: translateY(-150%);
+.nav-mobile.visible {
+    transform: translateY(0);
 }
 
-.nav-item {
+.nav-mobile .nav-item {
     padding: 15px 0;
     text-decoration: none;
     color: #86776f;
@@ -168,7 +168,7 @@ header {
     border-bottom: 1px solid #eee;
 }
 
-.nav-item:hover {
+.nav-mobile .nav-item:hover {
     background-color: #f4f4f4;
 }
 
@@ -232,7 +232,8 @@ section {
 
 .explore-button {
     display: block;
-    width: 66.66%;
+    width: 80%;
+    max-width: 300px;
     margin: 0 auto;
     padding: 10px 20px;
     border: 2px solid #86776f;
@@ -385,8 +386,14 @@ section {
 
 /* Media queries */
 @media (max-width: 1024px) {
-    .nav-desktop { display: none; }
-    .hamburger-menu { display: flex; }
+    .nav-desktop {
+        display: none;
+    }
+    .hamburger-menu {
+        display: flex;
+        order: 2;
+        margin-left: auto;
+    }
     .social-contact {
         width: 100%;
         justify-content: flex-start;
@@ -397,28 +404,36 @@ section {
 
 @media (max-width: 768px) {
     header {
-        justify-content: flex-start;
+        justify-content: center;
         min-height: 100px;
         padding: 10px 5%;
     }
-
     .intro-cards-container,
     .product-cards-container {
         flex-direction: column;
         align-items: center;
     }
-
     .intro-card,
     .product-card {
         width: 100%;
         margin-bottom: 20px;
     }
-
-    .explore-button { width: 100%; }
+    .explore-button {
+        width: 100%;
+    }
+    .social-contact {
+        display: none;
+    }
 }
 
 @media (max-width: 480px) {
-    h1 { font-size: 2em; }
-    h2 { font-size: 1.5em; }
-    .product-cards-container { grid-template-columns: 1fr; }
+    h1 {
+        font-size: 2em;
+    }
+    h2 {
+        font-size: 1.5em;
+    }
+    .product-cards-container {
+        grid-template-columns: 1fr;
+    }
 }
