@@ -1,3 +1,6 @@
+/* Import font Poppins per i titoli moderni */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
+
 /* General body and font styles */
 body {
     font-family: 'Montserrat', sans-serif;
@@ -19,6 +22,7 @@ h1 {
     text-align: center;
     font-size: 2.5em;
     margin-bottom: 20px;
+    font-family: 'Dancing Script', cursive;
 }
 
 h2 {
@@ -41,43 +45,28 @@ p {
 
 /* Header */
 header {
+    width: 100%;
+    background-color: #86776f;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+}
+
+/* Riga superiore: social-contact + hamburger */
+.header-top {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 10px 5%;
-    min-height: 120px;
-    position: fixed;
-    width: 90%;
-    z-index: 1000;
-    top: 0;
-    left: 50%;
-    transform: translateX(-50%);
-    background-color: #86776f;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-    flex-wrap: wrap;
-}
-
-.header-logo {
-    order: 1;
-    width: 100%;
-    text-align: center;
-    margin-bottom: 10px;
-}
-
-.logo {
-    max-height: 100px;
-    width: auto;
-    display: inline-block;
+    padding: 5px 5%;
 }
 
 /* Social and contact */
 .social-contact {
     display: flex;
-    align-items: center;
     gap: 15px;
-    width: 20%;
-    min-width: 140px;
-    flex-wrap: wrap;
+    align-items: center;
 }
 
 .social-contact a {
@@ -98,14 +87,25 @@ header {
     color: #f4f4f4;
 }
 
+/* Logo */
+.header-logo {
+    text-align: center;
+    padding: 5px 0;
+}
+
+.logo {
+    max-height: 100px;
+    width: auto;
+    display: inline-block;
+}
+
 /* Desktop menu */
 .nav-desktop {
-    width: 100%;
     display: flex;
     justify-content: center;
     gap: 25px;
-    order: 2;
     flex-wrap: wrap;
+    padding-bottom: 5px;
 }
 
 .nav-desktop .nav-item {
@@ -174,7 +174,7 @@ header {
 
 /* Main sections */
 main {
-    padding-top: 160px;
+    padding-top: 180px;
 }
 
 section {
@@ -204,29 +204,46 @@ section {
     border: 1px solid #ddd;
     overflow: hidden;
     box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .intro-card img {
-    width: 100%;
+    width: 65%;
+    display: block;
+    margin: 0 auto;
     aspect-ratio: 1/1;
     object-fit: cover;
-    display: block;
 }
 
 .intro-content {
     padding: 20px;
-    text-align: center;
+    text-align: justify; /* testo giustificato al centro */
+    text-align-last: center;
+    max-width: 65%;
+    margin: 0 auto;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.1em;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
 }
 
 .intro-content h3 {
+    font-family: 'Poppins', sans-serif;
+    font-size: 1.5em;
+    text-transform: uppercase;
     margin-top: 0;
     color: #86776f;
 }
 
 .intro-description {
-    font-size: 0.9em;
+    font-size: 1.1em;
     color: #666;
-    text-align: center;
+    text-align: justify;
+    text-align-last: center;
     margin-bottom: 15px;
 }
 
@@ -234,7 +251,7 @@ section {
     display: block;
     width: 80%;
     max-width: 300px;
-    margin: 0 auto;
+    margin: 15px auto 30px auto; /* spazio extra sotto */
     padding: 10px 20px;
     border: 2px solid #86776f;
     background-color: transparent;
@@ -242,6 +259,7 @@ section {
     text-decoration: none;
     font-weight: bold;
     transition: all 0.3s ease;
+    text-align: center;
 }
 
 .explore-button:hover {
@@ -299,6 +317,7 @@ section {
     font-size: 1.1em;
     font-weight: bold;
     transition: background-color 0.3s ease;
+    text-align: center;
 }
 
 #intro-contact-form button:hover,
@@ -306,77 +325,69 @@ section {
     background-color: #6a5d55;
 }
 
-/* Product cards */
+/* Sezioni prodotti: centrati come intro */
 .product-cards-container {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-    gap: 30px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    align-items: center;
     margin-top: 40px;
 }
 
+/* Box dei prodotti */
 .product-card {
+    width: 100%;
+    max-width: 65%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     background-color: #fff;
     overflow: hidden;
     box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-    display: flex;
-    flex-direction: column;
 }
 
-.product-slider {
-    width: 100%;
+/* Immagini dei prodotti: stesse dimensioni intro */
+.product-card .product-slider {
+    width: 65%;
     aspect-ratio: 1/1;
     overflow: hidden;
-    position: relative;
     display: flex;
-    transition: transform 0.5s ease-in-out;
+    justify-content: center;
 }
 
-.product-slider img {
+.product-card .product-slider img {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    flex-shrink: 0;
 }
 
-.slider-dots {
-    position: absolute;
-    bottom: 10px;
-    left: 50%;
-    transform: translateX(-50%);
-    display: flex;
-    gap: 8px;
-}
-
-.dot {
-    width: 10px;
-    height: 10px;
-    background-color: rgba(255,255,255,.7);
-    border: 1px solid #86776f;
-    transition: background-color 0.3s;
-}
-
-.dot.active {
-    background-color: #86776f;
-}
-
+/* Product description */
 .product-description {
     padding: 20px;
-    text-align: center;
+    text-align: justify; /* testo giustificato */
+    text-align-last: center;
     flex-grow: 1;
     display: flex;
     flex-direction: column;
     justify-content: center;
+    max-width: 65%;
+    margin: 0 auto;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.1em;
+    gap: 15px;
 }
 
 .product-description h3 {
+    font-family: 'Poppins', sans-serif;
+    font-size: 1.5em;
+    text-transform: uppercase;
     margin-top: 0;
     color: #86776f;
 }
 
 .product-text {
-    font-size: 0.9em;
+    font-size: 1.1em;
     color: #555;
-    text-align: center;
 }
 
 .product-text-italic {
@@ -391,8 +402,6 @@ section {
     }
     .hamburger-menu {
         display: flex;
-        order: 2;
-        margin-left: auto;
     }
     .social-contact {
         width: 100%;
@@ -403,10 +412,8 @@ section {
 }
 
 @media (max-width: 768px) {
-    header {
-        justify-content: center;
-        min-height: 100px;
-        padding: 10px 5%;
+    main {
+        padding-top: 160px;
     }
     .intro-cards-container,
     .product-cards-container {
@@ -418,8 +425,17 @@ section {
         width: 100%;
         margin-bottom: 20px;
     }
+    .intro-card img,
+    .product-card .product-slider {
+        width: 65%;
+        margin: 0 auto;
+    }
     .explore-button {
-        width: 100%;
+        display: block;
+        width: 80%;
+        max-width: 300px;
+        margin: 15px auto 30px auto; /* margine extra sotto */
+        text-align: center;
     }
     .social-contact {
         display: none;
@@ -433,7 +449,9 @@ section {
     h2 {
         font-size: 1.5em;
     }
-    .product-cards-container {
-        grid-template-columns: 1fr;
+    .intro-card img,
+    .product-card .product-slider {
+        width: 65%;
+        margin: 0 auto;
     }
 }
