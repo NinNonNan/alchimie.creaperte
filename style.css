@@ -187,6 +187,7 @@ main {
 section {
     padding: 80px 20px;
     background-color: #fff;
+    border-bottom: 1px solid #ddd; /* linea separatrice */
 }
 
 .section-hidden {
@@ -370,77 +371,94 @@ section .intro-contact-form-container li {
     font-weight: 500;
 }
 
-/* Contatti: uniformazione form migliorata */
+/* Contatti: form */
 #contatti form {
     display: flex;
     flex-direction: column;
-    max-width: 900px;
-    width: 90%;
-    margin: 0 auto;
     gap: 20px;
+    max-width: 700px; /* larghezza uguale al testo introduttivo */
+    margin: 0 auto;
+    padding: 30px;
     background-color: #fff;
-    padding: 30px 25px;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
-    border-radius: 10px;
+    border: 1px solid #ddd;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.08);
+}
+
+#contatti .form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
 }
 
 #contatti label {
+    font-size: 0.95em;
     font-weight: 600;
     color: #86776f;
-    margin-bottom: 8px;
-    text-align: left;
 }
 
 #contatti input,
 #contatti textarea {
-    padding: 15px;
-    border: 2px solid #86776f;
-    border-radius: 8px;
+    padding: 14px 16px;
+    border: 1px solid #ccc;
+    border-radius: 0;
     font-family: 'Montserrat', sans-serif;
-    font-size: 1.05em;
-    width: 100%;
-    box-sizing: border-box;
-    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+    font-size: 1em;
+    transition: all 0.3s ease;
 }
 
 #contatti input:focus,
 #contatti textarea:focus {
+    border-color: #86776f;
+    box-shadow: 0 0 5px rgba(134, 119, 111, 0.3);
     outline: none;
-    border-color: #a18c80;
-    box-shadow: 0 0 5px rgba(134, 119, 111, 0.5);
 }
 
-/* Pulsanti come explore-button */
-#contatti button,
-#contatti .whatsapp-button {
-    display: inline-block;
-    padding: 14px 30px;
-    font-size: 1.15em;
-    font-weight: 600;
-    color: #86776f;
-    border: 2px solid #86776f;
-    background-color: transparent;
-    text-decoration: none;
-    cursor: pointer;
-    transition: all 0.3s ease;
-    border-radius: 8px;
-    min-width: 150px;
-    text-align: center;
-}
-
-#contatti button:hover,
-#contatti .whatsapp-button:hover {
-    background-color: #86776f;
-    color: #fff;
-}
-
-/* Gruppo pulsanti */
-#contatti .button-group {
+/* Link testuali principali */
+.contact-links {
     display: flex;
-    flex-wrap: wrap;
-    gap: 20px;
+    flex-direction: column;
+    gap: 10px;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.contact-links a.text-link {
+    color: #86776f;
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+.contact-links a.text-link:hover {
+    color: #555;
+}
+
+/* Social contact sotto i link principali */
+#contatti .social-contact {
+    display: flex;
     justify-content: center;
-    margin-top: 15px;
+    gap: 20px;
+    margin-bottom: 30px;
+}
+
+#contatti .social-contact a {
+    color: #86776f;
+    font-size: 1.5em;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+#contatti .social-contact a:hover {
+    color: #555;
+}
+
+/* Testo introduttivo per WhatsApp */
+#contatti .whatsapp-intro {
+    text-align: center;
+    font-size: 1.1em;
+    font-weight: 500;
+    color: #86776f;
+    margin: 20px 0 10px 0;
 }
 
 /* Buttons explore-button */
@@ -449,16 +467,19 @@ section .intro-contact-form-container li {
     width: 80%;
     max-width: 300px;
     margin: 15px auto 30px auto;
-    padding: 10px 20px;
+    padding: 12px 20px;
     border: 2px solid #86776f;
     background-color: transparent;
     color: #86776f;
     text-decoration: none;
     font-weight: bold;
+    font-size: 1.05em;
     transition: all 0.3s ease;
     text-align: center;
+    border-radius: 0;
 }
 
+/* Hover per explore-button */
 .explore-button:hover {
     background-color: #86776f;
     color: white;
@@ -499,15 +520,11 @@ section .intro-contact-form-container li {
         width: 100%;
         margin: 0 auto;
     }
-    .explore-button {
-        display: block;
-        width: 80%;
-        max-width: 300px;
-        margin: 15px auto 30px auto;
-        text-align: center;
-    }
     .social-contact {
         display: none;
+    }
+    #contatti form {
+        max-width: 100%;
     }
 }
 
@@ -522,5 +539,9 @@ section .intro-contact-form-container li {
     .product-card .product-slider {
         width: 100%;
         margin: 0 auto;
+    }
+    #contatti .button-group {
+        flex-direction: column;
+        align-items: stretch;
     }
 }

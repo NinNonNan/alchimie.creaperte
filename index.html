@@ -419,28 +419,48 @@
         </div>
     </section>
 
-    <section id="contatti" class="section-hidden">
+    <section id="contatti">
         <div class="content-wrapper">
-            <h2>Contatti</h2>
-            <p>Per informazioni o ordini, compila il modulo qui sotto e ti risponderemo al più presto.</p>
-            <form id="contact-form" action="mailto:info@tuoindirizzo.com" method="post" enctype="text/plain">
-                <label for="name">Nome:</label>
-                <input type="text" id="name" name="name" placeholder="Il tuo nome" required>
+            <h2>Contattaci</h2>
+            <p>Hai bisogno di informazioni o vuoi semplicemente farci un saluto? Scrivici pure! Puoi contattarci via email, telefono o WhatsApp, oppure compilare il form qui sotto e ti risponderemo al più presto.</p>
 
-                <label for="email">Email:</label>
-                <input type="email" id="email" name="email" placeholder="La tua email" required>
+            <!-- Link testuali principali -->
+            <div class="contact-links">
+                <a href="mailto:info@alchimiecreaperte.it" class="text-link">Email: info@alchimiecreaperte.it</a>
+                <a href="tel:+393518644668" class="text-link">Telefono: (+39) 351.8644668</a>
+                <a href="https://wa.me/393518644668" target="_blank" class="text-link">WhatsApp: (+39) 351.8644668</a>
+            </div>
 
-                <label for="message">Messaggio:</label>
-                <textarea id="message" name="message" rows="5" placeholder="Scrivi qui il tuo messaggio" required></textarea>
+            <!-- Pulsanti social -->
+            <div class="social-contact">
+                <a href="https://www.facebook.com/alchimie.creaperte" target="_blank" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                <a href="https://www.instagram.com/alchimie.creaperte" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+            </div>
 
-                <!-- Pulsanti affiancati -->
+            <!-- Form di contatto -->
+            <form action="#" method="post">
+                <div class="form-group">
+                    <label for="nome">Nome *</label>
+                    <input type="text" id="nome" name="nome" required placeholder="Inserisci il tuo nome">
+                </div>
+                <div class="form-group">
+                    <label for="email">Email *</label>
+                    <input type="email" id="email" name="email" required placeholder="Inserisci la tua email">
+                </div>
+                <div class="form-group">
+                    <label for="messaggio">Il tuo messaggio *</label>
+                    <textarea id="messaggio" name="messaggio" rows="6" required placeholder="Scrivi qui il tuo messaggio"></textarea>
+                </div>
                 <div class="button-group">
-                    <button type="submit">Invia</button>
-                    <a href="https://wa.me/+393518644668" target="_blank" class="whatsapp-button"><i class="fab fa-whatsapp"></i> WhatsApp</a>
+                    <button type="submit">Invia Messaggio</button>
                 </div>
             </form>
         </div>
     </section>
+
+
+
+
 </main>
 
 <script src="script.js"></script>
