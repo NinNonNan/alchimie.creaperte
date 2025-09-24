@@ -425,15 +425,19 @@
             <p>Per informazioni o ordini, compila il modulo qui sotto e ti risponderemo al più presto.</p>
             <form id="contact-form" action="mailto:info@tuoindirizzo.com" method="post" enctype="text/plain">
                 <label for="name">Nome:</label>
-                <input type="text" id="name" name="name" required>
+                <input type="text" id="name" name="name" placeholder="Il tuo nome" required>
 
                 <label for="email">Email:</label>
-                <input type="email" id="email" name="email" required>
+                <input type="email" id="email" name="email" placeholder="La tua email" required>
 
                 <label for="message">Messaggio:</label>
-                <textarea id="message" name="message" rows="5" required></textarea>
+                <textarea id="message" name="message" rows="5" placeholder="Scrivi qui il tuo messaggio" required></textarea>
 
-                <button type="submit">Invia</button>
+                <!-- Pulsanti affiancati -->
+                <div class="button-group">
+                    <button type="submit">Invia</button>
+                    <a href="https://wa.me/+393518644668" target="_blank" class="whatsapp-button"><i class="fab fa-whatsapp"></i> WhatsApp</a>
+                </div>
             </form>
         </div>
     </section>

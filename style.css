@@ -221,7 +221,7 @@ section .intro-cards-container,
 section .product-cards-container,
 section #contatti,
 section .intro-contact-form-container {
-    max-width: 700px; /* uniformato */
+    max-width: 700px;
     margin: 0 auto;
     font-family: 'Montserrat', sans-serif;
     font-size: 1.1em;
@@ -289,14 +289,14 @@ section .intro-contact-form-container li {
     overflow: hidden;
     box-shadow: 0 4px 8px rgba(0,0,0,0.1);
     width: 100%;
-    max-width: 700px; /* uniformato */
+    max-width: 700px;
     display: flex;
     flex-direction: column;
     align-items: center;
 }
 
 .intro-card img {
-    width: 100%; /* uniformato */
+    width: 100%;
     display: block;
     margin: 0 auto;
     aspect-ratio: 1/1;
@@ -314,7 +314,7 @@ section .intro-contact-form-container li {
 
 .product-card {
     width: 100%;
-    max-width: 700px; /* uniformato */
+    max-width: 700px;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -324,7 +324,7 @@ section .intro-contact-form-container li {
 }
 
 .product-card .product-slider {
-    width: 100%; /* uniformato */
+    width: 100%;
     aspect-ratio: 1/1;
     overflow: hidden;
     display: flex;
@@ -345,16 +345,16 @@ section .intro-contact-form-container li {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    max-width: 700px; /* uniformato */
+    max-width: 700px;
     margin: 0 auto;
     font-family: 'Montserrat', sans-serif;
-    font-size: 1.1em; /* uniformato */
+    font-size: 1.1em;
     gap: 15px;
 }
 
 .product-description h3 {
-    font-family: 'Poppins', sans-serif; /* uniformato */
-    font-size: 2.2em; /* uniformato */
+    font-family: 'Poppins', sans-serif;
+    font-size: 2.2em;
     text-transform: uppercase;
     margin-top: 0;
     color: #86776f;
@@ -370,65 +370,80 @@ section .intro-contact-form-container li {
     font-weight: 500;
 }
 
-/* Contact forms */
-.intro-contact-form-container,
-#contatti {
-    background-color: #f4f4f4;
-    padding: 30px;
-    margin-top: 50px;
-}
-
-#intro-contact-form,
+/* Contatti: uniformazione form migliorata */
 #contatti form {
     display: flex;
     flex-direction: column;
-    max-width: 600px;
+    max-width: 900px;
+    width: 90%;
     margin: 0 auto;
+    gap: 20px;
+    background-color: #fff;
+    padding: 30px 25px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+    border-radius: 10px;
 }
 
-#intro-contact-form label,
 #contatti label {
-    margin-top: 15px;
-    font-weight: bold;
+    font-weight: 600;
     color: #86776f;
+    margin-bottom: 8px;
     text-align: left;
 }
 
-#intro-contact-form input,
-#intro-contact-form textarea,
 #contatti input,
 #contatti textarea {
-    padding: 10px;
-    border: 1px solid #ccc;
-    margin-top: 5px;
-}
-
-#intro-contact-form textarea,
-#contatti textarea {
-    resize: vertical;
-    min-height: 120px;
-}
-
-#intro-contact-form button,
-#contatti button {
-    margin-top: 20px;
     padding: 15px;
-    background-color: #86776f;
-    color: #fff;
-    border: none;
+    border: 2px solid #86776f;
+    border-radius: 8px;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.05em;
+    width: 100%;
+    box-sizing: border-box;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+#contatti input:focus,
+#contatti textarea:focus {
+    outline: none;
+    border-color: #a18c80;
+    box-shadow: 0 0 5px rgba(134, 119, 111, 0.5);
+}
+
+/* Pulsanti come explore-button */
+#contatti button,
+#contatti .whatsapp-button {
+    display: inline-block;
+    padding: 14px 30px;
+    font-size: 1.15em;
+    font-weight: 600;
+    color: #86776f;
+    border: 2px solid #86776f;
+    background-color: transparent;
+    text-decoration: none;
     cursor: pointer;
-    font-size: 1.1em;
-    font-weight: bold;
-    transition: background-color 0.3s ease;
+    transition: all 0.3s ease;
+    border-radius: 8px;
+    min-width: 150px;
     text-align: center;
 }
 
-#intro-contact-form button:hover,
-#contatti button:hover {
-    background-color: #6a5d55;
+#contatti button:hover,
+#contatti .whatsapp-button:hover {
+    background-color: #86776f;
+    color: #fff;
 }
 
-/* Buttons */
+/* Gruppo pulsanti */
+#contatti .button-group {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+    margin-top: 15px;
+}
+
+/* Buttons explore-button */
 .explore-button {
     display: block;
     width: 80%;
