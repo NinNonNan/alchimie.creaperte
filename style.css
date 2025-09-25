@@ -128,16 +128,16 @@ header {
 .hamburger-menu {
     display: none;
     flex-direction: column;
-    justify-content: flex-start;
-    align-items: flex-end;
-    width: 30px;
-    height: 25px;
+    justify-content: center;
+    align-items: center;
+    width: 35px;
+    height: 35px;
     background: transparent;
     border: none;
     cursor: pointer;
-    padding: 0;
+    padding: 5px;
     z-index: 1001;
-    margin-left: auto;
+    margin-left: 0;
 }
 
 .hamburger-menu .bar {
@@ -187,7 +187,7 @@ main {
 section {
     padding: 80px 20px;
     background-color: #fff;
-    border-bottom: 1px solid #ddd; /* linea separatrice */
+    border-bottom: 1px solid #ddd;
 }
 
 .section-hidden {
@@ -286,9 +286,7 @@ section .intro-contact-form-container li {
 
 .intro-card {
     background-color: #fff;
-    border: 1px solid #ddd;
     overflow: hidden;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
     width: 100%;
     max-width: 700px;
     display: flex;
@@ -321,7 +319,6 @@ section .intro-contact-form-container li {
     align-items: center;
     background-color: #fff;
     overflow: hidden;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
 }
 
 .product-card .product-slider {
@@ -355,7 +352,7 @@ section .intro-contact-form-container li {
 
 .product-description h3 {
     font-family: 'Poppins', sans-serif;
-    font-size: 2.2em;
+    font-size: 1.6em; /* ridotto per desktop */
     text-transform: uppercase;
     margin-top: 0;
     color: #86776f;
@@ -376,11 +373,10 @@ section .intro-contact-form-container li {
     display: flex;
     flex-direction: column;
     gap: 20px;
-    max-width: 700px; /* larghezza uguale al testo introduttivo */
+    max-width: 700px;
     margin: 0 auto;
     padding: 30px;
     background-color: #fff;
-    border: 1px solid #ddd;
     box-shadow: 0 2px 6px rgba(0,0,0,0.08);
 }
 
@@ -479,7 +475,6 @@ section .intro-contact-form-container li {
     border-radius: 0;
 }
 
-/* Hover per explore-button */
 .explore-button:hover {
     background-color: #86776f;
     color: white;
@@ -534,6 +529,9 @@ section .intro-contact-form-container li {
     }
     h2 {
         font-size: 1.5em;
+    }
+    .product-description h3 {
+        font-size: 1.2em; /* ridotto decisamente per smartphone */
     }
     .intro-card img,
     .product-card .product-slider {

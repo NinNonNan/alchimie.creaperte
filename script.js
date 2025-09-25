@@ -18,6 +18,12 @@ document.addEventListener('DOMContentLoaded', () => {
             const targetId = link.getAttribute('href').substring(1);
             showSection(targetId);
             window.scrollTo({ top: 0, behavior: 'smooth' });
+
+            // Chiudi menu mobile se link cliccato
+            const mobileNav = document.querySelector('.nav-mobile');
+            if(mobileNav.classList.contains('visible')) {
+                mobileNav.classList.remove('visible');
+            }
         });
     });
 
@@ -28,8 +34,16 @@ document.addEventListener('DOMContentLoaded', () => {
     const hamburger = document.querySelector('.hamburger-menu');
     const mobileNav = document.querySelector('.nav-mobile');
 
-    hamburger.addEventListener('click', () => {
-        mobileNav.classList.toggle('hidden');
+    hamburger.addEventListener('click', (e) => {
+        mobileNav.classList.toggle('visible');
+        e.stopPropagation(); // impedisce che il click sull'hamburger chiuda subito il menu
+    });
+
+    // Chiudi il menu se clicchi fuori
+    document.addEventListener('click', (e) => {
+        if (mobileNav.classList.contains('visible') && !mobileNav.contains(e.target) && e.target !== hamburger) {
+            mobileNav.classList.remove('visible');
+        }
     });
 
     // Carousel dei prodotti
@@ -60,13 +74,37 @@ document.addEventListener('DOMContentLoaded', () => {
             if(idx !== 0) slide.style.display = 'none';
         });
 
-        // Auto slide (opzionale)
-        setInterval(() => {
-            slides[currentIndex].style.display = 'none';
-            dotsContainer.children[currentIndex].classList.remove('active');
-            currentIndex = (currentIndex + 1) % slides.length;
-            slides[currentIndex].style.display = 'block';
-            dotsContainer.children[currentIndex].classList.add('active');
-        }, 5000);
+        // Rimosso auto-slide
+        // setInterval(() => {...}, 5000);
     });
+
+    // --- FORM CONTATTI ---
+    const form = document.getElementById('contactForm');
+
+    if(form){
+        form.addEventListener('submit', async (e) => {
+            e.preventDefault();
+
+            const formData = new FormData(form);
+            const data = Object.fromEntries(formData.entries());
+
+            try {
+                const response = await fetch('https://script.google.com/macros/s/AKfycbz4HtBZO1digsQY_djA7ftx7Trm6bhvfrApFzU55kpqf0Wgf7fLWIZoamT63g0TkyNb/exec', {
+                    method: 'POST',
+                    body: JSON.stringify(data),
+                    headers: { 'Content-Type': 'application/json' }
+                });
+
+                if (response.ok) {
+                    alert('Messaggio inviato con successo!');
+                    form.reset();
+                } else {
+                    alert('Errore nell\'invio, riprova.');
+                }
+            } catch (err) {
+                console.error(err);
+                alert('Errore di connessione, riprova.');
+            }
+        });
+    }
 });
