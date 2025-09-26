@@ -1,9 +1,9 @@
-name: Deploy to TopHost via FTP
+name: 🚀 Deploy to TopHost via FTP
 
 on:
   push:
     branches:
-      - main   # o il branch che usi per il deploy
+      - main   # o "master" se il tuo ramo principale si chiama così
 
 jobs:
   ftp-deploy:
@@ -12,15 +12,10 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v3
 
-      - name: Deploy via FTP
+      - name: Deploy to FTP
         uses: SamKirkland/FTP-Deploy-Action@v4.3.4
         with:
-          server: ${{ secrets.ftp.alchimiecreaperte.it }}
-          username: ${{ secrets.alchimiecreaperte.it }}
-          password: ${{ secrets.FCsmnnls610@ }}
-          server-dir: ${{ secrets./htdocs }}
-          exclude: |
-            **/.git*
-            **/.github*
-            **/README.md
-            **/deploy.sh
+          server: ${{ secrets.FTP_SERVER }}
+          username: ${{ secrets.FTP_USERNAME }}
+          password: ${{ secrets.FTP_PASSWORD }}
+          server-dir: ${{ secrets.FTP_DIR }}
