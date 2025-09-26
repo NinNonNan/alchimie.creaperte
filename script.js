@@ -1,7 +1,9 @@
 document.addEventListener('DOMContentLoaded', () => {
     const sections = document.querySelectorAll('section');
     const navLinks = document.querySelectorAll('.nav-item');
+    const exploreLinks = document.querySelectorAll('.explore-link'); // Link "Esplora la collezione"
 
+    // Funzione per mostrare la sezione
     function showSection(sectionId) {
         sections.forEach(section => {
             if(section.id === sectionId) {
@@ -12,6 +14,7 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
+    // Gestione click menu principale
     navLinks.forEach(link => {
         link.addEventListener('click', e => {
             e.preventDefault();
@@ -19,11 +22,21 @@ document.addEventListener('DOMContentLoaded', () => {
             showSection(targetId);
             window.scrollTo({ top: 0, behavior: 'smooth' });
 
-            // Chiudi menu mobile se link cliccato
+            // Chiudi menu mobile se aperto
             const mobileNav = document.querySelector('.nav-mobile');
             if(mobileNav.classList.contains('visible')) {
                 mobileNav.classList.remove('visible');
             }
+        });
+    });
+
+    // Gestione click "Esplora la collezione"
+    exploreLinks.forEach(link => {
+        link.addEventListener('click', e => {
+            e.preventDefault();
+            const targetId = link.getAttribute('href').substring(1);
+            showSection(targetId);
+            window.scrollTo({ top: 0, behavior: 'smooth' });
         });
     });
 
@@ -73,9 +86,6 @@ document.addEventListener('DOMContentLoaded', () => {
         slides.forEach((slide, idx) => {
             if(idx !== 0) slide.style.display = 'none';
         });
-
-        // Rimosso auto-slide
-        // setInterval(() => {...}, 5000);
     });
 
     // --- FORM CONTATTI ---
@@ -87,7 +97,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
             const formData = new FormData(form);
 
-            // Rinominiamo i campi secondo lo script Google
             const data = {
                 name: formData.get('name'),
                 email: formData.get('email'),
@@ -101,14 +110,12 @@ document.addEventListener('DOMContentLoaded', () => {
                         method: 'POST',
                         headers: { 'Content-Type': 'application/json' },
                         body: JSON.stringify(data),
-                        mode: 'no-cors'   // serve per bypassare CORS in locale
+                        mode: 'no-cors'
                     }
                 );
 
-                // Nascondi il form
                 form.style.display = 'none';
 
-                // Mostra messaggio di ringraziamento
                 const thankYouMessage = document.createElement('p');
                 thankYouMessage.textContent = 'Grazie! Ti contatteremo al più presto.';
                 thankYouMessage.classList.add('contact-thankyou');
@@ -121,3 +128,4 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 });
+

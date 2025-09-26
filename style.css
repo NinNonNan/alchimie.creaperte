@@ -513,6 +513,24 @@ section .intro-contact-form-container li {
     border-radius: 0;
 }
 
+/* Buttons explore-button */
+.explore-link {
+    display: block;
+    width: 80%;
+    max-width: 300px;
+    margin: 15px auto 30px auto;
+    padding: 12px 20px;
+    border: 2px solid #86776f;
+    background-color: transparent;
+    color: #86776f;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 1em; /* ridotto */
+    transition: all 0.3s ease;
+    text-align: center;
+    border-radius: 0;
+}
+
 .explore-button:hover {
     background-color: #86776f;
     color: white;
