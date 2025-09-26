@@ -1,19 +1,20 @@
-name: 🚀 Deploy to TopHost via FTP
+name: Deploy to TopHost
 
 on:
+  workflow_dispatch:   # permette l'avvio manuale
   push:
     branches:
-      - main   # o "master" se il tuo ramo principale si chiama così
+      - main           # oppure "master", dipende dal tuo branch principale
 
 jobs:
-  ftp-deploy:
+  deploy:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout repository
         uses: actions/checkout@v3
 
-      - name: Deploy to FTP
-        uses: SamKirkland/FTP-Deploy-Action@v4.3.4
+      - name: Upload to FTP
+        uses: SamKirkland/FTP-Deploy-Action@4.3.0
         with:
           server: ${{ secrets.FTP_SERVER }}
           username: ${{ secrets.FTP_USERNAME }}
