@@ -462,6 +462,16 @@ section .intro-contact-form-container li {
     margin: 20px 0 10px 0;
 }
 
+.contact-thankyou {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.2em;
+    font-weight: 600;
+    color: #86776f;
+    text-align: center; /* centro orizzontale */
+    margin: 30px auto;  /* margini sopra/sotto e centratura */
+    display: block;     /* assicurati che prenda la larghezza del contenitore */
+}
+
 /* Buttons explore-button */
 .explore-button {
     display: block;

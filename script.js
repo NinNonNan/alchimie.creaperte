@@ -81,29 +81,42 @@ document.addEventListener('DOMContentLoaded', () => {
     // --- FORM CONTATTI ---
     const form = document.getElementById('contactForm');
 
-    if(form){
+    if (form) {
         form.addEventListener('submit', async (e) => {
             e.preventDefault();
 
             const formData = new FormData(form);
-            const data = Object.fromEntries(formData.entries());
+
+            // Rinominiamo i campi secondo lo script Google
+            const data = {
+                name: formData.get('name'),
+                email: formData.get('email'),
+                message: formData.get('message')
+            };
 
             try {
-                const response = await fetch('https://script.google.com/macros/s/AKfycbz4HtBZO1digsQY_djA7ftx7Trm6bhvfrApFzU55kpqf0Wgf7fLWIZoamT63g0TkyNb/exec', {
-                    method: 'POST',
-                    body: JSON.stringify(data),
-                    headers: { 'Content-Type': 'application/json' }
-                });
+                await fetch(
+                    'https://script.google.com/macros/s/AKfycby5yw9kyHMxKs3YAYKcGMuhBRQDQbnSa2BVY1e1NdnFsBswtC70QLuXxSGR5G43jpef/exec',
+                    {
+                        method: 'POST',
+                        headers: { 'Content-Type': 'application/json' },
+                        body: JSON.stringify(data),
+                        mode: 'no-cors'   // serve per bypassare CORS in locale
+                    }
+                );
 
-                if (response.ok) {
-                    alert('Messaggio inviato con successo!');
-                    form.reset();
-                } else {
-                    alert('Errore nell\'invio, riprova.');
-                }
+                // Nascondi il form
+                form.style.display = 'none';
+
+                // Mostra messaggio di ringraziamento
+                const thankYouMessage = document.createElement('p');
+                thankYouMessage.textContent = 'Grazie! Ti contatteremo al più presto.';
+                thankYouMessage.classList.add('contact-thankyou');
+                form.parentNode.appendChild(thankYouMessage);
+
             } catch (err) {
-                console.error(err);
-                alert('Errore di connessione, riprova.');
+                console.error("Errore durante l'invio:", err);
+                alert('Errore di connessione. Riprova più tardi.');
             }
         });
     }
