@@ -30,12 +30,12 @@ h1 {
 }
 
 h2 {
-    font-size: 2em;
+    font-size: 1.8em; /* ridotto da 2.2em */
     margin-bottom: 15px;
 }
 
 p {
-    font-size: 1.1em;
+    font-size: 1em; /* ridotto da 1.1em */
     margin-bottom: 15px;
 }
 
@@ -199,7 +199,7 @@ section {
 /* Titoli sezioni uniformi */
 section h2 {
     font-family: 'Poppins', sans-serif;
-    font-size: 2.2em;
+    font-size: 1.8em; /* ridotto */
     text-transform: uppercase;
     letter-spacing: 1px;
     margin-bottom: 40px;
@@ -230,7 +230,7 @@ section .intro-contact-form-container {
     max-width: 700px;
     margin: 0 auto;
     font-family: 'Montserrat', sans-serif;
-    font-size: 1.1em;
+    font-size: 1em; /* ridotto */
     line-height: 1.7;
     color: #555;
     display: flex;
@@ -351,20 +351,20 @@ section .intro-contact-form-container li {
     max-width: 700px;
     margin: 0 auto;
     font-family: 'Montserrat', sans-serif;
-    font-size: 1.1em;
+    font-size: 1em; /* ridotto */
     gap: 15px;
 }
 
 .product-description h3 {
     font-family: 'Poppins', sans-serif;
-    font-size: 1.6em; /* ridotto per desktop */
+    font-size: 1.4em; /* ridotto da 1.6em */
     text-transform: uppercase;
     margin-top: 0;
     color: #86776f;
 }
 
 .product-text {
-    font-size: 1.1em;
+    font-size: 1em;
     color: #555;
 }
 
@@ -392,7 +392,7 @@ section .intro-contact-form-container li {
 }
 
 #contatti label {
-    font-size: 0.95em;
+    font-size: 0.9em; /* ridotto */
     font-weight: 600;
     color: #86776f;
 }
@@ -403,7 +403,7 @@ section .intro-contact-form-container li {
     border: 1px solid #ccc;
     border-radius: 0;
     font-family: 'Montserrat', sans-serif;
-    font-size: 1em;
+    font-size: 0.95em; /* ridotto */
     transition: all 0.3s ease;
 }
 
@@ -412,6 +412,28 @@ section .intro-contact-form-container li {
     border-color: #86776f;
     box-shadow: 0 0 5px rgba(134, 119, 111, 0.3);
     outline: none;
+}
+
+/* Pulsante form uniforme con sito */
+#contatti button[type="submit"] {
+    display: block;
+    width: 50%;
+    max-width: 250px;
+    margin: 20px auto;
+    padding: 12px 20px;
+    border: 2px solid #86776f;
+    background-color: transparent;
+    color: #86776f;
+    font-weight: bold;
+    font-size: 1em;
+    cursor: pointer;
+    text-align: center;
+    transition: all 0.3s ease;
+}
+
+#contatti button[type="submit"]:hover {
+    background-color: #86776f;
+    color: white;
 }
 
 /* Link testuali principali */
@@ -462,14 +484,15 @@ section .intro-contact-form-container li {
     margin: 20px 0 10px 0;
 }
 
+/* Grazie dopo invio form */
 .contact-thankyou {
     font-family: 'Montserrat', sans-serif;
-    font-size: 1.2em;
+    font-size: 1.1em; /* leggermente più piccolo */
     font-weight: 600;
     color: #86776f;
-    text-align: center; /* centro orizzontale */
-    margin: 30px auto;  /* margini sopra/sotto e centratura */
-    display: block;     /* assicurati che prenda la larghezza del contenitore */
+    text-align: center;
+    margin: 30px auto;
+    display: block;
 }
 
 /* Buttons explore-button */
@@ -484,7 +507,7 @@ section .intro-contact-form-container li {
     color: #86776f;
     text-decoration: none;
     font-weight: bold;
-    font-size: 1.05em;
+    font-size: 1em; /* ridotto */
     transition: all 0.3s ease;
     text-align: center;
     border-radius: 0;
@@ -546,7 +569,7 @@ section .intro-contact-form-container li {
         font-size: 1.5em;
     }
     .product-description h3 {
-        font-size: 1.2em; /* ridotto decisamente per smartphone */
+        font-size: 1.2em;
     }
     .intro-card img,
     .product-card .product-slider {
