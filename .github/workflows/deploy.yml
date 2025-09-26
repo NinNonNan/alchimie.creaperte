@@ -1,1 +1,26 @@
+name: Deploy to TopHost via FTP
 
+on:
+  push:
+    branches:
+      - main   # o il branch che usi per il deploy
+
+jobs:
+  ftp-deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      - name: Deploy via FTP
+        uses: SamKirkland/FTP-Deploy-Action@v4.3.4
+        with:
+          server: ${{ secrets.ftp.alchimiecreaperte.it }}
+          username: ${{ secrets.alchimiecreaperte.it }}
+          password: ${{ secrets.FCsmnnls610@ }}
+          server-dir: ${{ secrets./htdocs }}
+          exclude: |
+            **/.git*
+            **/.github*
+            **/README.md
+            **/deploy.sh
