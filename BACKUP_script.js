@@ -6,7 +6,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // Funzione per mostrare la sezione
     function showSection(sectionId) {
         sections.forEach(section => {
-            if (section.id === sectionId) {
+            if(section.id === sectionId) {
                 section.classList.remove('section-hidden');
             } else {
                 section.classList.add('section-hidden');
@@ -24,7 +24,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
             // Chiudi menu mobile se aperto
             const mobileNav = document.querySelector('.nav-mobile');
-            if (mobileNav.classList.contains('visible')) {
+            if(mobileNav.classList.contains('visible')) {
                 mobileNav.classList.remove('visible');
             }
         });
@@ -49,7 +49,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     hamburger.addEventListener('click', (e) => {
         mobileNav.classList.toggle('visible');
-        e.stopPropagation();
+        e.stopPropagation(); // impedisce che il click sull'hamburger chiuda subito il menu
     });
 
     // Chiudi il menu se clicchi fuori
@@ -64,37 +64,28 @@ document.addEventListener('DOMContentLoaded', () => {
 
     sliders.forEach(slider => {
         const slides = slider.querySelectorAll('img');
-        const dotsContainer = slider.nextElementSibling; // deve essere <div class="slider-dots"></div>
         let currentIndex = 0;
 
-        // inizializza immagini
-        slides.forEach((slide, idx) => {
-            slide.style.display = idx === 0 ? 'block' : 'none';
-        });
-
-        // inizializza i dot
-        if (dotsContainer) {
+        const dotsContainer = slider.nextElementSibling; // slider-dots
+        if(dotsContainer) {
             slides.forEach((_, index) => {
                 const dot = document.createElement('span');
                 dot.classList.add('dot');
-                if (index === 0) dot.classList.add('active');
-
+                if(index === 0) dot.classList.add('active');
                 dot.addEventListener('click', () => {
-                    // nascondi tutte le immagini
-                    slides.forEach(slide => slide.style.display = 'none');
-                    // mostra quella scelta
+                    slides[currentIndex].style.display = 'none';
                     slides[index].style.display = 'block';
-
-                    // aggiorna i dot
-                    dotsContainer.querySelectorAll('.dot').forEach(d => d.classList.remove('active'));
+                    dotsContainer.children[currentIndex].classList.remove('active');
                     dot.classList.add('active');
-
                     currentIndex = index;
                 });
-
                 dotsContainer.appendChild(dot);
             });
         }
+
+        slides.forEach((slide, idx) => {
+            if(idx !== 0) slide.style.display = 'none';
+        });
     });
 
     // --- FORM CONTATTI ---
@@ -137,3 +128,4 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 });
+

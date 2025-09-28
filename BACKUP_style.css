@@ -2,18 +2,17 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
 
 /* General body and font styles */
-* { box-sizing: border-box; }
-
 body {
     font-family: 'Montserrat', sans-serif;
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
     background-color: #f8f8f8;
     color: #333;
     line-height: 1.6;
 }
 
-/* Testi di base */
+/* Testi di base sempre a sinistra */
 p, h1, h2, h3, ul, li {
     text-align: left;
 }
@@ -31,12 +30,12 @@ h1 {
 }
 
 h2 {
-    font-size: 1.8em;
+    font-size: 1.8em; /* ridotto da 2.2em */
     margin-bottom: 15px;
 }
 
 p {
-    font-size: 1em;
+    font-size: 1em; /* ridotto da 1.1em */
     margin-bottom: 15px;
 }
 
@@ -65,7 +64,7 @@ header {
     padding: 5px 5%;
 }
 
-/* Social and contact (header) */
+/* Social and contact */
 .social-contact {
     display: flex;
     gap: 15px;
@@ -144,20 +143,19 @@ header {
 }
 
 .hamburger-menu .bar {
-    width: 22px;
+    width: 100%;
     height: 3px;
     background-color: #f4f4f4;
-    margin: 3px 0;
-    transition: all 0.25s ease-in-out;
+    transition: all 0.3s ease-in-out;
 }
 
-/* Mobile nav - colore uguale all'header */
+/* Mobile nav */
 .nav-mobile {
     position: fixed;
     top: 100px;
     left: 0;
     width: 100%;
-    background-color: #86776f; /* stesso colore dell'header */
+    background-color: #fff;
     box-shadow: 0 2px 5px rgba(0,0,0,0.1);
     z-index: 999;
     display: flex;
@@ -174,13 +172,13 @@ header {
 .nav-mobile .nav-item {
     padding: 15px 0;
     text-decoration: none;
-    color: #fff; /* testi bianchi su mobile */
+    color: #86776f;
     font-weight: 500;
-    border-bottom: 1px solid rgba(255,255,255,0.06);
+    border-bottom: 1px solid #eee;
 }
 
 .nav-mobile .nav-item:hover {
-    background-color: rgba(0,0,0,0.05);
+    background-color: #f4f4f4;
 }
 
 /* Main sections */
@@ -191,7 +189,7 @@ main {
 section {
     padding: 80px 20px;
     background-color: #fff;
-    border-bottom: 1px solid #e6e0dd; /* linea separatrice tra sezioni */
+    border-bottom: 1px solid #ddd;
 }
 
 .section-hidden {
@@ -201,14 +199,14 @@ section {
 /* Titoli sezioni uniformi */
 section h2 {
     font-family: 'Poppins', sans-serif;
-    font-size: 1.8em;
+    font-size: 1.8em; /* ridotto */
     text-transform: uppercase;
     letter-spacing: 1px;
-    margin-bottom: 24px;
+    margin-bottom: 40px;
     text-align: left;
     color: #86776f;
     position: relative;
-    max-width: 900px;
+    max-width: 700px;
     margin-left: auto;
     margin-right: auto;
 }
@@ -232,7 +230,7 @@ section .intro-contact-form-container {
     max-width: 700px;
     margin: 0 auto;
     font-family: 'Montserrat', sans-serif;
-    font-size: 1em;
+    font-size: 1em; /* ridotto */
     line-height: 1.7;
     color: #555;
     display: flex;
@@ -258,6 +256,26 @@ section .intro-contact-form-container strong {
     color: #86776f;
 }
 
+section .content-wrapper ul,
+section .intro-cards-container ul,
+section .product-cards-container ul,
+section #contatti ul,
+section .intro-contact-form-container ul {
+    list-style: disc;
+    padding-left: 1.5em;
+    margin: 0 auto;
+    max-width: 600px;
+}
+
+section .content-wrapper li,
+section .intro-cards-container li,
+section .product-cards-container li,
+section #contatti li,
+section .intro-contact-form-container li {
+    margin-bottom: 10px;
+    color: #555;
+}
+
 /* Intro cards */
 .intro-cards-container {
     display: flex;
@@ -270,7 +288,6 @@ section .intro-contact-form-container strong {
 .intro-card-link {
     text-decoration: none;
     color: inherit;
-    display: block;
 }
 
 .intro-card {
@@ -310,29 +327,18 @@ section .intro-contact-form-container strong {
     overflow: hidden;
 }
 
-/* SLIDER: immagini sovrapposte per garantire comportamento a singolo slide */
 .product-card .product-slider {
     width: 100%;
     aspect-ratio: 1/1;
     overflow: hidden;
-    position: relative; /* per sovrapporre le immagini */
-    background-color: #f4f4f4;
-    display: block;
+    display: flex;
+    justify-content: center;
 }
 
 .product-card .product-slider img {
-    position: absolute;
-    top: 0;
-    left: 0;
-    display: none; /* tutte nascoste di default, JS mostrerà la corrente */
     width: 100%;
     height: 100%;
     object-fit: cover;
-}
-
-/* fallback se JS non parte: mostra la prima immagine */
-.product-card .product-slider img:first-child {
-    display: block;
 }
 
 .product-description {
@@ -345,13 +351,13 @@ section .intro-contact-form-container strong {
     max-width: 700px;
     margin: 0 auto;
     font-family: 'Montserrat', sans-serif;
-    font-size: 1em;
+    font-size: 1em; /* ridotto */
     gap: 15px;
 }
 
 .product-description h3 {
     font-family: 'Poppins', sans-serif;
-    font-size: 1.4em;
+    font-size: 1.4em; /* ridotto da 1.6em */
     text-transform: uppercase;
     margin-top: 0;
     color: #86776f;
@@ -365,36 +371,6 @@ section .intro-contact-form-container strong {
 .product-text-italic {
     font-style: italic;
     font-weight: 500;
-}
-
-/* DOTS container (visibili e cliccabili) */
-.slider-dots {
-    display: flex;
-    justify-content: center;
-    gap: 8px;
-    margin-top: 12px;
-    padding-bottom: 8px;
-}
-
-.slider-dots .dot {
-    width: 12px;
-    height: 12px;
-    border-radius: 50%;
-    background-color: #dcd6d3;
-    display: inline-block;
-    cursor: pointer;
-    border: 1px solid rgba(0,0,0,0.06);
-    transition: transform 0.12s ease, background-color 0.12s ease;
-}
-
-.slider-dots .dot:hover,
-.slider-dots .dot:focus {
-    transform: scale(1.08);
-    outline: none;
-}
-
-.slider-dots .dot.active {
-    background-color: #86776f;
 }
 
 /* Contatti: form */
@@ -416,60 +392,48 @@ section .intro-contact-form-container strong {
 }
 
 #contatti label {
-    font-size: 0.9em;
+    font-size: 0.9em; /* ridotto */
     font-weight: 600;
     color: #86776f;
 }
 
-/* I campi occupano tutta la larghezza del contenitore di testo */
 #contatti input,
 #contatti textarea {
-    width: 100%;
     padding: 14px 16px;
     border: 1px solid #ccc;
     border-radius: 0;
     font-family: 'Montserrat', sans-serif;
-    font-size: 0.95em;
-    transition: all 0.25s ease;
+    font-size: 0.95em; /* ridotto */
+    transition: all 0.3s ease;
 }
 
 #contatti input:focus,
 #contatti textarea:focus {
     border-color: #86776f;
-    box-shadow: 0 0 5px rgba(134, 119, 111, 0.18);
+    box-shadow: 0 0 5px rgba(134, 119, 111, 0.3);
     outline: none;
 }
 
-/* Pulsante form uniforme con sito (corretto look) */
-#contatti .button-group {
-    display: flex;
-    justify-content: center;
-    gap: 16px;
-    margin-top: 10px;
-    flex-wrap: wrap;
-}
-
-#contatti button[type="submit"],
-#contatti .whatsapp-button {
-    flex: 1;
-    min-width: 220px;
-    max-width: 260px;
-    padding: 14px 0;
-    font-size: 1.02em;
-    font-weight: 600;
-    color: #86776f;
+/* Pulsante form uniforme con sito */
+#contatti button[type="submit"] {
+    display: block;
+    width: 50%;
+    max-width: 250px;
+    margin: 20px auto;
+    padding: 12px 20px;
     border: 2px solid #86776f;
-    background: transparent;
+    background-color: transparent;
+    color: #86776f;
+    font-weight: bold;
+    font-size: 1em;
     cursor: pointer;
-    transition: all 0.25s ease;
     text-align: center;
-    border-radius: 0;
+    transition: all 0.3s ease;
 }
 
-#contatti button[type="submit"]:hover,
-#contatti .whatsapp-button:hover {
+#contatti button[type="submit"]:hover {
     background-color: #86776f;
-    color: #fff;
+    color: white;
 }
 
 /* Link testuali principali */
@@ -483,7 +447,7 @@ section .intro-contact-form-container strong {
 
 .contact-links a.text-link {
     color: #86776f;
-    text-decoration: none; /* niente sottolineatura */
+    text-decoration: none;
     font-weight: 500;
     transition: color 0.3s ease;
 }
@@ -492,7 +456,7 @@ section .intro-contact-form-container strong {
     color: #555;
 }
 
-/* Social contact sotto i link principali (nella sezione contatti) */
+/* Social contact sotto i link principali */
 #contatti .social-contact {
     display: flex;
     justify-content: center;
@@ -514,16 +478,16 @@ section .intro-contact-form-container strong {
 /* Testo introduttivo per WhatsApp */
 #contatti .whatsapp-intro {
     text-align: center;
-    font-size: 1.05em;
+    font-size: 1.1em;
     font-weight: 500;
     color: #86776f;
-    margin: 18px 0 10px 0;
+    margin: 20px 0 10px 0;
 }
 
 /* Grazie dopo invio form */
 .contact-thankyou {
     font-family: 'Montserrat', sans-serif;
-    font-size: 1.1em;
+    font-size: 1.1em; /* leggermente più piccolo */
     font-weight: 600;
     color: #86776f;
     text-align: center;
@@ -531,8 +495,25 @@ section .intro-contact-form-container strong {
     display: block;
 }
 
-/* Buttons explore style (uniformi, link senza sottolineatura) */
-.explore-button,
+/* Buttons explore-button */
+.explore-button {
+    display: block;
+    width: 80%;
+    max-width: 300px;
+    margin: 15px auto 30px auto;
+    padding: 12px 20px;
+    border: 2px solid #86776f;
+    background-color: transparent;
+    color: #86776f;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 1em; /* ridotto */
+    transition: all 0.3s ease;
+    text-align: center;
+    border-radius: 0;
+}
+
+/* Buttons explore-button */
 .explore-link {
     display: block;
     width: 80%;
@@ -544,31 +525,15 @@ section .intro-contact-form-container strong {
     color: #86776f;
     text-decoration: none;
     font-weight: bold;
-    font-size: 1em;
-    transition: all 0.25s ease;
+    font-size: 1em; /* ridotto */
+    transition: all 0.3s ease;
     text-align: center;
     border-radius: 0;
 }
 
-.explore-button:hover,
-.explore-link:hover {
+.explore-button:hover {
     background-color: #86776f;
     color: white;
-}
-
-/* accessibility helper: focus states */
-a:focus, button:focus, .dot:focus {
-    outline: 3px solid rgba(134,119,111,0.2);
-    outline-offset: 2px;
-}
-
-/* Footer (semplice) */
-footer {
-    background-color: #86776f;
-    color: white;
-    text-align: center;
-    padding: 20px;
-    margin-top: 40px;
 }
 
 /* Media queries */
@@ -606,16 +571,31 @@ footer {
         width: 100%;
         margin: 0 auto;
     }
+    .social-contact {
+        display: none;
+    }
     #contatti form {
         max-width: 100%;
-        padding: 20px;
     }
 }
 
 @media (max-width: 480px) {
-    h1 { font-size: 2em; }
-    h2 { font-size: 1.5em; }
-    .product-description h3 { font-size: 1.2em; }
-    #contatti .button-group { flex-direction: column; align-items: stretch; }
-    .hamburger-menu { right: 12px; top: 12px; position: absolute; }
+    h1 {
+        font-size: 2em;
+    }
+    h2 {
+        font-size: 1.5em;
+    }
+    .product-description h3 {
+        font-size: 1.2em;
+    }
+    .intro-card img,
+    .product-card .product-slider {
+        width: 100%;
+        margin: 0 auto;
+    }
+    #contatti .button-group {
+        flex-direction: column;
+        align-items: stretch;
+    }
 }
