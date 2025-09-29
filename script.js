@@ -1,6 +1,6 @@
 document.addEventListener('DOMContentLoaded', () => {
     const sections = document.querySelectorAll('section');
-    const navLinks = document.querySelectorAll('.nav-item');
+    const navLinks = document.querySelectorAll('.nav-item, .scroll-link');
     const exploreLinks = document.querySelectorAll('.explore-link'); // Link "Esplora la collezione"
 
     // Funzione per mostrare la sezione
