@@ -59,7 +59,7 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 
-    // Carousel dei prodotti
+    // Carousel dei prodotti con swipe
     const sliders = document.querySelectorAll('.product-slider');
 
     sliders.forEach(slider => {
@@ -80,21 +80,48 @@ document.addEventListener('DOMContentLoaded', () => {
                 if (index === 0) dot.classList.add('active');
 
                 dot.addEventListener('click', () => {
-                    // nascondi tutte le immagini
-                    slides.forEach(slide => slide.style.display = 'none');
-                    // mostra quella scelta
-                    slides[index].style.display = 'block';
-
-                    // aggiorna i dot
-                    dotsContainer.querySelectorAll('.dot').forEach(d => d.classList.remove('active'));
-                    dot.classList.add('active');
-
-                    currentIndex = index;
+                    showSlide(index);
                 });
 
                 dotsContainer.appendChild(dot);
             });
         }
+
+        // funzione per mostrare una slide
+        function showSlide(index) {
+            slides.forEach(slide => slide.style.display = 'none');
+            slides[index].style.display = 'block';
+
+            if (dotsContainer) {
+                dotsContainer.querySelectorAll('.dot').forEach(d => d.classList.remove('active'));
+                dotsContainer.children[index].classList.add('active');
+            }
+
+            currentIndex = index;
+        }
+
+        // swipe con touch
+        let startX = 0;
+        slider.addEventListener('touchstart', (e) => {
+            startX = e.touches[0].clientX;
+        });
+
+        slider.addEventListener('touchend', (e) => {
+            const endX = e.changedTouches[0].clientX;
+            const diffX = startX - endX;
+
+            if (Math.abs(diffX) > 50) { // soglia swipe
+                if (diffX > 0) {
+                    // swipe sinistra → slide successiva
+                    const nextIndex = (currentIndex + 1) % slides.length;
+                    showSlide(nextIndex);
+                } else {
+                    // swipe destra → slide precedente
+                    const prevIndex = (currentIndex - 1 + slides.length) % slides.length;
+                    showSlide(prevIndex);
+                }
+            }
+        });
     });
 
     // --- FORM CONTATTI ---
